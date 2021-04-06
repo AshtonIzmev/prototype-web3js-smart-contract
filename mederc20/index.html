@@ -184,20 +184,21 @@
               <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="inputAmount">Montant</label>
-                    <input type="number" class="form-control" id="inputAmount" 
+                    <label for="trsfInputAmount">Montant</label>
+                    <input type="number" class="form-control" id="trsfInputAmount" 
                     placeholder="Insérer votre montant : 150">
                   </div>
                   <div class="form-group">
-                    <label for="inputBenef">Adresse du bénéficiaire</label>
-                    <input type="tel" class="form-control" id="inputBenef" 
+                    <label for="trsfInputBenef">Adresse du bénéficiaire</label>
+                    <input type="tel" class="form-control" id="trsfInputBenef" 
                     pattern="0x[0-9a-zA-Z]{40}"
                     placeholder="0x123456abcde...">
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Transférer</button>
+                  <button type="button" onclick="transfer()" class="btn btn-primary">
+                    Transférer</button>
                 </div>
               </form>
             </div>
@@ -219,7 +220,7 @@
                       <th style="width: 40px">Date</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="tbodyevents">
                     <tr>
                       <td class="ht">0x123456...
                         <span class="tooltipp">Bénéficiaire 0x1234567890abcdefghij1234567890abcdefghij </span>
@@ -259,6 +260,12 @@
       L'historique des transaction est stockée sur le navigateur pour simplifier la navigation.
       Ce site est simplement un intermédiaire intuitif et user-friendly pour manipuler des smart 
       contracts de manière à respecter l'esprit de la désintermédiation.
+      <span id="smileydeploy" onclick="deployMED()">&#129488;</span>
+      <span style="display: none;">
+        <span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span>
+        <span id="paramctr2">10</span>
+        <span id="paramctr3">900</span>
+      </span>
     </p>
     </footer>
 
@@ -276,6 +283,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 <script type="text/javascript" src="/dist/js/web3helper.js"></script>
+<script type="text/javascript" src="/dist/js/generic_storage.js"></script>
 <script type="text/javascript" src="js/med.js"></script>
 
 </body>
