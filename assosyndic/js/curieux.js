@@ -62,7 +62,7 @@ function seekAssociation() {
 
 async function seekHistoricAssociation(address) {
     $("#seek-assoc").val(address);
-    let contractObject = await getContractObject(address, "AssociationOrg.json");
+    let contractObject = await getContractObject(address, "/assosyndic/contracts/AssociationOrg.json");
     let account = await getPrimaryAccount();
     if (!contractObject) { $("#seek-assoc").val(""); return; }
 
@@ -132,7 +132,7 @@ function seekHistoricAdminContract(adminAddress) {
 
 async function handleSeekHistoricAdminContract(adminAddress) {
     $("#seek-admin").val(adminAddress);
-    let contractAdminObject = await getContractObject(adminAddress, getContractAdminJson());
+    let contractAdminObject = await getContractObject(adminAddress, "/assosyndic/contracts/" + getContractAdminJson());
     let account = await getPrimaryAccount();
     if (!contractAdminObject) { $("#seek-admin").val(""); return; }
 
@@ -179,7 +179,7 @@ async function handleSeekHistoricAdminContract(adminAddress) {
 
     var assocP = await getContractValueWoArg(contractAdminObject, "assoCtr");
     $("#addassoc-admin").text(assocP);
-    let contractAssocObject = await getContractObject(assocP, "AssociationOrg.json");
+    let contractAssocObject = await getContractObject(assocP, "/assosyndic/contracts/AssociationOrg.json");
     var memberCountP = await getContractValueWoArg(contractAssocObject, "membersCount");
 
     $("#details-admin-membercount").text(" sur " + memberCountP + " membre(s) soit " + 100*voteCountP/memberCountP + "%");
@@ -214,7 +214,7 @@ function onVoteForAdminContract() {
 
 async function voteForAdminContract() {
     var adminAddress = $("#seek-admin").val();
-    var contractObject = await getContractObject(adminAddress, getContractAdminJson());
+    var contractObject = await getContractObject(adminAddress, "/assosyndic/contracts/" + getContractAdminJson());
 
     if (!contractObject) { $("#seek-admin").val(""); return; }
     var contractMethod = "vote";
@@ -246,7 +246,7 @@ function onActAdminContract() {
 async function actAdminContract() {
     
     var adminAddress = $("#addassoc-admin").text();
-    var contractObject = await getContractObject(adminAddress, "AssociationOrg.json");
+    var contractObject = await getContractObject(adminAddress, "/assosyndic/contracts/AssociationOrg.json");
     if (!contractObject) { $("#seek-admin").val(""); return; }
     var contractMethod = dictMethods[$("#admin-select").text()];
     var contractArg = $("#seek-admin").val();

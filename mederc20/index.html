@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Exploration de la blockchain</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="/dist/css/OverlayScrollbars.min.css">
@@ -12,18 +14,22 @@
 
   <style>
     .ht:hover .tooltipp {
-        display:block;
+      display: block;
     }
+
     .tooltipp {
-        display: none;
-        color: red;
-        margin-left: 28px; /* moves the tooltip to the right */
-        margin-top: 15px; /* moves it down */
-        position: absolute;
-        z-index: 1000;
+      display: none;
+      color: red;
+      margin-left: 28px;
+      /* moves the tooltip to the right */
+      margin-top: 15px;
+      /* moves it down */
+      position: absolute;
+      z-index: 1000;
     }
   </style>
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
 
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -60,231 +66,304 @@
     </ul>
   </nav>
 
-<div class="wrapper">
+  <div class="wrapper">
 
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="/index.html" class="brand-link">
-      <span class="brand-text font-weight-light">Prototypes Blockchain</span>
-    </a>
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <a href="/index.html" class="brand-link">
+        <span class="brand-text font-weight-light">Prototypes Blockchain</span>
+      </a>
 
-    <div class="sidebar">
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-            <a href="/assosyndic/index.html" class="nav-link">
-              <p>
-                <i class="fas fa-sitemap"></i>
-                Association & Syndic
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/mederc20/index.html" class="nav-link">
-              <p>
-                <i class="fas fa-hand-holding-usd"></i>
-                <span style="font-weight: bolder; color:white">Moroccan E-Dirham</span>
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
+      <div class="sidebar">
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="/assosyndic/index.html" class="nav-link">
+                <p>
+                  <i class="fas fa-sitemap"></i>
+                  Association & Syndic
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/mederc20/index.html" class="nav-link">
+                <p>
+                  <i class="fas fa-hand-holding-usd"></i>
+                  <span style="font-weight: bolder; color:white">Moroccan E-Dirham</span>
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
 
-  <div class="content-wrapper">
-    <div class="content-header"></div>
+    <div class="content-wrapper">
+      <div class="content-header"></div>
 
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>
-                  <span id="solde"> ?? </span>
-                </h3>
-                <p>Solde <span class="small">(avant taxe et revenu)</span></p>
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>
+                    <span id="solde"> ?? </span>
+                  </h3>
+                  <p>Solde MED <span class="small">(avant taxe et revenu)</span></p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a href="#" class="small-box-footer" onclick="loadSolde()">Mettre à jour <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
-              </div>
-              <a href="#" class="small-box-footer">Mettre à jour <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>
-                  <span id="tax-delay"> ?? </span> <span class="small">jours</span>
-                </h3>
-                <p>Taxe en retard</p>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3>
+                    <span id="tax-delay"> ?? </span> <span class="small">jours</span>
+                  </h3>
+                  <p>d'impôts en retard</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-calculator"></i>
+                </div>
+                <a href="#" class="small-box-footer" onclick="updateAccount()">Passer à la caisse <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-calculator"></i>
-              </div>
-              <a href="#" class="small-box-footer">Payer ses taxes <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>
-                  <span id="income">??</span><sup>MED</sup>
-                </h3>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>
+                    <span id="income">??</span><sup>MED</sup>
+                  </h3>
 
-                <p>Revenu en attente</p>
+                  <p>Revenu en attente</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-cash"></i>
+                </div>
+                <a href="#" class="small-box-footer" onclick="updateAccount()">Passer à la caisse <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-cash"></i>
-              </div>
-              <a href="#" class="small-box-footer">Récupérer le revenu <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>
-                  <span id="total-supply">??</span> <sup>MED</sup>
-                </h3>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3>
+                    <span id="total-supply">??</span> <sup>MED</sup>
+                  </h3>
 
-                <p>Quantité totale de E-Dirham</p>
+                  <p>Quantité totale de E-Dirham</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" onclick="plusdinfos()" class="small-box-footer">Plus d'information <i class="fas fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">Plus d'information <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+            <!-- ./col -->
           </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-        <!-- Main row -->
-        
-        <div class="row">
+          <!-- /.row -->
+          <!-- Main row -->
 
-          <!-- Transfert -->
-          <div class="col-md-6">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Transfert de MED</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="trsfInputAmount">Montant</label>
-                    <input type="number" class="form-control" id="trsfInputAmount" 
-                    placeholder="Insérer votre montant : 150">
+          <div class="row">
+
+            <!-- Transfert -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Transfert de MED</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="trsfInputAmount">Montant</label>
+                      <input type="number" class="form-control" id="trsfInputAmount"
+                        placeholder="Insérer votre montant : 150">
+                    </div>
+                    <div class="form-group">
+                      <label for="trsfInputBenef">Adresse du bénéficiaire</label>
+                      <input type="tel" class="form-control" id="trsfInputBenef" pattern="0x[0-9a-zA-Z]{40}"
+                        placeholder="0x123456abcde...">
+                    </div>
+                    <div class="form-group">
+                      <label for="trsfInputLib">Libellé bénéficiaire</label>
+                      <input type="text" class="form-control" id="trsfInputLib"
+                        placeholder="Collègue de travail 3ème étage...">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="trsfInputBenef">Adresse du bénéficiaire</label>
-                    <input type="tel" class="form-control" id="trsfInputBenef" 
-                    pattern="0x[0-9a-zA-Z]{40}"
-                    placeholder="0x123456abcde...">
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <button type="button" onclick="onTransferERC20Btn()" class="btn btn-primary">
+                      Transférer</button>
                   </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Historique -->
+            <div class="col-md-6">
+              <div class="card card-secondary">
+                <div class="card-header">
+                  <h3 class="card-title">Historique des opérations</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th>Bénéficiaire</th>
+                        <th>Montant</th>
+                        <th style="width: 40px">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbodyevents1">
+                    </tbody>
+                  </table>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="button" onclick="transfer()" class="btn btn-primary">
-                    Transférer</button>
+              </div>
+            </div>
+
+          </div>
+          
+
+          <div class="row">
+            <!-- Beneficiaires -->
+            <div class="col-md-12">
+              <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title">Beneficiaires</h3>
                 </div>
-              </form>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th>Bénéficiaire</th>
+                        <th>Libellé</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbodyevents2">
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
             </div>
           </div>
 
-          <!-- Historique -->
-          <div class="col-md-6">
-            <div class="card card-secondary">
-              <div class="card-header">
-                <h3 class="card-title">Historique des opérations</h3>
+          <div class="row">
+            <!-- Beneficiaires -->
+            <div class="col-md-12">
+              <div class="card card-warning">
+                <div class="card-header">
+                  <h3 class="card-title" style="font-weight: bold;">Console d'administration de la Banque Centrale</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  Ces commandes ne fonctionnent que depuis la wallet de la Banque Centrale : 
+                  <button type="button" onclick="onCreateERC20Btn()" class="btn btn-dark">
+                    Créer une cryptomonnaie de type MED</button>
+                  <button type="button" onclick="addDay()" class="btn btn-secondary">
+                    Appel aux taxes</button>
+                  <button type="button" onclick="addMonth()" class="btn btn-secondary">
+                    Verser le revenu universel</button>
+                  <span id="smiley-deploy" style="display: none;"><br /><br />
+                    <span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span><br />
+                    <span id="paramctr2">10</span><br />
+                    <span id="paramctr3">900</span><br />
+                    <span id="paramctr4">false</span><br />
+                    <span id="paramctr5">2000000000000</span><br />
+                    <span id="token-address"></span><br />
+                    <span id="smiley-deploy-status"></span>
+                  </span>
+                </div>
+                <!-- /.card-body -->
               </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <table class="table table-sm">
-                  <thead>
-                    <tr>
-                      <th>Bénéficiaire</th>
-                      <th>Montant</th>
-                      <th style="width: 40px">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody id="tbodyevents">
-                    <tr>
-                      <td class="ht">0x123456...
-                        <span class="tooltipp">Bénéficiaire 0x1234567890abcdefghij1234567890abcdefghij </span>
-                      </td>
-                      <td>
-                        249
-                      </td>
-                      <td>10/03/2021</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
             </div>
           </div>
 
-        </div>
+          <div class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+            style="position: fixed; bottom: 50%; margin: 5% auto; left: 0; right: 0;">
+            <div class="toast-header">
+              <strong class="mr-auto toast-header"></strong>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+            </div>
+          </div>
 
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
+          <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+      </section>
 
 
-  </div>
+    </div>
 
 
-  <footer class="main-footer">
-    <p>
-      Les informations vous concernant (clés privée et publique) sont stockées 
-      sur votre navigateur (extension MetaMask) ou sur votre application MetaMask.
-      <br/>
-      Les informations concernant les contrats sont stockés sur la blockchain directement.
-      <br/>
-      <strong>Aucune information personnelle, technique ou de nature blockchain n'est stockée sur 
-        nos serveurs.</strong>
-      <br/>
-      L'historique des transaction est stockée sur le navigateur pour simplifier la navigation.
-      Ce site est simplement un intermédiaire intuitif et user-friendly pour manipuler des smart 
-      contracts de manière à respecter l'esprit de la désintermédiation.
-      <span id="smileydeploy" onclick="deployMED()">&#129488;</span>
-      <span style="display: none;">
-        <span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span>
-        <span id="paramctr2">10</span>
-        <span id="paramctr3">900</span>
-      </span>
-    </p>
+    <footer class="main-footer">
+      <p>
+        Les informations vous concernant (clés privée et publique) sont stockées
+        sur votre navigateur (extension MetaMask) ou sur votre application MetaMask.
+        <br />
+        Les informations concernant les contrats sont stockés sur la blockchain directement.
+        <br />
+        <strong>Aucune information personnelle, technique ou de nature blockchain n'est stockée sur
+          nos serveurs.</strong>
+        <br />
+        L'historique des transaction est stockée sur le navigateur pour simplifier la navigation.
+        Ce site est simplement un intermédiaire intuitif et user-friendly pour manipuler des smart
+        contracts de manière à respecter l'esprit de la désintermédiation. 
+        <span onclick="onCreateERC20Btn()">&#129488;</span>
+        <span onclick="addDay()">&#128578;</span>
+        <span onclick="addMonth()">&#128526;</span>
+        <span id="smiley-deploy" style="display: none;"><br/><br/>
+          <span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span><br/>
+          <span id="paramctr2">10</span><br/>
+          <span id="paramctr3">900</span><br/>
+          <span id="paramctr4">false</span><br/>
+          <span id="paramctr5">2000000000000</span><br/>
+          <span id="token-address"></span><br/>
+          <span id="smiley-deploy-status"></span>
+        </span>
+      </p>
     </footer>
 
-  <aside class="control-sidebar control-sidebar-dark">
-  </aside>
-</div>
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+  </div>
 
-<script src="/dist/js/jquery.min.js"></script>
-<script src="/dist/js/jquery.overlayScrollbars.min.js"></script>
-<script src="/dist/js/jquery-ui.min.js"></script>
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<script src="/dist/js/adminlte.js"></script>
+  <script src="/dist/js/jquery.min.js"></script>
+  <script src="/dist/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="/dist/js/jquery-ui.min.js"></script>
+  <script src="/dist/js/bootstrap.min.js"></script>
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <script src="/dist/js/adminlte.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-<script type="text/javascript" src="/dist/js/web3helper.js"></script>
-<script type="text/javascript" src="/dist/js/generic_storage.js"></script>
-<script type="text/javascript" src="js/med.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script type="text/javascript" src="/dist/js/web3helper.js"></script>
+  <script type="text/javascript" src="/dist/js/generic_storage.js"></script>
+  <script type="text/javascript" src="js/med_eth.js"></script>
+  <script type="text/javascript" src="js/med.js"></script>
 
 </body>
+
 </html>

@@ -1,7 +1,7 @@
 
 var WEB3ID = "1985459";
-var ethereumHost = "209.250.236.210";
-var ethereumPort = "8545";
+var gasGlobal = 4054108;
+var gasPriceGlobal = '2000000000';
 
 async function getWeb3() {
     // Wait for loading completion to avoid race conditions with web3 injection timing.
@@ -21,7 +21,7 @@ async function getWeb3() {
         console.log('Injected web3 detected.');
         return web3;
     } else {
-        const provider = new Web3.providers.HttpProvider('http://' + ethereumHost + ':' + ethereumPort);
+        const provider = new Web3.providers.HttpProvider('https://curieux.ma/blockchain/');
         const web3 = new Web3(provider);
         console.log('No web3 instance injected, using Local web3.');
         return web3;
@@ -35,7 +35,7 @@ async function getContractObject(contractAddress, jsonContract) {
     }
     let web3 = await getWeb3();
     let account = await getPrimaryAccount();
-    let jsonData = await $.getJSON('contracts/' + jsonContract);
+    let jsonData = await $.getJSON(jsonContract);
     let abi = jsonData['abi'];
     var ctr;
     try {
@@ -48,11 +48,9 @@ async function getContractObject(contractAddress, jsonContract) {
 };
 
 async function createContract(deploymentArgs, jsonContract, errorCallback, transactionHashCallback, finalCallback) {
-    var gasGlobal = 4054108;
-    var gasPriceGlobal = '2000000000';
     let web3 = await getWeb3();
     let account = await getPrimaryAccount();
-    $.getJSON('contracts/' + jsonContract, function (data) {
+    $.getJSON(jsonContract, function (data) {
         let abi = data['abi'];
         let bytecode = data['bytecode'];
         let ctr = new web3.eth.Contract(abi);
@@ -67,12 +65,10 @@ async function createContract(deploymentArgs, jsonContract, errorCallback, trans
 };
 
 async function callContractMethod(contractObject, methodTypeArg, methodCallArg, transactionHashCallback, errorCallback, finalCallback) {
-    var gasGlobal = 4054108;
-    var gasPriceGlobal = '2000000000';
     let account = await getPrimaryAccount();
     var call;
     if (methodCallArg) {
-        call = contractObject.methods[methodTypeArg](methodCallArg);
+        call = contractObject.methods[methodTypeArg](...methodCallArg);
     } else {
         call = contractObject.methods[methodTypeArg]();
     }

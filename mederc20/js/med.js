@@ -12,57 +12,68 @@ async function main() {
         }
     });
     loadHistoric();
+    loadDetails();
 };
 
 function setBalance(w3, account) {
     w3.eth.getBalance(account, function (err, balance) {
-        $("#solde").html((w3.utils.fromWei(balance, 'ether')).substring(0, 5) + "MED");
         $("#accountaddress").html(account.substring(0, 15) + "...");
         $("#completeaccountaddress").html(account);
     });
 }
-async function refreshEther() {
-    getWeb3().then((web3) => {
-        web3.eth.getCoinbase(function (err, account) {
-            if (err === null) {
-                setBalance(web3, account);
-            }
-        });
-    });
-};
+
 
 function addTransferToStore(trsf) { addToStore(trsf, "transfert"); };
+function addBenefToStore(trsf) { addRechercheToStore(trsf, "beneficiaire"); };
 
 function loadHistoric() {
     var eventList = JSON.parse(getStore())['r'];
-    $("#tbodyevents").html("");
+    $("#tbodyevents1").html("");
+    $("#tbodyevents2").html("");
     eventList.forEach(function (a) {
         var tuple = a.split("|");
         if (tuple[2] == "transfert") {
             var benef_amount = tuple[0].split(';');
-            $("#tbodyevents").append(
+            $("#tbodyevents1").append(
                 "<tr><td class='ht'>" + benef_amount[0].substring(0, 10) + "..." +
                 "</td><td>" + benef_amount[1] + "</td><td>" + tuple[1] + "</td></tr>"
+            );
+        }
+        if (tuple[2] == "beneficiaire") {
+            var benef_lib = tuple[0].split(';');
+            $("#tbodyevents2").append(
+                "<tr><td class='ht'><a href='#' onclick='preload(\"" + benef_lib[0] +"\")'>" + benef_lib[0].substring(0, 12) + "...</a>" +
+                "</td><td>" + benef_lib[1] + "</td>"
             );
         }
     });
 };
 
-function transfer() {
-    var benef = $("#trsfInputBenef").val();
-    var amount = $("#trsfInputAmount").val();
-    addTransferToStore(benef + ";" + amount);
-    alert(benef + amount);
-    loadHistoric();
+function preload(benef) {
+    $("#trsfInputBenef").val(benef);
 }
 
-function deployMED() {
-    var treasureAdd = $("#paramctr1").text();
-    var ratePct = $("#paramctr2").text();
-    var umi = $("#paramctr3").text();
-    alert(treasureAdd + ratePct + umi);
+function loadDetails() {
+    loadSolde();
+    loadTaxDays();
+    loadUMI();
+    loadTotalSupply();
+};
+
+function updateAccount() {
+    payTaxesGetUmi();
+}
+
+function plusdinfos() {
+    $('.toast-header').text("Informations");
+    $('.toast-body').text("La quantité totale de crypto-token disponible dans l'ensemble des wallets. Celle-ci peut être fixe ou modulable si le contract est ouvert à la création et destruction monétaire.");
+    $('.toast').toast({ 'delay': 10000 }).toast('show');
 }
 
 window.addEventListener('load', main);
 
-// web3.eth.sendTransaction({from:"0x981093C7A5AA41b6b5f754c27b3a62adBB34Dd7a", to:"0x132f15ff1af2c9741d10e12ddc141574eecadd25", value:web3.utils.toWei("1", "ether")});
+/*
+
+web3.eth.sendTransaction({from:"0xb9A97094910D6538ae2AF51CEe0706F33E492B60", to:"0x99e5A82c5000f18F3CB0027382F9310110bD0376", value:web3.utils.toWei("5", "ether")});
+
+*/

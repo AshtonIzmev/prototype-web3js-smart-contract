@@ -26,7 +26,7 @@ function onCreateAssociationBtn() {
         $("#created-assoc").append("<p> Association créée à l'adresse <span class='bold'>" + contractInstance.options.address + "</span> à " + ds + "</p>");
         loadHistoric();
     }
-    createContract([assocName, memberName], 'AssociationOrg.json', errorCallback, transactionHashCallback, finalCallback);
+    createContract([assocName, memberName], '/assosyndic/contracts/AssociationOrg.json', errorCallback, transactionHashCallback, finalCallback);
 }
 
 /////////////////////////
@@ -53,7 +53,7 @@ function createAdmin(deploymentArgs, jsonContract, successCallback, typeStr, sta
         successCallback(contractInstance);
         loadHistoric();
     }
-    createContract(deploymentArgs, jsonContract, errorCallback, transactionHashCallback, finalCallback);
+    createContract(deploymentArgs, "/assosyndic/contracts/" + jsonContract, errorCallback, transactionHashCallback, finalCallback);
 };
 
 function onBecomeOwner() {

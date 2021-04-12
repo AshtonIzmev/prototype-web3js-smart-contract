@@ -44,7 +44,7 @@ function loadHistoric() {
                 + eraseBtn1
                 + "'" + tuple[0] + "'" 
                 + eraseBtn2
-                + "</span>"
+                + "</span></br>"
             );
         }
     });

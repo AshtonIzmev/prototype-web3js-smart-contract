@@ -27,6 +27,12 @@
       position: absolute;
       z-index: 1000;
     }
+
+    @media screen and (min-width: 400px) {
+      br {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -108,12 +114,35 @@
         <div class="container-fluid">
 
           <div class="row">
+
+            <!-- Solde -->
+            <div class="col-12">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>
+                    <span id="solde"> <span style="color: gainsboro;">Vous n'êtes pas </br>
+                        connecté à la </br> blockchain </span></span>
+                  </h3>
+                  <p>Solde d'Ether (de test)</p>
+                  <span id="received-ether"></span>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-bag"></i>
+                </div>
+                <a onclick="getEther()" class="small-box-footer">Recevoir <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col-12">
               <div class="callout callout-info">
                 <h5><i class="fas fa-info"></i> La communauté des curieux</h5>
                 <span>
                   Nous allons explorer la technologie blockchain ensemble.
-                  Ce site web vous permettra d'interagir avec des contrats de la blockchain Ethereum.
+                  Ce site web vous permettra d'interagir avec des contrats de la blockchain Ethereum. Pour ce faire,
+                  vous aurez besoin de l'application Metamask et de récupérer de l'ether (de test).
                 </span>
               </div>
             </div>
@@ -137,7 +166,7 @@
 
           <div class="row">
             <div class="col-12">
-              <div class="callout callout-info">
+              <div class="callout callout-info" id="network-problem">
                 <p>
                   <span class="bold">
                     Merci de connecter votre extension/application MetaMask ou de rafraichir la page afin de connecter
@@ -145,12 +174,13 @@
                   </span>
                 </p>
                 <p>
-                <div id="network-problem">Merci de suivre cette procédure :
+                <div>Merci de suivre cette procédure :
                   <ol>
-                    <li>Installer Metamask (application dans le store si vous êtes sur mobile)
+                    <li>Installer <a href="https://play.google.com/store/apps/details?id=io.metamask">Metamask</a>
+                      (application dans le store si vous êtes sur mobile)
                       ou extension Google Chrome si sur desktop</li>
-                    <li>Configurer votre wallet Metamask (avec mot de passe)</li>
-                    <li>Ajouter un nouveau réseau tel que décrit plus haut (avec Add network
+                    <li>Configurer votre wallet Metamask</li>
+                    <li>Ajouter un nouveau réseau (avec Add network
                       dans les paramètres puis renseigner dans RPC URL https://curieux.ma/blockchain/ puis 985459 dans
                       chainId)</li>
                     <li>Accepter la connection au site (une pop-up devrait s'afficher)</li>
@@ -161,11 +191,22 @@
             </div>
           </div>
 
+          <div class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+            style="position: fixed; bottom: 50%; margin: 5% auto; left: 0; right: 0;">
+            <div class="toast-header">
+              <strong class="mr-auto toast-header"></strong>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+            </div>
+          </div>
+
         </div><!-- /.container-fluid -->
       </section>
 
     </div>
-
 
     <footer class="main-footer">
       <p>
@@ -174,8 +215,8 @@
         <br />
         Les informations concernant les contrats sont stockés sur la blockchain directement.
         <br />
-        <strong>Aucune information personnelle, technique ou de nature blockchain n'est stockée sur
-          nos serveurs.</strong>
+        <strong>Aucune information personnelle, technique ou de nature blockchain n'est stockée sur un serveur
+          centralisé.</strong>
         <br />
         L'historique des transaction est stockée sur le navigateur pour simplifier la navigation.
         Ce site est simplement un intermédiaire intuitif et user-friendly pour manipuler des smart
@@ -190,10 +231,14 @@
   <script src="/dist/js/jquery.min.js"></script>
   <script src="/dist/js/jquery.overlayScrollbars.min.js"></script>
   <script src="/dist/js/jquery-ui.min.js"></script>
+  <script src="/dist/js/bootstrap.min.js"></script>
   <script>
     $.widget.bridge('uibutton', $.ui.button)
   </script>
   <script src="/dist/js/adminlte.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script type="text/javascript" src="/dist/js/web3helper.js"></script>
+  <script type="text/javascript" src="/dist/js/home.js"></script>
 
 </body>
 
