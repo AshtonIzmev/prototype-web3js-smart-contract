@@ -1,4 +1,4 @@
-var tokenCtrAdd = "0xa3218bc33753EfF6454d870D996Faa8eB068CeA9";
+var tokenCtrAdd = "0x92Ed9a464e2A8a1e79A34056A854A75839176430";
 
 function onCreateERC20Btn() {
     var treasureAdd = $("#paramctr1").text();
@@ -91,8 +91,10 @@ async function loadUMI() {
 
 async function loadTotalSupply() {
     var contractObject = await getContractObject(tokenCtrAdd, '/mederc20/contracts/MED.json');
-    let result = await getContractValueWoArg(contractObject, "totalSupply");
-    $("#total-supply").text(result/1000000000 + "G");
+    let totalSupply = await getContractValueWoArg(contractObject, "totalSupply");
+    let allowMint = await getContractValueWoArg(contractObject, "allowMint");
+    $("#total-supply").text(totalSupply/1000000000 + "G");
+    $("#mintable").text(allowMint ? "(Imprimable)" : "(Non imprimable)")
     console.log("Total supply à jour");
 };
 

@@ -15,7 +15,7 @@ async function main() {
 
 function setBalance(w3, account) {
   w3.eth.getBalance(account, function (err, balance) {
-    $("#solde").html((w3.utils.fromWei(balance, 'ether')).substring(0, 4) + "MED");
+    $("#solde").html((w3.utils.fromWei(balance, 'ether')).substring(0, 5) + " ETH");
   });
 }
 

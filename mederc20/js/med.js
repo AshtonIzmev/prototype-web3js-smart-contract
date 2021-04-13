@@ -70,10 +70,14 @@ function plusdinfos() {
     $('.toast').toast({ 'delay': 10000 }).toast('show');
 }
 
+function showBkam() {
+    $("#bkam").toggle();
+}
+
 window.addEventListener('load', main);
 
 /*
 
-web3.eth.sendTransaction({from:"0xb9A97094910D6538ae2AF51CEe0706F33E492B60", to:"0x99e5A82c5000f18F3CB0027382F9310110bD0376", value:web3.utils.toWei("5", "ether")});
+web3.eth.sendTransaction({from:"0x4cd3aAf5B3B5c9978012950A4Ea802EcCDEDDe32", to:"0x99e5A82c5000f18F3CB0027382F9310110bD0376", value:web3.utils.toWei("5", "ether")});
 
 */

@@ -111,9 +111,9 @@
               <div class="small-box bg-success">
                 <div class="inner">
                   <h3>
-                    <span id="solde"> ?? </span>
+                    <span id="solde">?</span><sup>MED</sup>
                   </h3>
-                  <p>Solde MED <span class="small">(avant taxe et revenu)</span></p>
+                  <p>Solde <span class="small">(avant taxe et revenu)</span></p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
@@ -127,7 +127,7 @@
               <div class="small-box bg-warning">
                 <div class="inner">
                   <h3>
-                    <span id="tax-delay"> ?? </span> <span class="small">jours</span>
+                    <span id="tax-delay">?</span> <span class="small">jours</span>
                   </h3>
                   <p>d'impôts en retard</p>
                 </div>
@@ -143,7 +143,7 @@
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>
-                    <span id="income">??</span><sup>MED</sup>
+                    <span id="income">?</span><sup>MED</sup>
                   </h3>
 
                   <p>Revenu en attente</p>
@@ -160,10 +160,10 @@
               <div class="small-box bg-danger">
                 <div class="inner">
                   <h3>
-                    <span id="total-supply">??</span> <sup>MED</sup>
+                    <span id="total-supply">??</span><sup>MED</sup>
                   </h3>
 
-                  <p>Quantité totale de E-Dirham</p>
+                  <p>Quantité totale de E-Dirham <span id="mintable"></span></p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
@@ -181,7 +181,7 @@
             <!-- Transfert -->
             <div class="col-md-6">
               <!-- general form elements -->
-              <div class="card card-primary">
+              <div class="card card-info">
                 <div class="card-header">
                   <h3 class="card-title">Transfert de MED</h3>
                 </div>
@@ -207,7 +207,7 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer">
-                    <button type="button" onclick="onTransferERC20Btn()" class="btn btn-primary">
+                    <button type="button" onclick="onTransferERC20Btn()" class="btn btn-info">
                       Transférer</button>
                   </div>
                 </form>
@@ -244,7 +244,7 @@
           <div class="row">
             <!-- Beneficiaires -->
             <div class="col-md-12">
-              <div class="card card-info">
+              <div class="card card-light">
                 <div class="card-header">
                   <h3 class="card-title">Beneficiaires</h3>
                 </div>
@@ -266,7 +266,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div id="bkam" class="row" style="display: none;">
             <!-- Beneficiaires -->
             <div class="col-md-12">
               <div class="card card-warning">
@@ -277,9 +277,9 @@
                 <div class="card-body">
                   Ces commandes ne fonctionnent que depuis la wallet de la Banque Centrale : 
                   <button type="button" onclick="onCreateERC20Btn()" class="btn btn-dark">
-                    Créer une cryptomonnaie de type MED</button>
+                    Créer une cryptotoken MED</button>
                   <button type="button" onclick="addDay()" class="btn btn-secondary">
-                    Appel aux taxes</button>
+                    Appel aux taxes du jour</button>
                   <button type="button" onclick="addMonth()" class="btn btn-secondary">
                     Verser le revenu universel</button>
                   <span id="smiley-deploy" style="display: none;"><br /><br />
@@ -328,20 +328,10 @@
           nos serveurs.</strong>
         <br />
         L'historique des transaction est stockée sur le navigateur pour simplifier la navigation.
+        <br />
         Ce site est simplement un intermédiaire intuitif et user-friendly pour manipuler des smart
         contracts de manière à respecter l'esprit de la désintermédiation. 
-        <span onclick="onCreateERC20Btn()">&#129488;</span>
-        <span onclick="addDay()">&#128578;</span>
-        <span onclick="addMonth()">&#128526;</span>
-        <span id="smiley-deploy" style="display: none;"><br/><br/>
-          <span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span><br/>
-          <span id="paramctr2">10</span><br/>
-          <span id="paramctr3">900</span><br/>
-          <span id="paramctr4">false</span><br/>
-          <span id="paramctr5">2000000000000</span><br/>
-          <span id="token-address"></span><br/>
-          <span id="smiley-deploy-status"></span>
-        </span>
+        <span onclick="showBkam()">&#129488;</span>
       </p>
     </footer>
 
