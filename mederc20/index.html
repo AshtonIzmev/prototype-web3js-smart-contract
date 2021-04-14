@@ -134,7 +134,10 @@
                 <div class="icon">
                   <i class="ion ion-calculator"></i>
                 </div>
-                <a href="#" class="small-box-footer" onclick="updateAccount()">Passer à la caisse <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer" onclick="updateAccount()">Passer à la caisse 
+                  <i id="fa11" class="fas fa-arrow-circle-right"></i>
+                  <i id="fa12" class="fas fa-spinner fa-pulse" style="display:none;"></i>
+                </a>
               </div>
             </div>
             <!-- ./col -->
@@ -151,7 +154,10 @@
                 <div class="icon">
                   <i class="ion ion-cash"></i>
                 </div>
-                <a href="#" class="small-box-footer" onclick="updateAccount()">Passer à la caisse <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer" onclick="updateAccount()">Récupérer le revenu 
+                  <i id="fa21" class="fas fa-arrow-circle-right"></i>
+                  <i id="fa22" class="fas fa-spinner fa-pulse" style="display:none;"></i>
+                </a>
               </div>
             </div>
             <!-- ./col -->
@@ -208,7 +214,7 @@
                   <!-- /.card-body -->
                   <div class="card-footer">
                     <button type="button" onclick="onTransferERC20Btn()" class="btn btn-info">
-                      Transférer</button>
+                      Transférer <i id="fa3" class="fas fa-spinner fa-pulse" style="display:none;"></i></button>
                   </div>
                 </form>
               </div>

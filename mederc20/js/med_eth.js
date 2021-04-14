@@ -1,4 +1,4 @@
-var tokenCtrAdd = "0x92Ed9a464e2A8a1e79A34056A854A75839176430";
+var tokenCtrAdd = "0xfffBB3799b10523bB58bdDa6A762ED12cc84Ef0F";
 
 function onCreateERC20Btn() {
     var treasureAdd = $("#paramctr1").text();
@@ -48,8 +48,15 @@ async function onTransferERC20Btn() {
         $('.toast-header').text("Tentative de transfert");
         $('.toast-body').text("Une erreur est survenue lors du transfert");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
-    }
+    };
+    function transactionHashCallback(transactionHash) {
+        $('#fa3').toggle();
+        $('.toast-header').text("Tentative de transfert");
+        $('.toast-body').text("Votre transfert est en cours de traitement. Merci de patienter.");
+        $('.toast').toast({ 'delay': 3000 }).toast('show');
+    };
     function finalCallback(data) {
+        $('#fa3').toggle();
         $('.toast-header').text("Transfert");
         $('.toast-body').text("Le transfert de " + amount + "MED a été correctement réalisé");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
@@ -57,9 +64,9 @@ async function onTransferERC20Btn() {
         addBenefToStore(benef + ";" + lib);
         loadSolde();
         loadHistoric();
-    }
+    };
 
-    callContractMethod(contractObject, contractMethod, contractArg, console.log, errorCallback, finalCallback);
+    callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
 }
 
 async function loadSolde() {
@@ -107,19 +114,32 @@ async function payTaxesGetUmi() {
     function errorCallback (error) {
         console.log(error);
         $('.toast-header').text("Passage à la caisse");
-        $('.toast-body').text("Récupérer son revenu universel et payer ses taxes");
+        $('.toast-body').text("Une erreur est survenue lors de la récupération du revenu universel et du paiement des taxes");
         $('.toast').toast({ 'delay': 5000 }).toast('show');
-    }
+    };
+    function transactionHashCallback(transactionHash) {
+        $('#fa11').toggle();
+        $('#fa12').toggle();
+        $('#fa21').toggle();
+        $('#fa22').toggle();
+        $('.toast-header').text("Passage à la caisse");
+        $('.toast-body').text("La transaction de récupération de revenu et de paiement de taxe a bien été reçue. Merci de patienter");
+        $('.toast').toast({ 'delay': 5000 }).toast('show');
+    };
     function finalCallback(data) {
+        $('#fa11').toggle();
+        $('#fa12').toggle();
+        $('#fa21').toggle();
+        $('#fa22').toggle();
         $('.toast-header').text("Passage à la caisse");
         $('.toast-body').text("Le revenu universel a été transféré sur votre compte. Les taxes ont été payées");
         $('.toast').toast({ 'delay': 5000 }).toast('show');
         loadSolde();
         loadTaxDays();
         loadUMI();
-    }
+    };
 
-    callContractMethod(contractObject, contractMethod, [account], console.log, errorCallback, finalCallback);
+    callContractMethod(contractObject, contractMethod, [account], transactionHashCallback, errorCallback, finalCallback);
 }
 
 async function addDay() {
