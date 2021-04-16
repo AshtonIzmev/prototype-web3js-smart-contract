@@ -1,4 +1,4 @@
-var tokenCtrAdd = "0xfffBB3799b10523bB58bdDa6A762ED12cc84Ef0F";
+var tokenCtrAdd = "0x398c53e17a755280b3cb7283f2e79cde57973119";
 
 function onCreateERC20Btn() {
     var treasureAdd = $("#paramctr1").text();
@@ -74,6 +74,7 @@ async function loadSolde() {
     let account = await getPrimaryAccount();
     let result = await getContractValueWiArg(contractObject, "balanceOf", account);
     $("#solde").text(result);
+    $("#connect").hide();
     console.log("Solde à jour");
 };
 

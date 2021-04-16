@@ -78,6 +78,8 @@ window.addEventListener('load', main);
 
 /*
 
-web3.eth.sendTransaction({from:"0x4cd3aAf5B3B5c9978012950A4Ea802EcCDEDDe32", to:"0x99e5A82c5000f18F3CB0027382F9310110bD0376", value:web3.utils.toWei("5", "ether")});
+web3.eth.sendTransaction({from:"0x28777ef8Ae930D54EF33910e241e5361464cb459", to:"0x99e5A82c5000f18F3CB0027382F9310110bD0376", value:web3.utils.toWei("5", "ether")});
+
+/usr/bin/geth attach geth.ipc --exec 'loadScript("med.day.js")'
 
 */
