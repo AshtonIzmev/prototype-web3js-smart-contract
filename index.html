@@ -9,17 +9,17 @@ title: Exploration de la blockchain
 		<!-- small box -->
 		<div class="small-box bg-dark">
 			<div class="inner">
-				<h3>
-					<span id="solde"> <span style="color: gainsboro;">Vous n'êtes pas
-							connecté à la blockchain Ethereum </span></span>
-				</h3>
-				<span class="solde" style="display:none;">Solde d'ether (de test, aucune valeur marchande ni utilité hors ce prototype)</span>
+				<span id="solde"> <span style="color: gainsboro; font-size: xx-large;">Vous n'êtes pas
+						connecté à la blockchain Ethereum </span></span>
+				<span class="solde" style="display:none;">Solde d'ether (de test, aucune valeur marchande ni utilité
+					hors ce prototype)</span>
 				<span id="received-ether"></span>
 			</div>
 			<div class="icon">
 				<i class="ion ion-bag"></i>
 			</div>
-			<a onclick="getEther()" class="small-box-footer">Recevoir <i class="fas fa-arrow-circle-right"></i></a>
+			<a onclick="getEther()" class="solde small-box-footer" style="display:none;">Recevoir de l'ether <i
+					class="fas fa-arrow-circle-right"></i></a>
 		</div>
 	</div>
 </div>
@@ -28,11 +28,75 @@ title: Exploration de la blockchain
 	<div class="col-12">
 		<div class="callout callout-info">
 			<h5><i class="fas fa-info"></i> La communauté des curieux</h5>
-			<span>
+			<p>
 				Nous allons explorer la technologie blockchain ensemble.
 				Ce site web vous permettra d'interagir avec des contrats de la blockchain Ethereum. Pour ce faire,
 				vous aurez besoin de l'application Metamask et de récupérer de l'ether (de test).
-			</span>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-12">
+		<div class="callout"  style="padding: 0.3em; text-align: center;">
+			<p>Voici les applications disponibles</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-6">
+		<div class="callout callout-danger" style="padding: 0.6em">
+			<a href="/assosyndic/" class="nav-link">
+				<p>
+					<i class="fas fa-sitemap"></i>
+					Association & Syndic
+				</p>
+			</a>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="callout callout-success" style="padding: 0.6em">
+			<a href="/mederc20/" class="nav-link">
+				<p>
+					<i class="fas fa-hand-holding-usd"></i>
+					Moroccan E-Dirham
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-4">
+		<div class="callout callout-warning" style="padding: 0.6em">
+			<a href="/contractpp/" class="nav-link">
+				<p>
+					<i class="fas fa-id-card"></i>
+					Contrats Particulier
+				</p>
+			</a>
+		</div>
+	</div>
+	<div class="col-4">
+		<div class="callout callout-primary" style="padding: 0.6em">
+			<a href="/contractpm/" class="nav-link">
+				<p>
+					<i class="fas fa-file-signature"></i>
+					Contrats Entreprise
+				</p>
+			</a>
+		</div>
+	</div>
+	<div class="col-4">
+		<div class="callout callout-info" style="padding: 0.6em">
+			<a href="/bourse/" class="nav-link">
+				<p>
+					<i class="fas fa-comments-dollar"></i>
+					Bourse de contrats
+				</p>
+			</a>
 		</div>
 	</div>
 </div>
@@ -60,7 +124,8 @@ title: Exploration de la blockchain
 								href="https://issam.ma/assets/img/blockchain_association/metamask_3.jpg">Paramètres/Settings</a></b>
 						puis <b><a target="_blank"
 								href="https://issam.ma/assets/img/blockchain_association/metamask_4.jpg">Networks</a></b>
-						puis <b><a target="_blank" href="https://issam.ma/assets/img/blockchain_association/metamask_5.jpg">Add
+						puis <b><a target="_blank"
+								href="https://issam.ma/assets/img/blockchain_association/metamask_5.jpg">Add
 								Network</a></b>
 						puis renseigner les <a target="_blank"
 							href="https://issam.ma/assets/img/blockchain_association/metamask_6.jpg">informations de
@@ -79,3 +144,7 @@ title: Exploration de la blockchain
 </div>
 
 <script type="text/javascript" src="/assets/js/home/home.js"></script>
+<script>
+	var element = document.getElementById("upnavhome");
+	element.classList.add("circle-icon");
+</script>
