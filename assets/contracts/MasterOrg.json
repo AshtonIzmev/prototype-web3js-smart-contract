@@ -1,0 +1,989 @@
+{
+  "contractName": "MasterOrg",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_association",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "_founder",
+          "type": "string"
+        }
+      ],
+      "name": "CreationEvent",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_association",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_founder",
+          "type": "string"
+        }
+      ],
+      "name": "emitCreation",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_association\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_founder\",\"type\":\"string\"}],\"name\":\"CreationEvent\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_association\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_founder\",\"type\":\"string\"}],\"name\":\"emitCreation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Master.sol\":\"MasterOrg\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Administration.sol\":{\"keccak256\":\"0x8c067d29ed9f53ee97c04b18a028b174058942a921dd482dff2f1da3341f7d75\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2025cae9488fbe04f0b09b264b916a950c2e47e83cb2b785a7151c810cc3e6a2\",\"dweb:/ipfs/QmQKeRV2ZhagLwh1emg6z1Jwj3Fpc2gmhv1BSd8Nctn8Ck\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Association.sol\":{\"keccak256\":\"0xa227a1fc656e813cb61e51628232627742b7289143302c3c2d2e8e1b3ba01e58\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bdb5c06d18476eb8d1c65341391bb2b18192bebd22ca4e429244d6ae27799a59\",\"dweb:/ipfs/QmPQySJmMKaVKyFoEaH3rZnw3YZpG9QT5aX9mFsmYPxLFn\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Master.sol\":{\"keccak256\":\"0x9ead05beac8381ded984276035a16011e0f262cb515492d02ced2a9352b235c7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c52624b426d1832e8f3db3860cf9aed36953c6d4f18e58159183aa44144cbed0\",\"dweb:/ipfs/QmaKXHDL72kRx3JGfh9dqTomNGNKaep3CeNawRKmZMDLCp\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103b9806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063cabe6a5714610030575b600080fd5b61004a60048036038101906100459190610109565b61004c565b005b7fd9b0de631da1fc031f22c56ca7e415d5e77d43b25a21d2dd1dfef5e1b60d571083838360405161007f939291906101d0565b60405180910390a1505050565b600061009f61009a8461023a565b610215565b9050828152602081018484840111156100b757600080fd5b6100c28482856102b9565b509392505050565b6000813590506100d98161036c565b92915050565b600082601f8301126100f057600080fd5b813561010084826020860161008c565b91505092915050565b60008060006060848603121561011e57600080fd5b600061012c868287016100ca565b935050602084013567ffffffffffffffff81111561014957600080fd5b610155868287016100df565b925050604084013567ffffffffffffffff81111561017257600080fd5b61017e868287016100df565b9150509250925092565b61019181610287565b82525050565b60006101a28261026b565b6101ac8185610276565b93506101bc8185602086016102c8565b6101c58161035b565b840191505092915050565b60006060820190506101e56000830186610188565b81810360208301526101f78185610197565b9050818103604083015261020b8184610197565b9050949350505050565b600061021f610230565b905061022b82826102fb565b919050565b6000604051905090565b600067ffffffffffffffff8211156102555761025461032c565b5b61025e8261035b565b9050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600061029282610299565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b82818337600083830152505050565b60005b838110156102e65780820151818401526020810190506102cb565b838111156102f5576000848401525b50505050565b6103048261035b565b810181811067ffffffffffffffff821117156103235761032261032c565b5b80604052505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000601f19601f8301169050919050565b61037581610287565b811461038057600080fd5b5056fea2646970667358221220c17a19b20dff33cc903cee6f111dc835aa0a59ee3cbcd41bce685e5c3eb796d864736f6c63430008030033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063cabe6a5714610030575b600080fd5b61004a60048036038101906100459190610109565b61004c565b005b7fd9b0de631da1fc031f22c56ca7e415d5e77d43b25a21d2dd1dfef5e1b60d571083838360405161007f939291906101d0565b60405180910390a1505050565b600061009f61009a8461023a565b610215565b9050828152602081018484840111156100b757600080fd5b6100c28482856102b9565b509392505050565b6000813590506100d98161036c565b92915050565b600082601f8301126100f057600080fd5b813561010084826020860161008c565b91505092915050565b60008060006060848603121561011e57600080fd5b600061012c868287016100ca565b935050602084013567ffffffffffffffff81111561014957600080fd5b610155868287016100df565b925050604084013567ffffffffffffffff81111561017257600080fd5b61017e868287016100df565b9150509250925092565b61019181610287565b82525050565b60006101a28261026b565b6101ac8185610276565b93506101bc8185602086016102c8565b6101c58161035b565b840191505092915050565b60006060820190506101e56000830186610188565b81810360208301526101f78185610197565b9050818103604083015261020b8184610197565b9050949350505050565b600061021f610230565b905061022b82826102fb565b919050565b6000604051905090565b600067ffffffffffffffff8211156102555761025461032c565b5b61025e8261035b565b9050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600061029282610299565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b82818337600083830152505050565b60005b838110156102e65780820151818401526020810190506102cb565b838111156102f5576000848401525b50505050565b6103048261035b565b810181811067ffffffffffffffff821117156103235761032261032c565b5b80604052505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000601f19601f8301169050919050565b61037581610287565b811461038057600080fd5b5056fea2646970667358221220c17a19b20dff33cc903cee6f111dc835aa0a59ee3cbcd41bce685e5c3eb796d864736f6c63430008030033",
+  "immutableReferences": {},
+  "sourceMap": "163:311:2:-:0;;;204:17;;;;;;;;;;163:311;;;;;;",
+  "deployedSourceMap": "163:311:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;231:162;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;342:44;356:12;370:5;377:8;342:44;;;;;;;;:::i;:::-;;;;;;;;231:162;;;:::o;7:345:26:-;;110:66;126:49;168:6;126:49;:::i;:::-;110:66;:::i;:::-;101:75;;199:6;192:5;185:21;237:4;230:5;226:16;275:3;266:6;261:3;257:16;254:25;251:2;;;292:1;289;282:12;251:2;305:41;339:6;334:3;329;305:41;:::i;:::-;91:261;;;;;;:::o;358:139::-;;442:6;429:20;420:29;;458:33;485:5;458:33;:::i;:::-;410:87;;;;:::o;517:273::-;;622:3;615:4;607:6;603:17;599:27;589:2;;640:1;637;630:12;589:2;680:6;667:20;705:79;780:3;772:6;765:4;757:6;753:17;705:79;:::i;:::-;696:88;;579:211;;;;;:::o;796:778::-;;;;958:2;946:9;937:7;933:23;929:32;926:2;;;974:1;971;964:12;926:2;1017:1;1042:53;1087:7;1078:6;1067:9;1063:22;1042:53;:::i;:::-;1032:63;;988:117;1172:2;1161:9;1157:18;1144:32;1203:18;1195:6;1192:30;1189:2;;;1235:1;1232;1225:12;1189:2;1263:63;1318:7;1309:6;1298:9;1294:22;1263:63;:::i;:::-;1253:73;;1115:221;1403:2;1392:9;1388:18;1375:32;1434:18;1426:6;1423:30;1420:2;;;1466:1;1463;1456:12;1420:2;1494:63;1549:7;1540:6;1529:9;1525:22;1494:63;:::i;:::-;1484:73;;1346:221;916:658;;;;;:::o;1580:118::-;1667:24;1685:5;1667:24;:::i;:::-;1662:3;1655:37;1645:53;;:::o;1704:364::-;;1820:39;1853:5;1820:39;:::i;:::-;1875:71;1939:6;1934:3;1875:71;:::i;:::-;1868:78;;1955:52;2000:6;1995:3;1988:4;1981:5;1977:16;1955:52;:::i;:::-;2032:29;2054:6;2032:29;:::i;:::-;2027:3;2023:39;2016:46;;1796:272;;;;;:::o;2074:624::-;;2301:2;2290:9;2286:18;2278:26;;2314:71;2382:1;2371:9;2367:17;2358:6;2314:71;:::i;:::-;2432:9;2426:4;2422:20;2417:2;2406:9;2402:18;2395:48;2460:78;2533:4;2524:6;2460:78;:::i;:::-;2452:86;;2585:9;2579:4;2575:20;2570:2;2559:9;2555:18;2548:48;2613:78;2686:4;2677:6;2613:78;:::i;:::-;2605:86;;2268:430;;;;;;:::o;2704:129::-;;2765:20;;:::i;:::-;2755:30;;2794:33;2822:4;2814:6;2794:33;:::i;:::-;2745:88;;;:::o;2839:75::-;;2905:2;2899:9;2889:19;;2879:35;:::o;2920:308::-;;3072:18;3064:6;3061:30;3058:2;;;3094:18;;:::i;:::-;3058:2;3132:29;3154:6;3132:29;:::i;:::-;3124:37;;3216:4;3210;3206:15;3198:23;;2987:241;;;:::o;3234:99::-;;3320:5;3314:12;3304:22;;3293:40;;;:::o;3339:169::-;;3457:6;3452:3;3445:19;3497:4;3492:3;3488:14;3473:29;;3435:73;;;;:::o;3514:96::-;;3580:24;3598:5;3580:24;:::i;:::-;3569:35;;3559:51;;;:::o;3616:126::-;;3693:42;3686:5;3682:54;3671:65;;3661:81;;;:::o;3748:154::-;3832:6;3827:3;3822;3809:30;3894:1;3885:6;3880:3;3876:16;3869:27;3799:103;;;:::o;3908:307::-;3976:1;3986:113;4000:6;3997:1;3994:13;3986:113;;;4085:1;4080:3;4076:11;4070:18;4066:1;4061:3;4057:11;4050:39;4022:2;4019:1;4015:10;4010:15;;3986:113;;;4117:6;4114:1;4111:13;4108:2;;;4197:1;4188:6;4183:3;4179:16;4172:27;4108:2;3957:258;;;;:::o;4221:281::-;4304:27;4326:4;4304:27;:::i;:::-;4296:6;4292:40;4434:6;4422:10;4419:22;4398:18;4386:10;4383:34;4380:62;4377:2;;;4445:18;;:::i;:::-;4377:2;4485:10;4481:2;4474:22;4264:238;;;:::o;4508:180::-;4556:77;4553:1;4546:88;4653:4;4650:1;4643:15;4677:4;4674:1;4667:15;4694:102;;4786:2;4782:7;4777:2;4770:5;4766:14;4762:28;4752:38;;4742:54;;;:::o;4802:122::-;4875:24;4893:5;4875:24;:::i;:::-;4868:5;4865:35;4855:2;;4914:1;4911;4904:12;4855:2;4845:79;:::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\nimport \"../utils/Context.sol\";\nimport \"../assoc/Association.sol\";\nimport \"../assoc/Administration.sol\";\n\ncontract MasterOrg is Context {\n    \n    constructor() { }\n    \n    function emitCreation(address _association, string memory _name, string memory _founder) public {\n        emit CreationEvent(_association, _name, _founder);\n    }\n\n    event CreationEvent(address _association, string _name, string _founder);\n}",
+  "sourcePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Master.sol",
+  "ast": {
+    "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Master.sol",
+    "exportedSymbols": {
+      "AssociationAdministration": [
+        89
+      ],
+      "AssociationAdministrationCooptation": [
+        323
+      ],
+      "AssociationAdministrationMemberban": [
+        155
+      ],
+      "AssociationAdministrationOwnerchange": [
+        213
+      ],
+      "AssociationAdministrationReferendum": [
+        390
+      ],
+      "AssociationAdministrationSelfdestruct": [
+        256
+      ],
+      "AssociationOrg": [
+        1038
+      ],
+      "Context": [
+        5188
+      ],
+      "MasterOrg": [
+        1074
+      ]
+    },
+    "id": 1075,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1040,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol",
+        "file": "../utils/Context.sol",
+        "id": 1041,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1075,
+        "sourceUnit": 5189,
+        "src": "58:30:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Association.sol",
+        "file": "../assoc/Association.sol",
+        "id": 1042,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1075,
+        "sourceUnit": 1039,
+        "src": "89:34:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Administration.sol",
+        "file": "../assoc/Administration.sol",
+        "id": 1043,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1075,
+        "sourceUnit": 391,
+        "src": "124:37:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1044,
+              "name": "Context",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 5188,
+              "src": "185:7:2"
+            },
+            "id": 1045,
+            "nodeType": "InheritanceSpecifier",
+            "src": "185:7:2"
+          }
+        ],
+        "contractDependencies": [
+          5188
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1074,
+        "linearizedBaseContracts": [
+          1074,
+          5188
+        ],
+        "name": "MasterOrg",
+        "nameLocation": "172:9:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1048,
+              "nodeType": "Block",
+              "src": "218:3:2",
+              "statements": []
+            },
+            "id": 1049,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1046,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "215:2:2"
+            },
+            "returnParameters": {
+              "id": 1047,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "218:0:2"
+            },
+            "scope": 1074,
+            "src": "204:17:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1064,
+              "nodeType": "Block",
+              "src": "327:66:2",
+              "statements": [
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 1059,
+                        "name": "_association",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1051,
+                        "src": "356:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 1060,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1053,
+                        "src": "370:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 1061,
+                        "name": "_founder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1055,
+                        "src": "377:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 1058,
+                      "name": "CreationEvent",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1073,
+                      "src": "342:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,string memory,string memory)"
+                      }
+                    },
+                    "id": 1062,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "342:44:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1063,
+                  "nodeType": "EmitStatement",
+                  "src": "337:49:2"
+                }
+              ]
+            },
+            "functionSelector": "cabe6a57",
+            "id": 1065,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emitCreation",
+            "nameLocation": "240:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1056,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1051,
+                  "mutability": "mutable",
+                  "name": "_association",
+                  "nameLocation": "261:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1065,
+                  "src": "253:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1050,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "253:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1053,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nameLocation": "289:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1065,
+                  "src": "275:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1052,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1055,
+                  "mutability": "mutable",
+                  "name": "_founder",
+                  "nameLocation": "310:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1065,
+                  "src": "296:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1054,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "252:67:2"
+            },
+            "returnParameters": {
+              "id": 1057,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "327:0:2"
+            },
+            "scope": 1074,
+            "src": "231:162:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "id": 1073,
+            "name": "CreationEvent",
+            "nameLocation": "405:13:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1072,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1067,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_association",
+                  "nameLocation": "427:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1073,
+                  "src": "419:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1066,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "419:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1069,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nameLocation": "448:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1073,
+                  "src": "441:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1068,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "441:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1071,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_founder",
+                  "nameLocation": "462:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1073,
+                  "src": "455:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1070,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "455:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "418:53:2"
+            },
+            "src": "399:73:2"
+          }
+        ],
+        "scope": 1075,
+        "src": "163:311:2"
+      }
+    ],
+    "src": "33:441:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Master.sol",
+    "exportedSymbols": {
+      "AssociationAdministration": [
+        89
+      ],
+      "AssociationAdministrationCooptation": [
+        323
+      ],
+      "AssociationAdministrationMemberban": [
+        155
+      ],
+      "AssociationAdministrationOwnerchange": [
+        213
+      ],
+      "AssociationAdministrationReferendum": [
+        390
+      ],
+      "AssociationAdministrationSelfdestruct": [
+        256
+      ],
+      "AssociationOrg": [
+        1038
+      ],
+      "Context": [
+        5188
+      ],
+      "MasterOrg": [
+        1074
+      ]
+    },
+    "id": 1075,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1040,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol",
+        "file": "../utils/Context.sol",
+        "id": 1041,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1075,
+        "sourceUnit": 5189,
+        "src": "58:30:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Association.sol",
+        "file": "../assoc/Association.sol",
+        "id": 1042,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1075,
+        "sourceUnit": 1039,
+        "src": "89:34:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/assoc/Administration.sol",
+        "file": "../assoc/Administration.sol",
+        "id": 1043,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1075,
+        "sourceUnit": 391,
+        "src": "124:37:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1044,
+              "name": "Context",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 5188,
+              "src": "185:7:2"
+            },
+            "id": 1045,
+            "nodeType": "InheritanceSpecifier",
+            "src": "185:7:2"
+          }
+        ],
+        "contractDependencies": [
+          5188
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1074,
+        "linearizedBaseContracts": [
+          1074,
+          5188
+        ],
+        "name": "MasterOrg",
+        "nameLocation": "172:9:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1048,
+              "nodeType": "Block",
+              "src": "218:3:2",
+              "statements": []
+            },
+            "id": 1049,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1046,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "215:2:2"
+            },
+            "returnParameters": {
+              "id": 1047,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "218:0:2"
+            },
+            "scope": 1074,
+            "src": "204:17:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1064,
+              "nodeType": "Block",
+              "src": "327:66:2",
+              "statements": [
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 1059,
+                        "name": "_association",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1051,
+                        "src": "356:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 1060,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1053,
+                        "src": "370:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 1061,
+                        "name": "_founder",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1055,
+                        "src": "377:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 1058,
+                      "name": "CreationEvent",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1073,
+                      "src": "342:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,string memory,string memory)"
+                      }
+                    },
+                    "id": 1062,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "342:44:2",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1063,
+                  "nodeType": "EmitStatement",
+                  "src": "337:49:2"
+                }
+              ]
+            },
+            "functionSelector": "cabe6a57",
+            "id": 1065,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "emitCreation",
+            "nameLocation": "240:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1056,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1051,
+                  "mutability": "mutable",
+                  "name": "_association",
+                  "nameLocation": "261:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1065,
+                  "src": "253:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1050,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "253:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1053,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nameLocation": "289:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1065,
+                  "src": "275:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1052,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1055,
+                  "mutability": "mutable",
+                  "name": "_founder",
+                  "nameLocation": "310:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1065,
+                  "src": "296:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1054,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "296:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "252:67:2"
+            },
+            "returnParameters": {
+              "id": 1057,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "327:0:2"
+            },
+            "scope": 1074,
+            "src": "231:162:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "id": 1073,
+            "name": "CreationEvent",
+            "nameLocation": "405:13:2",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1072,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1067,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_association",
+                  "nameLocation": "427:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1073,
+                  "src": "419:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1066,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "419:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1069,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nameLocation": "448:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1073,
+                  "src": "441:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1068,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "441:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1071,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_founder",
+                  "nameLocation": "462:8:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1073,
+                  "src": "455:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1070,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "455:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "418:53:2"
+            },
+            "src": "399:73:2"
+          }
+        ],
+        "scope": 1075,
+        "src": "163:311:2"
+      }
+    ],
+    "src": "33:441:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.3+commit.8d00100c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2021-05-30T22:02:14.098Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

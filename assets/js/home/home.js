@@ -5,8 +5,8 @@ async function main() {
   web3.eth.getCoinbase(function (err, account) {
       if (err === null) {
           if ((netTyp == "private") && (id == WEB3ID)) {
-              $(".container").show();
-              $(".solde").show();
+              $("#connexion").hide();
+              $("#solde-explain").show();
               $("#network-problem").hide();
           }
           setBalance(web3, account);

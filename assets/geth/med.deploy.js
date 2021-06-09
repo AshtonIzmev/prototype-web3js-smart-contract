@@ -18,4 +18,5 @@ var result = ctr.new("0x66A161F8Fbe105817aeeA74d36f1208260E4bE10", 10, 90000, fa
     }
    }
 );
+
 // check on var syslog contract address

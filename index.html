@@ -9,10 +9,10 @@ title: Exploration de la blockchain
 		<!-- small box -->
 		<div class="small-box bg-dark">
 			<div class="inner">
-				<span id="solde"> <span style="color: gainsboro; font-size: xx-large;">Vous n'êtes pas
-						connecté à la blockchain Ethereum </span></span>
-				<span class="solde" style="display:none;">Solde d'ether (de test, aucune valeur marchande ni utilité
+				{% include connexion.html %}
+				<span id="solde-explain" style="display:none;">Solde d'ether (de test, aucune valeur marchande ni utilité
 					hors ce prototype)</span>
+				<h3 id="solde"></h3>
 				<span id="received-ether"></span>
 			</div>
 			<div class="icon">
@@ -40,14 +40,28 @@ title: Exploration de la blockchain
 <div class="row">
 	<div class="col-12">
 		<div class="callout"  style="padding: 0.3em; text-align: center;">
-			<p>Voici les applications disponibles</p>
+			<p style="font-weight: bolder;">Applications blockchain disponibles</p>
 		</div>
 	</div>
 </div>
 
 <div class="row">
+	<div class="col-12">
+		<div class="callout callout-warning" style="padding: 0.1em">
+			<a href="/kyc/" class="nav-link">
+				<p>
+					<i class="fas fa-id-badge"></i>
+					Identité numérique
+				</p>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
 	<div class="col-6">
-		<div class="callout callout-danger" style="padding: 0.6em">
+		<div class="callout callout-danger" style="padding: 0.2em">
 			<a href="/assosyndic/" class="nav-link">
 				<p>
 					<i class="fas fa-sitemap"></i>
@@ -57,7 +71,7 @@ title: Exploration de la blockchain
 		</div>
 	</div>
 	<div class="col-6">
-		<div class="callout callout-success" style="padding: 0.6em">
+		<div class="callout callout-success" style="padding: 0.2em">
 			<a href="/mederc20/" class="nav-link">
 				<p>
 					<i class="fas fa-hand-holding-usd"></i>
@@ -70,7 +84,7 @@ title: Exploration de la blockchain
 
 <div class="row">
 	<div class="col-4">
-		<div class="callout callout-warning" style="padding: 0.6em">
+		<div class="callout callout-default" style="padding: 0.2em">
 			<a href="/contractpp/" class="nav-link">
 				<p>
 					<i class="fas fa-id-card"></i>
@@ -80,7 +94,7 @@ title: Exploration de la blockchain
 		</div>
 	</div>
 	<div class="col-4">
-		<div class="callout callout-primary" style="padding: 0.6em">
+		<div class="callout callout-primary" style="padding: 0.2em">
 			<a href="/contractpm/" class="nav-link">
 				<p>
 					<i class="fas fa-file-signature"></i>
@@ -90,7 +104,7 @@ title: Exploration de la blockchain
 		</div>
 	</div>
 	<div class="col-4">
-		<div class="callout callout-info" style="padding: 0.6em">
+		<div class="callout callout-info" style="padding: 0.2em">
 			<a href="/bourse/" class="nav-link">
 				<p>
 					<i class="fas fa-comments-dollar"></i>
@@ -112,7 +126,8 @@ title: Exploration de la blockchain
 				</span>
 			</p>
 			<p>
-			<div>Merci de suivre cette procédure :
+			<div>
+				<h2>Procédure à suivre </h2>
 				<ol>
 					<li>Installer <a href="https://play.google.com/store/apps/details?id=io.metamask">Metamask</a>
 						&nbsp; <a href="https://play.google.com/store/apps/details?id=io.metamask"><img
