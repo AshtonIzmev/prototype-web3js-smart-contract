@@ -2,35 +2,35 @@
 // LOCAL STORAGE
 /////////////////////////
 
-var keyLocalStorage = "events_v0.3";
+var keyLocalStorage = "events_v0.31";
 var emptyRes = '{"r":[]}';
 
 function getStore() {
     return window.localStorage.getItem(keyLocalStorage) || emptyRes;
 };
 
-function addToStore(assoc, typeStore) {
+function addToStore(key, typeStore) {
     var current = window.localStorage.getItem(keyLocalStorage) || emptyRes;
     dicur = JSON.parse(current);
-    dicur['r'].push((assoc + '|' + new Date().toISOString() + "|" + typeStore));
+    dicur['r'].push((key + '|' + new Date().toISOString() + "|" + typeStore));
     window.localStorage.setItem(keyLocalStorage, JSON.stringify(dicur));
 };
 
-function addRechercheToStore(assoc, typeStore) {
+function addRechercheToStore(key, typeStore) {
     var current = window.localStorage.getItem(keyLocalStorage) || emptyRes;
     dicur = JSON.parse(current);
-    var ind = dicur['r'].map(x => x.split("|")[0]).indexOf(assoc);
+    var ind = dicur['r'].map(x => x.split("|")[0]).indexOf(key);
     if (ind > -1) {
         return;
     }
-    dicur['r'].push((assoc + '|' + new Date().toISOString() + "|" + typeStore));
+    dicur['r'].push((key + '|' + new Date().toISOString() + "|" + typeStore));
     window.localStorage.setItem(keyLocalStorage, JSON.stringify(dicur));
 };
 
-function removeFromStore(assoc) {
+function removeFromStore(key) {
     var current = window.localStorage.getItem(keyLocalStorage) || emptyRes;
     dicur = JSON.parse(current);
-    var ind = dicur['r'].map(x => x.split("|")[0]).indexOf(assoc);
+    var ind = dicur['r'].map(x => x.split("|")[0]).indexOf(key);
     if (ind > -1) {
         dicur['r'].splice(ind, 1);
     }

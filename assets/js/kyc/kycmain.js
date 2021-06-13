@@ -83,6 +83,7 @@ function copyAdd(add) {
         `<p>Adresse copiée :</p><p>${add}</p>`
     );
     $('.toast-header').text("Addresse copiée");
+    $('.toast-body').text("");
     $('.toast').toast({ 'delay': 2000 }).toast('show');
     copyStringToClipboard(add);
 };

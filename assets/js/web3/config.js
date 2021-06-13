@@ -6,13 +6,13 @@ const WEB3ID = isLocalhost ? "1338" : "985459";
 const blockchainProvider = isLocalhost ? 'http://localhost:8545/' : 'https://curieux.ma/blockchain/';
 
 // Localhost const
-var kycAdd = "0x1250DB380345680732Cb6Ad15A5aD8EA9faC95b6"
-var medAdd = "0x71444DC754aF1DB77c12d8Aafd28c1577a0ad823"
-var fpAdd = "0x3B78E615B8DB518335CB4AE7F21c331741d23705"
-var marketplaceAdd = "0x1520CeF5D46DFF8201Ea361C4a01033CD6B79322"
-var datAdd = "0xfAFE338d4d7Ba48A5eA90AeB6B057589f2C07bda"
-var factoringAdd = "0x25512E2374289648bba23873efc3f2B4Dfe6649E"
-var mudarabaAdd = "0x506049e2e921Bb32D230C4567B06A09B844890e7"
+var kycAdd = "0xE7af561121578B12eC46Cc77CF15585EB4F442Ac"
+var medAdd = "0x84A71869614bda1c157eE03577B82Fc405b8Ca7b"
+var fpAdd = "0xF34F5bABE3d1Fae9F8C299b95e4CD1EeAb75B9Ee"
+var marketplaceAdd = "0x7477711B5cd6AD7b8c4d76810e2a26fD4ccCf877"
+var datAdd = "0xC906f9fbF11e080ab7de294bFE9c89b36FC28C38"
+var factoringAdd = "0xAfEF6F405854Ba433a4C150a88d7844D63CE8F05"
+var mudarabaAdd = "0xdc262E022C699A33fD97C041bb613c62e9435802"
 
 // Geth const
 const kycGAdd = "0x92f1Dd59b999d4E1DE9Ce3365C03625495d643d5"
@@ -33,13 +33,12 @@ const mudarabaCtrAdd = isLocalhost ? mudarabaAdd : mudarabaGAdd;
 
 
 // ! Modifier le token contract address également dans med.day et med.month !
-
 const rootContractJson = '/assets/contracts/';
 const kycJsonPath = '/assets/contracts/KYC.json';
 const medJsonPath = '/assets/contracts/MED.json';
 const assoJson = '/assets/contracts/AssociationOrg.json';
 
-const medTransfertStorageKey = "transfert_20210525";
+const medTransfertStorageKey = "transfert";
 const medbeneficiaireStorageKey = "beneficiaire"
 
 /*
@@ -48,11 +47,16 @@ const medbeneficiaireStorageKey = "beneficiaire"
 
 // Add ether
 web3.eth.sendTransaction({from:accounts[0], to:"0x99e5A82c5000f18F3CB0027382F9310110bD0376", value:web3.utils.toWei("5", "ether")});
+web3.eth.sendTransaction({from:accounts[0], to:"0x485d493EB472E10469F14bADa83c33941c018A76", value:web3.utils.toWei("5", "ether")});
+
 
 // add day and month
 let instance = await MED.deployed();
+
 instance.incrementDay({from: accounts[0]});
+
 instance.incrementDay({from: accounts[0]});
+
 instance.incrementMonth({from: accounts[0]});
 
 

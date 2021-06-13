@@ -61,6 +61,8 @@ async function onTransferERC20Btn() {
         addBenefToStore(benef + ";" + lib);
         loadSolde();
         loadHistoric();
+        $('#modal-transfer').modal('hide');
+        $('.modal-backdrop').hide();
     };
 
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);

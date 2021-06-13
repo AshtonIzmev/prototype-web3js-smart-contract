@@ -12,6 +12,7 @@ async function main() {
     });
     loadHistoric();
     loadDetails();
+    checkKYC();
 };
 
 function addTransferToStore(trsf) { addToStore(trsf, medTransfertStorageKey); };
@@ -25,16 +26,20 @@ function loadHistoric() {
         var tuple = a.split("|");
         if (tuple[2] == medTransfertStorageKey) {
             var benef_amount = tuple[0].split(';');
+            let a = benef_amount[0].substring(0, 10);
+            let b = benef_amount[1];
+            let c = tuple[1];
             $("#tbodyevents1").append(
-                "<tr><td class='ht'>" + benef_amount[0].substring(0, 10) + "..." +
-                "</td><td>" + benef_amount[1] + "</td><td>" + tuple[1] + "</td></tr>"
+                `<tr><td class='ht'>${a}...</td><td>${b}</td><td>${c}</td></tr>`
             );
         }
         if (tuple[2] == medbeneficiaireStorageKey) {
             var benef_lib = tuple[0].split(';');
+            let add = benef_lib[0];
+            let libelle = benef_lib[1];
+            let addcut = benef_lib[0].substring(0, 12);
             $("#tbodyevents2").append(
-                "<tr><td class='ht'><a href='#' onclick='preload(\"" + benef_lib[0] +"\", \"" + benef_lib[1] + "\")'>" + benef_lib[0].substring(0, 12) + "...</a>" +
-                "</td><td>" + benef_lib[1] + "</td>"
+                `<tr><td class='ht'>${libelle}</td><td><a href='#' onclick='preload("${add}", "${libelle}")'>${addcut}...</a></td>`
             );
         }
     });
@@ -43,6 +48,7 @@ function loadHistoric() {
 function preload(benef, lib) {
     $("#trsfInputBenef").val(benef);
     $("#trsfInputLib").val(lib);
+    $('#modal-transfer').modal('show');
 }
 
 function loadDetails() {
@@ -60,10 +66,15 @@ function plusdinfos() {
     $('.toast-header').text("Informations");
     $('.toast-body').text("La quantité totale de crypto-token disponible dans l'ensemble des wallets. Celle-ci peut être fixe ou modulable si le contract est ouvert à la création et destruction monétaire.");
     $('.toast').toast({ 'delay': 10000 }).toast('show');
-}
+};
 
-function showBkam() {
-    $("#bkam").toggle();
-}
+async function checkKYC() {
+    let account = await getPrimaryAccount();
+    var contractObject = await getContractObject(kycCtrAdd, kycJsonPath);
+    let isVerified = await getContractValueWiArg(contractObject, "ecitizen", account);
+    if (!isVerified) {
+        $("#kycstatus").show();
+    }
+};
 
 window.addEventListener('load', main);

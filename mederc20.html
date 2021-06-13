@@ -18,6 +18,24 @@ permalink: /mederc20/
 	</div>
 </div>
 
+<div class="row" style="display: none;" id="kycstatus">
+	<div class="col-lg-12">
+		<div id="kycstatuscolor" class="small-box bg-danger">
+			<div class="inner">
+				<span style="font-size: xx-large;">
+					Votre identité n'a pas encore été vérifiée 
+					<a href="/kyc/" class="nav-link" style="color: white;">
+						<p style="font-size: large;">
+							<i class="fas fa-id-badge"></i>
+							Vérifier ici
+						</p>
+					</a>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="row">
 	<div class="col-lg-3 col-6">
 		<!-- small box -->
@@ -99,41 +117,14 @@ permalink: /mederc20/
 
 	<!-- Transfert -->
 	<div class="col-md-6">
-		<!-- general form elements -->
-		<div class="card card-info">
-			<div class="card-header">
-				<h3 class="card-title">Transfert de MED</h3>
-			</div>
-			<!-- /.card-header -->
-			<!-- form start -->
-			<form>
-				<div class="card-body">
-					<div class="form-group">
-						<label for="trsfInputAmount">Montant</label>
-						<input type="number" class="form-control" id="trsfInputAmount"
-							placeholder="Insérer votre montant : 15,99">
-					</div>
-					<div class="form-group">
-						<label for="trsfInputBenef">Adresse du bénéficiaire</label>
-						<input type="tel" class="form-control" id="trsfInputBenef" pattern="0x[0-9a-zA-Z]{40}"
-							placeholder="0x123456abcde...">
-					</div>
-					<div class="form-group">
-						<label for="trsfInputLib">Libellé bénéficiaire</label>
-						<input type="text" class="form-control" id="trsfInputLib"
-							placeholder="Collègue de travail 3ème étage...">
-					</div>
-				</div>
-				<!-- /.card-body -->
-				<div class="card-footer">
-					<button type="button" onclick="onTransferERC20Btn()" class="btn btn-info">
-						Transférer <i id="fa3" class="fas fa-spinner fa-pulse" style="display:none;"></i></button> <span
-						onclick="showBkam()">🧐</span>
-				</div>
-			</form>
+		<!-- small box -->
+		<div class="small-box bg-primary"  style="padding: 2px;">
+			<a href="#" class="small-box-footer btn btn-default" data-toggle="modal" data-target="#modal-transfer">Envoyer du MED</a>
 		</div>
 	</div>
+</div>
 
+<div class="row">
 	<!-- Historique -->
 	<div class="col-md-6">
 		<div class="card card-secondary">
@@ -166,15 +157,15 @@ permalink: /mederc20/
 	<div class="col-md-12">
 		<div class="card card-light">
 			<div class="card-header">
-				<h3 class="card-title">Beneficiaires</h3>
+				<h3 class="card-title">Historique de béneficiaires</h3>
 			</div>
 			<!-- /.card-header -->
 			<div class="card-body p-0">
 				<table class="table table-sm">
 					<thead>
 						<tr>
-							<th>Bénéficiaire</th>
-							<th>Libellé</th>
+							<th>Libellé bénéficiaire</th>
+							<th>Adresse</th>
 						</tr>
 					</thead>
 					<tbody id="tbodyevents2">
@@ -186,33 +177,38 @@ permalink: /mederc20/
 	</div>
 </div>
 
-<div id="bkam" class="row" style="display: none;">
-	<!-- Beneficiaires -->
-	<div class="col-md-12">
-		<div class="card card-warning">
-			<div class="card-header">
-				<h3 class="card-title" style="font-weight: bold;">Console d'administration de la Banque Centrale</h3>
+<!-- MODALS -->
+<div class="modal fade" id="modal-transfer" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Transfert de MED</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
 			</div>
-			<!-- /.card-header -->
-			<div class="card-body">
-				Ces commandes ne fonctionnent que depuis la wallet de la Banque Centrale :
-				<button type="button" onclick="onCreateERC20Btn()" class="btn btn-dark">
-					Créer une cryptotoken MED</button>
-				<button type="button" onclick="addDay()" class="btn btn-secondary">
-					Appel aux taxes du jour</button>
-				<button type="button" onclick="addMonth()" class="btn btn-secondary">
-					Verser le revenu universel</button>
-				<span id="smiley-deploy" style="display: none;"><br /><br />
-					<span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span><br />
-					<span id="paramctr2">10</span><br />
-					<span id="paramctr3">90000</span><br />
-					<span id="paramctr4">false</span><br />
-					<span id="paramctr5">200000000000000</span><br />
-					<span id="token-address"></span><br />
-					<span id="smiley-deploy-status"></span>
-				</span>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="trsfInputAmount">Montant</label>
+					<input type="number" class="form-control" id="trsfInputAmount"
+						placeholder="Insérer votre montant : 15,99">
+				</div>
+				<div class="form-group">
+					<label for="trsfInputBenef">Adresse du bénéficiaire</label>
+					<input type="tel" class="form-control" id="trsfInputBenef" pattern="0x[0-9a-zA-Z]{40}"
+						placeholder="0x123456abcde...">
+				</div>
+				<div class="form-group">
+					<label for="trsfInputLib">Libellé bénéficiaire</label>
+					<input type="text" class="form-control" id="trsfInputLib"
+						placeholder="Collègue de travail 3ème étage...">
+				</div>
 			</div>
-			<!-- /.card-body -->
+			<div class="modal-footer justify-content-between">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+				<button type="button" onclick="onTransferERC20Btn()" class="btn btn-info">
+					Transférer <i id="fa3" class="fas fa-spinner fa-pulse" style="display:none;"></i>
+			</div>
 		</div>
 	</div>
 </div>
