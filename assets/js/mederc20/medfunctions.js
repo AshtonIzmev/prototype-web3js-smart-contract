@@ -36,7 +36,7 @@ async function onTransferERC20Btn() {
     var amount = $("#trsfInputAmount").val();
     var lib = $("#trsfInputLib").val();
 
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     var contractMethod = "transfer";
     var contractArg = [benef, parseInt(parseFloat(amount)*100)];
     
@@ -67,7 +67,7 @@ async function onTransferERC20Btn() {
 }
 
 async function loadSolde() {
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     let account = await getPrimaryAccount();
     let result = await getContractValueWiArg(contractObject, "balanceOf", account);
     $("#solde").text(result/100);
@@ -76,7 +76,7 @@ async function loadSolde() {
 };
 
 async function loadTaxDays() {
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     let account = await getPrimaryAccount();
     let result = await getContractValueWiArg(contractObject, "elapsedTaxDaysOf", account);
     let daysElapsed = await getContractValueWoArg(contractObject, "daysElapsed");
@@ -85,7 +85,7 @@ async function loadTaxDays() {
 };
 
 async function loadUMI() {
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     let account = await getPrimaryAccount();
     let result = await getContractValueWiArg(contractObject, "elapsedIncomeMonthOf", account);
     let monthsElapsed = await getContractValueWoArg(contractObject, "monthsElapsed");
@@ -95,7 +95,7 @@ async function loadUMI() {
 };
 
 async function loadTotalSupply() {
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     let totalSupply = await getContractValueWoArg(contractObject, "totalSupply");
     let allowMint = await getContractValueWoArg(contractObject, "allowMint");
     $("#total-supply").text(totalSupply/100000000000 + "G");
@@ -106,7 +106,7 @@ async function loadTotalSupply() {
 async function payTaxesGetUmi() {
 
     let account = await getPrimaryAccount();
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     var contractMethod = "updateAccount";
     
     function errorCallback (error) {
@@ -141,14 +141,14 @@ async function payTaxesGetUmi() {
 }
 
 async function addDay() {
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     var contractMethod = "incrementDay";
     function finalCallback(data) { loadTaxDays(); };
     callContractMethod(contractObject, contractMethod, null, console.log, console.log, finalCallback);
 }
 
 async function addMonth() {
-    var contractObject = await getContractObject(tokenCtrAdd, medJsonPath);
+    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
     var contractMethod = "incrementMonth";
     function finalCallback(data) { loadUMI(); };
     callContractMethod(contractObject, contractMethod, null, console.log, console.log, finalCallback);

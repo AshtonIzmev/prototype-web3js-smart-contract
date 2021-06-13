@@ -10,207 +10,211 @@ permalink: /mederc20/
 		<!-- small box -->
 		<div class="small-box bg-dark">
 			<div class="inner">
-        {% include connexion.html %}
+				{% include connexion.html %}
 			</div>
-      <a href="/#instruction" class="solde small-box-footer">Instructions <i class="fas fa-arrow-circle-right"></i></a>
+			<a href="/#instruction" class="solde small-box-footer">Instructions <i
+					class="fas fa-arrow-circle-right"></i></a>
 		</div>
 	</div>
 </div>
 
 <div class="row">
-  <div class="col-lg-3 col-6">
-    <!-- small box -->
-    <div class="small-box bg-success">
-      <div class="inner">
-        <h3>
-          <span id="solde">?</span><sup>MED</sup>
-        </h3>
-        <p>Solde <span class="small">(avant taxe et revenu)</span></p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-bag"></i>
-      </div>
-      <a href="#" class="small-box-footer" onclick="loadSolde()">Mettre à jour <i
-          class="fas fa-arrow-circle-right"></i></a>
-    </div>
-  </div>
-  <!-- ./col -->
-  <div class="col-lg-3 col-6">
-    <!-- small box -->
-    <div class="small-box bg-warning">
-      <div class="inner">
-        <h3>
-          <span id="tax-delay">?</span> <span class="small">jours</span>
-        </h3>
-        <p>d'impôts en retard</p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-calculator"></i>
-      </div>
-      <a href="#" class="small-box-footer" onclick="updateAccount()">Passer à la caisse
-        <i id="fa11" class="fas fa-arrow-circle-right"></i>
-        <i id="fa12" class="fas fa-spinner fa-pulse" style="display:none;"></i>
-      </a>
-    </div>
-  </div>
-  <!-- ./col -->
-  <div class="col-lg-3 col-6">
-    <!-- small box -->
-    <div class="small-box bg-info">
-      <div class="inner">
-        <h3>
-          <span id="income">?</span><sup>MED</sup>
-        </h3>
-        <p>Revenu en attente</p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-cash"></i>
-      </div>
-      <a href="#" class="small-box-footer" onclick="updateAccount()">Récupérer le revenu
-        <i id="fa21" class="fas fa-arrow-circle-right"></i>
-        <i id="fa22" class="fas fa-spinner fa-pulse" style="display:none;"></i>
-      </a>
-    </div>
-  </div>
-  <!-- ./col -->
-  <div class="col-lg-3 col-6">
-    <!-- small box -->
-    <div class="small-box bg-danger">
-      <div class="inner">
-        <h3>
-          <span id="total-supply">??</span><sup>MED</sup>
-        </h3>
-        <p>Quantité totale de E-Dirham <span id="mintable"></span></p>
-      </div>
-      <div class="icon">
-        <i class="ion ion-stats-bars"></i>
-      </div>
-      <a href="#" onclick="plusdinfos()" class="small-box-footer">Plus d'information <i
-          class="fas fa-arrow-circle-right"></i></a>
-    </div>
-  </div>
-  <!-- ./col -->
+	<div class="col-lg-3 col-6">
+		<!-- small box -->
+		<div class="small-box bg-success">
+			<div class="inner">
+				<h3>
+					<span id="solde">?</span><sup>MED</sup>
+				</h3>
+				<p>Solde <span class="small">(avant taxe et revenu)</span></p>
+			</div>
+			<div class="icon">
+				<i class="ion ion-bag"></i>
+			</div>
+			<a href="#" class="small-box-footer" onclick="loadSolde()">Mettre à jour <i
+					class="fas fa-arrow-circle-right"></i></a>
+		</div>
+	</div>
+	<!-- ./col -->
+	<div class="col-lg-3 col-6">
+		<!-- small box -->
+		<div class="small-box bg-warning">
+			<div class="inner">
+				<h3>
+					<span id="tax-delay">?</span> <span class="small">jours</span>
+				</h3>
+				<p>d'impôts en retard</p>
+			</div>
+			<div class="icon">
+				<i class="ion ion-calculator"></i>
+			</div>
+			<a href="#" class="small-box-footer" onclick="updateAccount()">Passer à la caisse
+				<i id="fa11" class="fas fa-arrow-circle-right"></i>
+				<i id="fa12" class="fas fa-spinner fa-pulse" style="display:none;"></i>
+			</a>
+		</div>
+	</div>
+	<!-- ./col -->
+	<div class="col-lg-3 col-6">
+		<!-- small box -->
+		<div class="small-box bg-info">
+			<div class="inner">
+				<h3>
+					<span id="income">?</span><sup>MED</sup>
+				</h3>
+				<p>Revenu en attente</p>
+			</div>
+			<div class="icon">
+				<i class="ion ion-cash"></i>
+			</div>
+			<a href="#" class="small-box-footer" onclick="updateAccount()">Récupérer le revenu
+				<i id="fa21" class="fas fa-arrow-circle-right"></i>
+				<i id="fa22" class="fas fa-spinner fa-pulse" style="display:none;"></i>
+			</a>
+		</div>
+	</div>
+	<!-- ./col -->
+	<div class="col-lg-3 col-6">
+		<!-- small box -->
+		<div class="small-box bg-danger">
+			<div class="inner">
+				<h3>
+					<span id="total-supply">??</span><sup>MED</sup>
+				</h3>
+				<p>Quantité totale de E-Dirham <span id="mintable"></span></p>
+			</div>
+			<div class="icon">
+				<i class="ion ion-stats-bars"></i>
+			</div>
+			<a href="#" onclick="plusdinfos()" class="small-box-footer">Plus d'information <i
+					class="fas fa-arrow-circle-right"></i></a>
+		</div>
+	</div>
+	<!-- ./col -->
 </div>
 <!-- /.row -->
 <!-- Main row -->
 
 <div class="row">
 
-  <!-- Transfert -->
-  <div class="col-md-6">
-    <!-- general form elements -->
-    <div class="card card-info">
-      <div class="card-header">
-        <h3 class="card-title">Transfert de MED</h3>
-      </div>
-      <!-- /.card-header -->
-      <!-- form start -->
-      <form>
-        <div class="card-body">
-          <div class="form-group">
-            <label for="trsfInputAmount">Montant</label>
-            <input type="number" class="form-control" id="trsfInputAmount" placeholder="Insérer votre montant : 15,99">
-          </div>
-          <div class="form-group">
-            <label for="trsfInputBenef">Adresse du bénéficiaire</label>
-            <input type="tel" class="form-control" id="trsfInputBenef" pattern="0x[0-9a-zA-Z]{40}"
-              placeholder="0x123456abcde...">
-          </div>
-          <div class="form-group">
-            <label for="trsfInputLib">Libellé bénéficiaire</label>
-            <input type="text" class="form-control" id="trsfInputLib" placeholder="Collègue de travail 3ème étage...">
-          </div>
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          <button type="button" onclick="onTransferERC20Btn()" class="btn btn-info">
-            Transférer <i id="fa3" class="fas fa-spinner fa-pulse" style="display:none;"></i></button> <span onclick="showBkam()">🧐</span>
-        </div>
-      </form>
-    </div>
-  </div>
+	<!-- Transfert -->
+	<div class="col-md-6">
+		<!-- general form elements -->
+		<div class="card card-info">
+			<div class="card-header">
+				<h3 class="card-title">Transfert de MED</h3>
+			</div>
+			<!-- /.card-header -->
+			<!-- form start -->
+			<form>
+				<div class="card-body">
+					<div class="form-group">
+						<label for="trsfInputAmount">Montant</label>
+						<input type="number" class="form-control" id="trsfInputAmount"
+							placeholder="Insérer votre montant : 15,99">
+					</div>
+					<div class="form-group">
+						<label for="trsfInputBenef">Adresse du bénéficiaire</label>
+						<input type="tel" class="form-control" id="trsfInputBenef" pattern="0x[0-9a-zA-Z]{40}"
+							placeholder="0x123456abcde...">
+					</div>
+					<div class="form-group">
+						<label for="trsfInputLib">Libellé bénéficiaire</label>
+						<input type="text" class="form-control" id="trsfInputLib"
+							placeholder="Collègue de travail 3ème étage...">
+					</div>
+				</div>
+				<!-- /.card-body -->
+				<div class="card-footer">
+					<button type="button" onclick="onTransferERC20Btn()" class="btn btn-info">
+						Transférer <i id="fa3" class="fas fa-spinner fa-pulse" style="display:none;"></i></button> <span
+						onclick="showBkam()">🧐</span>
+				</div>
+			</form>
+		</div>
+	</div>
 
-  <!-- Historique -->
-  <div class="col-md-6">
-    <div class="card card-secondary">
-      <div class="card-header">
-        <h3 class="card-title">Historique des opérations</h3>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body p-0">
-        <table class="table table-sm">
-          <thead>
-            <tr>
-              <th>Bénéficiaire</th>
-              <th>Montant</th>
-              <th style="width: 40px">Date</th>
-            </tr>
-          </thead>
-          <tbody id="tbodyevents1">
-          </tbody>
-        </table>
-      </div>
-      <!-- /.card-body -->
-    </div>
-  </div>
+	<!-- Historique -->
+	<div class="col-md-6">
+		<div class="card card-secondary">
+			<div class="card-header">
+				<h3 class="card-title">Historique des opérations</h3>
+			</div>
+			<!-- /.card-header -->
+			<div class="card-body p-0">
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Bénéficiaire</th>
+							<th>Montant</th>
+							<th style="width: 40px">Date</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyevents1">
+					</tbody>
+				</table>
+			</div>
+			<!-- /.card-body -->
+		</div>
+	</div>
 
 </div>
 
 
 <div class="row">
-  <!-- Beneficiaires -->
-  <div class="col-md-12">
-    <div class="card card-light">
-      <div class="card-header">
-        <h3 class="card-title">Beneficiaires</h3>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body p-0">
-        <table class="table table-sm">
-          <thead>
-            <tr>
-              <th>Bénéficiaire</th>
-              <th>Libellé</th>
-            </tr>
-          </thead>
-          <tbody id="tbodyevents2">
-          </tbody>
-        </table>
-      </div>
-      <!-- /.card-body -->
-    </div>
-  </div>
+	<!-- Beneficiaires -->
+	<div class="col-md-12">
+		<div class="card card-light">
+			<div class="card-header">
+				<h3 class="card-title">Beneficiaires</h3>
+			</div>
+			<!-- /.card-header -->
+			<div class="card-body p-0">
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Bénéficiaire</th>
+							<th>Libellé</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyevents2">
+					</tbody>
+				</table>
+			</div>
+			<!-- /.card-body -->
+		</div>
+	</div>
 </div>
 
 <div id="bkam" class="row" style="display: none;">
-  <!-- Beneficiaires -->
-  <div class="col-md-12">
-    <div class="card card-warning">
-      <div class="card-header">
-        <h3 class="card-title" style="font-weight: bold;">Console d'administration de la Banque Centrale</h3>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        Ces commandes ne fonctionnent que depuis la wallet de la Banque Centrale :
-        <button type="button" onclick="onCreateERC20Btn()" class="btn btn-dark">
-          Créer une cryptotoken MED</button>
-        <button type="button" onclick="addDay()" class="btn btn-secondary">
-          Appel aux taxes du jour</button>
-        <button type="button" onclick="addMonth()" class="btn btn-secondary">
-          Verser le revenu universel</button>
-        <span id="smiley-deploy" style="display: none;"><br /><br />
-          <span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span><br />
-          <span id="paramctr2">10</span><br />
-          <span id="paramctr3">90000</span><br />
-          <span id="paramctr4">false</span><br />
-          <span id="paramctr5">200000000000000</span><br />
-          <span id="token-address"></span><br />
-          <span id="smiley-deploy-status"></span>
-        </span>
-      </div>
-      <!-- /.card-body -->
-    </div>
-  </div>
+	<!-- Beneficiaires -->
+	<div class="col-md-12">
+		<div class="card card-warning">
+			<div class="card-header">
+				<h3 class="card-title" style="font-weight: bold;">Console d'administration de la Banque Centrale</h3>
+			</div>
+			<!-- /.card-header -->
+			<div class="card-body">
+				Ces commandes ne fonctionnent que depuis la wallet de la Banque Centrale :
+				<button type="button" onclick="onCreateERC20Btn()" class="btn btn-dark">
+					Créer une cryptotoken MED</button>
+				<button type="button" onclick="addDay()" class="btn btn-secondary">
+					Appel aux taxes du jour</button>
+				<button type="button" onclick="addMonth()" class="btn btn-secondary">
+					Verser le revenu universel</button>
+				<span id="smiley-deploy" style="display: none;"><br /><br />
+					<span id="paramctr1">0x66A161F8Fbe105817aeeA74d36f1208260E4bE10</span><br />
+					<span id="paramctr2">10</span><br />
+					<span id="paramctr3">90000</span><br />
+					<span id="paramctr4">false</span><br />
+					<span id="paramctr5">200000000000000</span><br />
+					<span id="token-address"></span><br />
+					<span id="smiley-deploy-status"></span>
+				</span>
+			</div>
+			<!-- /.card-body -->
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript" src="/assets/js/generic/storage.js"></script>

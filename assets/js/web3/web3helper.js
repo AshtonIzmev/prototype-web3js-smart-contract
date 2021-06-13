@@ -131,6 +131,7 @@ async function callContractMethod(contractObject, methodTypeArg, methodCallArg, 
         gas: gasGlobal,
         gasPrice: gasPriceGlobal
     }, function (error, transactionHash) {
+        console.log(error);
         console.log(transactionHash);
     })
         .on('transactionHash', transactionHashCallback)

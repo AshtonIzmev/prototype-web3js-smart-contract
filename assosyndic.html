@@ -12,244 +12,245 @@ permalink: /assosyndic/
 		<!-- small box -->
 		<div class="small-box bg-dark">
 			<div class="inner">
-        {% include connexion.html %}
+				{% include connexion.html %}
 			</div>
-      <a href="/#instruction" class="solde small-box-footer">Instructions <i class="fas fa-arrow-circle-right"></i></a>
+			<a href="/#instruction" class="solde small-box-footer">Instructions <i
+					class="fas fa-arrow-circle-right"></i></a>
 		</div>
 	</div>
 </div>
 
 <div class="row">
 
-  <!-- Events -->
-  <div class="col-lg-12">
-    <!-- small box -->
-    <div class="small-box">
-      <div class="inner" style="min-height: 112px;">
-        <p style="font-size: larger;">Derniers événements</p>
-        <ul id="event-histo"></ul>
-      </div>
-      <div class="icon">
-        <i class="ion ion-alert"></i>
-      </div>
-      <span class="small-box-footer" style="color: black;">
-        L'adresse de mon compte :
-        <span style="font-weight: bolder;" id="accountaddress"
-          onclick="copyTextFromElement('completeaccountaddress')"> ? </span>
-        <span id="completeaccountaddress" style="display: none;"></span>
-      </span>
-    </div>
-  </div>
+	<!-- Events -->
+	<div class="col-lg-12">
+		<!-- small box -->
+		<div class="small-box">
+			<div class="inner" style="min-height: 112px;">
+				<p style="font-size: larger;">Derniers événements</p>
+				<ul id="event-histo"></ul>
+			</div>
+			<div class="icon">
+				<i class="ion ion-alert"></i>
+			</div>
+			<span class="small-box-footer" style="color: black;">
+				L'adresse de mon compte :
+				<span style="font-weight: bolder;" id="accountaddress"
+					onclick="copyTextFromElement('completeaccountaddress')"> ? </span>
+				<span id="completeaccountaddress" style="display: none;"></span>
+			</span>
+		</div>
+	</div>
 
 </div>
 
 <div class="row">
 
-  <div class="col-md-4">
-    <!-- general form elements -->
-    <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title">Créer une association</h3>
-      </div>
-      <form>
-        <div class="card-body">
-          <div id="created-assoc"></div>
-          <div id="created-assoc-statut"></div>
-          <div class="form-group">
-            <label for="inputNameAssoc">Nom de l'association</label>
-            <input type="text" class="form-control" id="name-assoc"
-              placeholder="Choisir un nom pour l'association">
-          </div>
-          <div class="form-group">
-            <label for="inputMemberNameAssoc">Votre pseudonyme</label>
-            <input type="text" class="form-control" id="member-name-assoc"
-              placeholder="Choisir un nom pour vous désigner">
-          </div>
-        </div>
-        <div class="card-footer">
-          <button type="button" onclick="onCreateAssociationBtn()" class="btn btn-primary">Créer</button>
-        </div>
-      </form>
-    </div>
-  </div>
+	<div class="col-md-4">
+		<!-- general form elements -->
+		<div class="card card-primary">
+			<div class="card-header">
+				<h3 class="card-title">Créer une association</h3>
+			</div>
+			<form>
+				<div class="card-body">
+					<div id="created-assoc"></div>
+					<div id="created-assoc-statut"></div>
+					<div class="form-group">
+						<label for="inputNameAssoc">Nom de l'association</label>
+						<input type="text" class="form-control" id="name-assoc"
+							placeholder="Choisir un nom pour l'association">
+					</div>
+					<div class="form-group">
+						<label for="inputMemberNameAssoc">Votre pseudonyme</label>
+						<input type="text" class="form-control" id="member-name-assoc"
+							placeholder="Choisir un nom pour vous désigner">
+					</div>
+				</div>
+				<div class="card-footer">
+					<button type="button" onclick="onCreateAssociationBtn()" class="btn btn-primary">Créer</button>
+				</div>
+			</form>
+		</div>
+	</div>
 
-  <div class="col-md-4">
-    <!-- general form elements -->
-    <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title">Rechercher une association</h3>
-      </div>
-      <form>
-        <div class="card-body">
-          <p>Je dispose d'un contrat d'une association</p>
-          <div class="form-group">
-            <label for="inputSeekAssoc">Adresse de l'association</label>
-            <input type="text" class="form-control" id="seek-assoc" placeholder="0xABCD1234...">
-          </div>
-        </div>
-        <div class="card-footer">
-          <button type="button" onclick="seekAssociation()" class="btn btn-primary">Rechercher</button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title">Gérer une association</h3>
-      </div>
-      <form>
-        <div class="card-body">
-          <p>Je dispose d'un contrat de cooptation, bannissement, dissolution,
-            changement de propriétaire ou referendum</p>
-          <span id="admin-select" style="display:none;"></span>
-          <div class="form-group">
-            <label for="inputSeekAssoc">Adresse du contrat de gestion</label>
-            <input type="text" class="form-control" id="seek-admin" placeholder="0xABCD1234...">
-          </div>
-        </div>
-        <div class="card-footer">
-          <button type="button" onclick="onSeekAdminContract()" class="btn btn-primary">Rechercher</button>
-        </div>
-      </form>
-    </div>
-  </div>
+	<div class="col-md-4">
+		<!-- general form elements -->
+		<div class="card card-primary">
+			<div class="card-header">
+				<h3 class="card-title">Rechercher une association</h3>
+			</div>
+			<form>
+				<div class="card-body">
+					<p>Je dispose d'un contrat d'une association</p>
+					<div class="form-group">
+						<label for="inputSeekAssoc">Adresse de l'association</label>
+						<input type="text" class="form-control" id="seek-assoc" placeholder="0xABCD1234...">
+					</div>
+				</div>
+				<div class="card-footer">
+					<button type="button" onclick="seekAssociation()" class="btn btn-primary">Rechercher</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card card-primary">
+			<div class="card-header">
+				<h3 class="card-title">Gérer une association</h3>
+			</div>
+			<form>
+				<div class="card-body">
+					<p>Je dispose d'un contrat de cooptation, bannissement, dissolution,
+						changement de propriétaire ou referendum</p>
+					<span id="admin-select" style="display:none;"></span>
+					<div class="form-group">
+						<label for="inputSeekAssoc">Adresse du contrat de gestion</label>
+						<input type="text" class="form-control" id="seek-admin" placeholder="0xABCD1234...">
+					</div>
+				</div>
+				<div class="card-footer">
+					<button type="button" onclick="onSeekAdminContract()" class="btn btn-primary">Rechercher</button>
+				</div>
+			</form>
+		</div>
+	</div>
 
 </div>
 
 <div class="row">
 
-  <div class="col-md-6">
-    <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title">Détails de l'association</h3>
-      </div>
-      <form>
-        <div class="card-body details-hide" id="sought-assoc" style="display: none;">
-          <p><span class='title'>Association</span> <span id='name-seek-assoc'></span> :
-            <span id='addassoc'></span>
-          </p>
-          <div class="myassoc">
-            <p><span class='title'>Président</span> : <span id="president"></span></p>
-            <span id="become-owner" class="ismember">
-              <button onclick="onBecomeOwner()" type="button"
-                class="btn btn-lg btn-block btn-dark mb-2">Devenir
-                président</button>
-            </span>
-            <div id="become-owner-statut"></div>
-          </div>
-          <div class="seassoc">
-            <p><span class='title'>Président</span> : C'est vous !</p>
-            <span id="destroy-assoc">
-              <button onclick="onSelfDestruct()" type="button"
-                class="btn btn-lg btn-block btn-danger mb-2">Dissoudre
-                l'association</button>
-            </span>
-            <div id="destroy-assoc-statut"></div>
-          </div>
-          <div class="ismember">
-            <p>J'en suis membre
-              <svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check-circle' fill='currentColor'
-                xmlns='http://www.w3.org/2000/svg'>
-                <path fill-rule='evenodd'
-                  d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' />
-                <path fill-rule='evenodd'
-                  d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z' />
-              </svg>
-            </p>
-          </div>
-          <div class="notmember" id="become-member">
-            <p>Je ne suis pas membre
-              <svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-emoji-dizzy' fill='currentColor'
-                xmlns='http://www.w3.org/2000/svg'>
-                <path fill-rule='evenodd'
-                  d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' />
-                <path fill-rule='evenodd'
-                  d='M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zm-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708z' />
-                <path d='M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z' />
-              </svg>
-            </p>
-            <input type="text" class="form-control mb-2" id="become-member-name"
-              placeholder="Quel est votre pseudonyme ?">
-            <button onclick="onJoinAssociation()" type="button"
-              class="btn btn-lg btn-block btn-warning mb-2">Rejoindre
-              l'association</button>
-          </div>
-          <div id="become-member-statut"></div>
-          <p><span class='title'>Nombre de membres</span> : <span id="nbmembers"></span>
-          </p>
-          <div id="member-ban-statut"></div>
-          <div id="member-list"></div>
-          <span id="ask-referendum" class="ismember">
-            <h6>Demander un referendum</h6>
-            <input type='text' class='form-control mb-2' id='ask-referendum-question'
-              placeholder='Question fermée à poser (OUI/NON)'>
-            <button onclick='onSendReferendum()' type='button'
-              class='btn btn-lg btn-block btn-primary mb-2'>Proposer un
-              referendum</button>
-          </span>
-          <div id="ask-referendum-statut"></div>
-          <div id="referendum-list"></div>
-        </div>
-      </form>
-    </div>
-  </div>
+	<div class="col-md-6">
+		<div class="card card-primary">
+			<div class="card-header">
+				<h3 class="card-title">Détails de l'association</h3>
+			</div>
+			<form>
+				<div class="card-body details-hide" id="sought-assoc" style="display: none;">
+					<p><span class='title'>Association</span> <span id='name-seek-assoc'></span> :
+						<span id='addassoc'></span>
+					</p>
+					<div class="myassoc">
+						<p><span class='title'>Président</span> : <span id="president"></span></p>
+						<span id="become-owner" class="ismember">
+							<button onclick="onBecomeOwner()" type="button"
+								class="btn btn-lg btn-block btn-dark mb-2">Devenir
+								président</button>
+						</span>
+						<div id="become-owner-statut"></div>
+					</div>
+					<div class="seassoc">
+						<p><span class='title'>Président</span> : C'est vous !</p>
+						<span id="destroy-assoc">
+							<button onclick="onSelfDestruct()" type="button"
+								class="btn btn-lg btn-block btn-danger mb-2">Dissoudre
+								l'association</button>
+						</span>
+						<div id="destroy-assoc-statut"></div>
+					</div>
+					<div class="ismember">
+						<p>J'en suis membre
+							<svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check-circle'
+								fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
+								<path fill-rule='evenodd'
+									d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' />
+								<path fill-rule='evenodd'
+									d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z' />
+							</svg>
+						</p>
+					</div>
+					<div class="notmember" id="become-member">
+						<p>Je ne suis pas membre
+							<svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-emoji-dizzy'
+								fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
+								<path fill-rule='evenodd'
+									d='M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z' />
+								<path fill-rule='evenodd'
+									d='M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zm-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708z' />
+								<path d='M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z' />
+							</svg>
+						</p>
+						<input type="text" class="form-control mb-2" id="become-member-name"
+							placeholder="Quel est votre pseudonyme ?">
+						<button onclick="onJoinAssociation()" type="button"
+							class="btn btn-lg btn-block btn-warning mb-2">Rejoindre
+							l'association</button>
+					</div>
+					<div id="become-member-statut"></div>
+					<p><span class='title'>Nombre de membres</span> : <span id="nbmembers"></span>
+					</p>
+					<div id="member-ban-statut"></div>
+					<div id="member-list"></div>
+					<span id="ask-referendum" class="ismember">
+						<h6>Demander un referendum</h6>
+						<input type='text' class='form-control mb-2' id='ask-referendum-question'
+							placeholder='Question fermée à poser (OUI/NON)'>
+						<button onclick='onSendReferendum()' type='button'
+							class='btn btn-lg btn-block btn-primary mb-2'>Proposer un
+							referendum</button>
+					</span>
+					<div id="ask-referendum-statut"></div>
+					<div id="referendum-list"></div>
+				</div>
+			</form>
+		</div>
+	</div>
 
-  <div class="col-md-6">
-    <div class="card card-primary">
-      <div class="card-header">
-        <h3 class="card-title">Gestion de l'association</h3>
-      </div>
-      <div class="card-body gerer-hide" style="display: none;">
-        <form>
-          <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <div id="details-admin" style="display: none;">
-                <p><span class='title'>Association</span> : <span id='addassoc-admin'></span>
-                </p>
-                <p><span class='title'>Contrat d'administration (à copier et envoyer aux
-                    membres de l'association)</span> : <span id='addadmin-admin'></span>
-                </p>
-                <p>
-                  Ce contrat <span class="bold" id="details-admin-type"></span><span class="bold"
-                    id="details-admin-member"></span>
-                </p>
-                <p>
-                  Il y a
-                  <span id='details-admin-vote'></span>
-                  votes en faveur
-                  <span id="details-admin-membercount"></span>
-                  <span id="details-admin-seuil"></span>
-                  <span id='details-admin-didvote'></span>
-                </p>
-                <span id="vote-list">
-                </span>
-                <span id="can-vote" style="display:none;">
-                  <button onclick="onVoteForAdminContract()" id="vote-for-admin" type="button"
-                    class="btn btn-lg btn-block btn-info mb-2">Voter
-                    pour</button>
-                </span>
-                <p>
-                  <span id="vote-status"></span>
-                </p>
-                <span id="seuil-enough" style="display:none;">
-                  <p>
-                    Lorsque le seuil requis est atteint, il est possible d'acter
-                    l'action d'administration :
-                  </p>
-                  <button onclick="onActAdminContract()" id="act-admin" type="button"
-                    class="btn btn-lg btn-block btn-info mb-2">Acter</button>
-                  <p>
-                    <span id="act-status"></span>
-                  </p>
-                </span>
-              </div>
-            </ul>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+	<div class="col-md-6">
+		<div class="card card-primary">
+			<div class="card-header">
+				<h3 class="card-title">Gestion de l'association</h3>
+			</div>
+			<div class="card-body gerer-hide" style="display: none;">
+				<form>
+					<div class="card-body">
+						<ul class="list-unstyled mt-3 mb-4">
+							<div id="details-admin" style="display: none;">
+								<p><span class='title'>Association</span> : <span id='addassoc-admin'></span>
+								</p>
+								<p><span class='title'>Contrat d'administration (à copier et envoyer aux
+										membres de l'association)</span> : <span id='addadmin-admin'></span>
+								</p>
+								<p>
+									Ce contrat <span class="bold" id="details-admin-type"></span><span class="bold"
+										id="details-admin-member"></span>
+								</p>
+								<p>
+									Il y a
+									<span id='details-admin-vote'></span>
+									votes en faveur
+									<span id="details-admin-membercount"></span>
+									<span id="details-admin-seuil"></span>
+									<span id='details-admin-didvote'></span>
+								</p>
+								<span id="vote-list">
+								</span>
+								<span id="can-vote" style="display:none;">
+									<button onclick="onVoteForAdminContract()" id="vote-for-admin" type="button"
+										class="btn btn-lg btn-block btn-info mb-2">Voter
+										pour</button>
+								</span>
+								<p>
+									<span id="vote-status"></span>
+								</p>
+								<span id="seuil-enough" style="display:none;">
+									<p>
+										Lorsque le seuil requis est atteint, il est possible d'acter
+										l'action d'administration :
+									</p>
+									<button onclick="onActAdminContract()" id="act-admin" type="button"
+										class="btn btn-lg btn-block btn-info mb-2">Acter</button>
+									<p>
+										<span id="act-status"></span>
+									</p>
+								</span>
+							</div>
+						</ul>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript" src="/assets/js/generic/storage.js"></script>
@@ -265,11 +266,11 @@ permalink: /assosyndic/
 <script src="/assets/js/vendor/holder.min.js"></script>
 
 <script>
-  Holder.addTheme('thumb', {
-    bg: '#55595c',
-    fg: '#eceeef',
-    text: 'Thumbnail'
-  });
+	Holder.addTheme('thumb', {
+		bg: '#55595c',
+		fg: '#eceeef',
+		text: 'Thumbnail'
+	});
 </script>
 <script>
 	var element = document.getElementById("upnavasso");
