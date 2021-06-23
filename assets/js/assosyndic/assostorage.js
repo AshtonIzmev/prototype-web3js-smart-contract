@@ -21,7 +21,7 @@ async function loadAssociationEvents() {
                 let assoFounder = e.returnValues._founder;
                 $("#event-assoc-histo").append(
                     `<p>${assoName} <span style="font-style: italic;">(founder ${assoFounder})</span>
-                    <button href='#' onclick='seekAssoc("${assoAdd}")' type="button" class="btn-dark" style="padding:revert;">Charger les détails</button></p>`
+                    <button href='#' onclick='onSeekAssoc("${assoAdd}")' type="button" class="btn-dark" style="padding:revert;">Charger l'association</button></p>`
                 );
             });
         }
@@ -52,12 +52,18 @@ async function loadAdministrationEvents(assocAdd) {
             console.log(error);
         else if (eventResult) {
             $("#event-admin-histo").html("");
+            if (eventResult.length > 0) {
+                $(".details-admin-hide").show();
+            }
             eventResult.forEach(function (e) {
                 let adminAdd = e.returnValues._event;
                 let adminKind = kindSwitch(e.returnValues._kind);
-                $("#event-admin-histo").append(
-                    `<p>${adminKind} <button href='#' onclick='handleSeekHistoricAdminContract("${adminAdd}")' type="button" class="btn-dark" style="padding:revert;">Charger les détails</button></p>`
-                );
+                getContractValueWiArg(contractObject, "seenAdmins", adminAdd).then(function(seenAdmin) {
+                    var acted = seenAdmin ? "Acté" : "En cours";
+                    $("#event-admin-histo").append(
+                        `<p>${adminKind} <button href='#' onclick='onSeekAdminContract("${adminAdd}", "${e.returnValues._kind}")' type="button" class="btn-dark" style="padding:revert;">Charger l'action</button> <span style="font-style: italic;">${acted}</span> </p>`
+                    );
+                });
             });
         }
     });

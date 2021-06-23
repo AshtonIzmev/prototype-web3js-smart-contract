@@ -45,12 +45,8 @@ var dictMethods = {
 };
 
 function toggleBlock(str) {
-    $(".recevoir-hide").toggle(str == "recevoir");
-    $(".creer-hide").toggle(str == "creer");
-    $(".rechercher-hide").toggle(str == "rechercher");
     $(".gerer-hide").toggle(str == "gerer");
     $(".details-hide").toggle(str == "details");
-    $(".histo-hide").toggle(str == "historique");
 }
 
 /////////////////////////

@@ -54,6 +54,7 @@ async function loadKYCHistoric() {
         if (error)
             console.log(error);
         else if (eventResult) {
+            $("#tbodyevents").html("");
             eventResult.forEach(function (e) {
                 let kycName = e.returnValues._name;
                 let kycAdd = e.returnValues._add;

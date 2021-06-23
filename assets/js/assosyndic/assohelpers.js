@@ -47,10 +47,10 @@ function getAssociationAddress() {
 
 function getContractAdminJson() {
     var defaultCtrType = "AssociationAdministrationCooptation.json";
-    return $("#admin-select").text() == "" ? defaultCtrType : dictContract[$("#admin-select").text()];
+    return $("#administration-kind").text() == "" ? defaultCtrType : dictContract[$("#administration-kind").text()];
 }
 
-async function seekAssoc(address) {
+async function onSeekAssoc(address) {
     setAssociationAddress(address);
     let contractObject = await getContractObject(address, assoJson);
     let account = await getPrimaryAccount();
@@ -96,6 +96,7 @@ async function seekAssoc(address) {
 
     // HANDLE Referendum List
     var referendums = await getReferendums(contractObject);
+    $("#referendum-list").html("");
     if (referendums.length > 0) {
         $("#referendum-list").html(`<p><span class='title'>Nombre de referendums votés</span> : ${referendums.length}</p>`);
         for (i = 0; i < referendums.length; i++) {
@@ -111,23 +112,28 @@ async function seekAssoc(address) {
 // HANDLE ADMIN CONTRACT
 /////////////////////////
 
-async function handleSeekHistoricAdminContract(adminAddress) {
+async function onSeekAdminContract(adminAddress, adminKind) {
     $("#administration-address").text(adminAddress);
     $(".administration-address").text(adminAddress);
+    $("#administration-kind").text(adminKind);
+    var assocAddress = $("#association-address").text();
     let contractAdminObject = await getContractObject(adminAddress, rootContractJson + getContractAdminJson());
     let account = await getPrimaryAccount();
     if (!contractAdminObject) { $("#administration-address").text(""); return; }
 
+    var contractObject = await getContractObject(assocAddress, assoJson);
+    var seenAdmin = await getContractValueWiArg(contractObject, "seenAdmins", adminAddress);
 
     var adminActionTypeP = await getContractValueWoArg(contractAdminObject, "getAdminActionType");
     var proposedMemberP = await getContractValueWoArg(contractAdminObject, "proposedMember");
     var voteCountP = await getContractValueWoArg(contractAdminObject, "voteCount");
 
-
     toggleBlock("gerer");
     $("#details-admin").show();
     $("#details-admin-type").text(dictLib[adminActionTypeP]);
 
+    $("#details-admin-vote").text(voteCountP);
+    $("#details-admin-seuil").text("(seuil requis : " + dictSeuil[adminActionTypeP] + "%)");
 
     $("#details-admin-member").text("");
     var detailLib = "";
@@ -147,22 +153,21 @@ async function handleSeekHistoricAdminContract(adminAddress) {
         $("#details-admin-member").text(detailLib);
     }
 
-    $("#details-admin-vote").text(voteCountP);
-    $("#details-admin-seuil").text("(seuil requis : " + dictSeuil[adminActionTypeP] + "%)");
-    $("#admin-select").text(adminActionTypeP);
-
     var assocP = await getContractValueWoArg(contractAdminObject, "assoCtr");
     let contractAssocObject = await getContractObject(assocP, assoJson);
     var memberCountP = await getContractValueWoArg(contractAssocObject, "membersCount");
 
     $("#details-admin-membercount").text(" sur " + memberCountP + " membre(s) soit " + 100*voteCountP/memberCountP + "%");
-    if (100*voteCountP >= dictSeuil[adminActionTypeP]*memberCountP) { 
+    $("#seuil-enough").hide();
+    if ((100*voteCountP >= dictSeuil[adminActionTypeP]*memberCountP) && !seenAdmin) { 
         $("#seuil-enough").show();
     }
 
     var didVoteP = await getContractValueWiArg(contractAdminObject, "didVotes", account);
     $("#details-admin-didvote").text(didVoteP ? ". Vous avez déjà voté pour" : "");
-    if (!didVoteP) {
+    
+    $("#can-vote").hide();
+    if (!didVoteP && !seenAdmin) {
         var canVoteP = await getContractValueWiArg(contractAssocObject, "members", account);
         if (canVoteP) {
             $("#can-vote").show();
@@ -181,12 +186,9 @@ async function handleSeekHistoricAdminContract(adminAddress) {
     
 }
 
-function onVoteForAdminContract() {
-    voteForAdminContract();
-}
-
-async function voteForAdminContract() {
+async function onVoteForAdminContract() {
     var adminAddress = $("#administration-address").text();
+    var adminKind = $("#administration-kind").text();
     var contractObject = await getContractObject(adminAddress, rootContractJson + getContractAdminJson());
 
     if (!contractObject) { $("#administration-address").text(""); return; }
@@ -206,21 +208,20 @@ async function voteForAdminContract() {
     }
     function finalCallback(data) {
         $("#vote-status").text("Votre vote a bien été comptabilisé");
-        handleSeekHistoricAdminContract(adminAddress);
+        onSeekAdminContract(adminAddress, adminKind);
     }
 
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
 };
 
-function onActAdminContract() {
-    actAdminContract();
-}
+async function onActAdminContract() {
+    var assocAddress = $("#association-address").text();
+    var adminAddress = $("#administration-address").text();
+    var adminKind = $("#administration-kind").text();
 
-async function actAdminContract() {
-    var adminAddress = $("#association-address").text();
-    var contractObject = await getContractObject(adminAddress, assoJson);
+    var contractObject = await getContractObject(assocAddress, assoJson);
     if (!contractObject) { $("#administration-address").text(""); return; }
-    var contractMethod = dictMethods[$("#admin-select").text()];
+    var contractMethod = dictMethods[$("#administration-kind").text()];
     var contractArg = $("#administration-address").text();
     
     function transactionHashCallback(transactionHash) {
@@ -236,7 +237,7 @@ async function actAdminContract() {
     }
     function finalCallback(data) {
         $("#act-status").text("Action réussie. L'association a bien été impactée");
-        handleSeekHistoricAdminContract(adminAddress);
+        onSeekAdminContract(adminAddress, adminKind);
     }
 
     callContractMethod(contractObject, contractMethod, [contractArg], transactionHashCallback, errorCallback, finalCallback);

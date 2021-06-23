@@ -1,4 +1,3 @@
-
 async function main() {
     let web3 = await getWeb3();
     let netTyp = await web3.eth.net.getNetworkType();

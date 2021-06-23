@@ -28,38 +28,11 @@ function onCreateAssociation() {
         $('#modal-create').modal('hide');
         $('.modal-backdrop').hide();
         loadAssociationEvents();
-        seekAssoc(contractInstance.options.address);
+        onSeekAssoc(contractInstance.options.address);
 
     }
     createContract([assocName, memberName, masterCtrAdd], assoJson, errorCallback, transactionHashCallback, finalCallback);
 }
-
-/////////////////////////
-// CREATE ADMIN CONTRACT
-/////////////////////////
-
-function createAdmin(deploymentArgs, jsonContract, successCallback, typeStr, statutId) {
-
-    function errorCallback(error) {
-        console.log(error);
-        $('.toast-header').text(typeStr);
-        $('.toast-body').text("Une erreur est survenue lors de la création de ce contrat");
-        $('.toast').toast({ 'delay': 3000 }).toast('show');
-        $("#" + statutId).html("<p> Erreur lors de la création du contrat de " + typeStr.toLowerCase() + ". Merci de réessayer </p>");
-    }
-
-    function transactionHashCallback(transactionHash) {
-        console.log(transactionHash);
-        $("#" + statutId).html("<p>La demande de " + typeStr.toLowerCase() + " a bien été reçue</p> <p>Merci de patienter une dizaine de secondes</p> <div class='spinner-border' role='status'><span class='sr-only'>Loading...</span></div> ");
-    }
-
-    function finalCallback(contractInstance) {
-        $("#" + statutId).html("");
-        successCallback(contractInstance);
-        loadAdministrationEvents(deploymentArgs[0]);
-    }
-    createContract(deploymentArgs, rootContractJson + jsonContract, errorCallback, transactionHashCallback, finalCallback);
-};
 
 function onBecomeOwner() {
     function sucessCallback(contractInstance) {
@@ -131,4 +104,27 @@ function onSelfDestruct() {
         addDissolutionToStore(contractAddress);
     }
     createAdmin([$("#association-address").text()], "AssociationAdministrationSelfdestruct.json", sucessCallback, "Dissolution de l'association", "destroy-assoc-statut");
+};
+
+function createAdmin(deploymentArgs, jsonContract, successCallback, typeStr, statutId) {
+
+    function errorCallback(error) {
+        console.log(error);
+        $('.toast-header').text(typeStr);
+        $('.toast-body').text("Une erreur est survenue lors de la création de ce contrat");
+        $('.toast').toast({ 'delay': 3000 }).toast('show');
+        $("#" + statutId).html("<p> Erreur lors de la création du contrat de " + typeStr.toLowerCase() + ". Merci de réessayer </p>");
+    }
+
+    function transactionHashCallback(transactionHash) {
+        console.log(transactionHash);
+        $("#" + statutId).html("<p>La demande de " + typeStr.toLowerCase() + " a bien été reçue</p> <p>Merci de patienter une dizaine de secondes</p> <div class='spinner-border' role='status'><span class='sr-only'>Loading...</span></div> ");
+    }
+
+    function finalCallback(contractInstance) {
+        $("#" + statutId).html("");
+        successCallback(contractInstance);
+        loadAdministrationEvents(deploymentArgs[0]);
+    }
+    createContract(deploymentArgs, rootContractJson + jsonContract, errorCallback, transactionHashCallback, finalCallback);
 };
