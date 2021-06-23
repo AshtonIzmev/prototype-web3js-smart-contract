@@ -7,12 +7,11 @@ async function main() {
         if (err === null) {
             if ((netTyp == "private") && (id == WEB3ID)) {
                 $(".connexion").hide();
-                setAccount(web3, account);
             }
         }
     });
     $('.toast').toast({ 'delay': 2000 });
-    loadHistoric();
+    loadAssociationEvents();
 };
 
 window.addEventListener('load', main);

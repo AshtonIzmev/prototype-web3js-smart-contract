@@ -7,13 +7,12 @@ async function main() {
         if (err === null) {
             if ((netTyp == "private") && (id == WEB3ID)) {
                 $(".connexion").hide();
-                setAccount(web3, account);
             }
         }
     });
     $('.toast').toast({ 'delay': 2000 });
     checkKYC();
-    loadHistoric();
+    loadKYCHistoric();
 };
 
 async function onSubmitKYC() {
@@ -39,7 +38,7 @@ async function onSubmitKYC() {
         $('.toast-header').text("Soumission");
         $('.toast-body').text("La vérification de l'identité de " + kycName + " a été correctement réalisé");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
-        loadHistoric();
+        loadKYCHistoric();
         checkKYC();
     };
 
@@ -49,7 +48,7 @@ async function onSubmitKYC() {
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
 };
 
-async function loadHistoric() {
+async function loadKYCHistoric() {
     var contractObject = await getContractObject(kycCtrAdd, kycJsonPath);
     contractObject.getPastEvents("IdentitySubmission", { fromBlock: 0, toBlock: 'latest' }, function (error, eventResult) {
         if (error)

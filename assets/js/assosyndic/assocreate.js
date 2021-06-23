@@ -1,4 +1,4 @@
-function onCreateAssociationBtn() {
+function onCreateAssociation() {
     var assocName = $("#name-assoc").val();
     var memberName = $("#member-name-assoc").val();
     if (assocName == "" || memberName == "") {
@@ -13,20 +13,25 @@ function onCreateAssociationBtn() {
         $("#created-assoc-statut").html("<p> Erreur lors de la création du contrat d'association. Merci de réessayer </p>");
     };
     function transactionHashCallback(transactionHash) {
+        $('#fa3').toggle();
         $("#created-assoc-statut").html("<p>La demande de création d'association a bien été reçue</p><p>Merci de patienter une dizaine de secondes</p> <div class='spinner-border' role='status'><span class='sr-only'>Loading...</span></div> ");
     };
     function finalCallback(contractInstance) {
+        $('#fa3').toggle();
         var d = new Date();
         var ds = d.toISOString().slice(11, 19);
-        addAssociationToStore(contractInstance.options.address);
         $("#created-assoc-statut").html("")
         $('.toast-header').text("Création d'association");
         $('.toast-body').text("Un contrat d'association a bien été créé à l'adresse " + contractInstance.options.address);
         $('.toast').toast({ 'delay': 2000 }).toast('show');
         $("#created-assoc").append("<p> Association créée à l'adresse <span class='bold'>" + contractInstance.options.address + "</span> à " + ds + "</p>");
-        loadHistoric();
+        $('#modal-create').modal('hide');
+        $('.modal-backdrop').hide();
+        loadAssociationEvents();
+        seekAssoc(contractInstance.options.address);
+
     }
-    createContract([assocName, memberName], assoJson, errorCallback, transactionHashCallback, finalCallback);
+    createContract([assocName, memberName, masterCtrAdd], assoJson, errorCallback, transactionHashCallback, finalCallback);
 }
 
 /////////////////////////
@@ -51,7 +56,7 @@ function createAdmin(deploymentArgs, jsonContract, successCallback, typeStr, sta
     function finalCallback(contractInstance) {
         $("#" + statutId).html("");
         successCallback(contractInstance);
-        loadHistoric();
+        loadAdministrationEvents(deploymentArgs[0]);
     }
     createContract(deploymentArgs, rootContractJson + jsonContract, errorCallback, transactionHashCallback, finalCallback);
 };
@@ -62,10 +67,10 @@ function onBecomeOwner() {
         $('.toast-header').text("Changement de président");
         $('.toast-body').text("Un contrat de changement de président a bien été créé à l'adresse " + contractAddress);
         $('.toast').toast({ 'delay': 2000 }).toast('show');
-        $("#become-owner").html("<p class='bold'>Le contrat de changement de propriétaire est créé à l'adresse suivante " + contractAddress + " à partager manuellement aux membres de l'association pour qu'ils votent pour votre mandat.</p>");
+        $("#become-owner").html("<p class='bold'>Le contrat de changement de propriétaire vient d'être créé à l'adresse suivante " + contractAddress +"</p>");
         addOwnerChangeToStore(contractAddress);
     }
-    createAdmin([$("#addassoc").text()], "AssociationAdministrationOwnerchange.json", sucessCallback, "Changement de président", "become-owner-statut");
+    createAdmin([$("#association-address").text()], "AssociationAdministrationOwnerchange.json", sucessCallback, "Changement de président", "become-owner-statut");
 };
 
 
@@ -79,10 +84,10 @@ function onJoinAssociation() {
         $('.toast-header').text("Demande de cooptation");
         $('.toast-body').text("Un contrat de cooptation a bien été créé à l'adresse " + contractAddress);
         $('.toast').toast({ 'delay': 2000 }).toast('show');
-        $("#become-member").html("<p class='bold'>Le contrat de changement de cooptation est créé à l'adresse " + contractAddress + " à partager manuellement aux membres de l'association pour qu'ils votent pour votre adhésion.</p>");
+        $("#become-member").html("<p class='bold'>Le contrat de changement de cooptation vient d'être créé à l'adresse " + contractAddress + "</p>");
         addCooptationToStore(contractAddress);
     }
-    createAdmin([$("#addassoc").text(), $("#become-member-name").val()], "AssociationAdministrationCooptation.json", sucessCallback, "Cooptation de membre", "become-member-statut");
+    createAdmin([$("#association-address").text(), $("#become-member-name").val()], "AssociationAdministrationCooptation.json", sucessCallback, "Cooptation de membre", "become-member-statut");
 };
 
 function onSpecificMemberBan(account) {
@@ -94,10 +99,10 @@ function onSpecificMemberBan(account) {
         $('.toast-header').text("Bannissement d'un membre");
         $('.toast-body').text("Un contrat de bannissement d'un membre a bien été créé à l'adresse " + contractAddress);
         $('.toast').toast({ 'delay': 2000 }).toast('show');
-        $("#member-ban").html("<p class='bold'>Le contrat d'un bannissement est créé à l'adresse " + contractAddress + " à partager manuellement aux membres de l'association pour qu'ils votent pour le bannissement.</p>");
+        $("#member-ban").html("<p class='bold'>Le contrat d'un bannissement vient d'être créé à l'adresse " + contractAddress + "</p>");
         addBanToStore(contractAddress);
     }
-    createAdmin([$("#addassoc").text(), account], "AssociationAdministrationMemberban.json", sucessCallback, "Bannissement d'un membre", "member-ban-statut");
+    createAdmin([$("#association-address").text(), account], "AssociationAdministrationMemberban.json", sucessCallback, "Bannissement d'un membre", "member-ban-statut");
 };
 
 
@@ -110,10 +115,10 @@ function onSendReferendum() {
         $('.toast-header').text("Referendum");
         $('.toast-body').text("Un contrat de referendum a bien été créé à l'adresse " + contractAddress);
         $('.toast').toast({ 'delay': 2000 }).toast('show');
-        $("#ask-referendum").html("<p class='bold'>Le contrat de referendum est créé à l'adresse " + contractAddress + " à partager manuellement aux membres de l'association pour qu'ils votent pour votre question.</p>");
+        $("#ask-referendum").html("<p class='bold'>Le contrat de referendum vient d'être créé à l'adresse " + contractAddress + "</p>");
         addReferendumToStore(contractAddress);
     }
-    createAdmin([$("#addassoc").text(), $("#ask-referendum-question").val()], "AssociationAdministrationReferendum.json", sucessCallback, "Referendum", "ask-referendum-statut");
+    createAdmin([$("#association-address").text(), $("#ask-referendum-question").val()], "AssociationAdministrationReferendum.json", sucessCallback, "Referendum", "ask-referendum-statut");
 };
 
 function onSelfDestruct() {
@@ -122,8 +127,8 @@ function onSelfDestruct() {
         $('.toast-header').text("Dissolution de l'association");
         $('.toast-body').text("Un contrat de dissolution de l'association a bien été créé à l'adresse " + contractAddress);
         $('.toast').toast({ 'delay': 2000 }).toast('show');
-        $("#destroy-assoc").html("<p class='bold'>Le contrat de dissolution de l'association est créé à l'adresse " + contractAddress + " à partager manuellement aux membres de l'association pour qu'ils votent pour la destruction.</p>");
+        $("#destroy-assoc").html("<p class='bold'>Le contrat de dissolution de l'association vient d'être créé à l'adresse " + contractAddress + "</p>");
         addDissolutionToStore(contractAddress);
     }
-    createAdmin([$("#addassoc").text()], "AssociationAdministrationSelfdestruct.json", sucessCallback, "Dissolution de l'association", "destroy-assoc-statut");
+    createAdmin([$("#association-address").text()], "AssociationAdministrationSelfdestruct.json", sucessCallback, "Dissolution de l'association", "destroy-assoc-statut");
 };
