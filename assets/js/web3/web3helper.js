@@ -143,6 +143,10 @@ async function getContractValueWiArg(contractObject, methodTypeArg, methodCallAr
     return contractObject.methods[methodTypeArg](methodCallArg).call();
 }
 
+async function getContractValueWi2Arg(contractObject, methodTypeArg, methodCallArg1, methodCallArg2) {
+    return contractObject.methods[methodTypeArg](methodCallArg1, methodCallArg2).call();
+}
+
 async function getContractValueWoArg(contractObject, methodTypeArg) {
     return contractObject.methods[methodTypeArg]().call();
 }

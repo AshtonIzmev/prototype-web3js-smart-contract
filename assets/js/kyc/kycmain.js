@@ -18,10 +18,10 @@ async function main() {
 async function onSubmitKYC() {
     var kycName = $("#kycName").val();
     var kycId = $("#kycId").val();
-
+    let account = await getPrimaryAccount();
     var contractObject = await getContractObject(kycCtrAdd, kycJsonPath);
     var contractMethod = "submitKYC";
-    var contractArg = [kycName, kycId];
+    var contractArg = [kycName, kycId, account];
 
     function errorCallback(error) {
         console.log(error);

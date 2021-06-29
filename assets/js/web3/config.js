@@ -6,14 +6,14 @@ const WEB3ID = isLocalhost ? "1338" : "985459";
 const blockchainProvider = isLocalhost ? 'http://localhost:8545/' : 'https://curieux.ma/blockchain/';
 
 // Localhost const
-var masterAdd = "0x7eeDE7d4Ae1484EeD2652a98c2221c49E0884892"
-var kycAdd = "0x352A4a63171E8de9BF978D0e24Ac67065F6C48b6"
-var medAdd = "0x8AB62Da8153E0375C12019FCbA84479bA88A540f"
-var fpAdd = "0xC10778Fc97586d0D8017c1B67a59b5D88B50AC73"
-var marketplaceAdd = "0x67439Af400319F7B0320245099774a782DE69f19"
-var datAdd = "0xf51980137710C9760661e2fcbB320F4745Aecf1C"
-var factoringAdd = "0x593B79B7b53E867d9bA2f854eFC91c677A8f036d"
-var mudarabaAdd = "0x65FfDb45095a2427eF9D64649C1C2dc275BBB244"
+var masterAdd = "0x3ac77bE9fcb25457FB27E69Cc80ED3100044DF16"
+var kycAdd = "0x231c65F021ae5b2aFeCEa83A99970aa1A7DA0308"
+var medAdd = "0xc904180c3640597aBa62892e109281839f3f7B4a"
+var fpAdd = "0xa1b75e745c0A14ebAd7fC465839DDc5D69F169c2"
+var marketplaceAdd = "0xe8e3264e8255ecef4d107f4807249a34AdCa088a"
+var datAdd = "0xd2FE2A09bB7F1686CEaC0cfD6786fe75425E62E5"
+var factoringAdd = "0x22a3e21474fC60A9a02f9d88D9646eFf8fa717Cf"
+var mudarabaAdd = "0x28761E00d8F2EEF0c67009f33bf3D69ce6b2982C"
 
 // Geth const
 const masterGAdd = "0x92f1Dd59b999d4E1DE9Ce3365C03625495d643d5"
@@ -41,6 +41,12 @@ const medJsonPath = '/assets/contracts/MED.json';
 const masterJsonPath = '/assets/contracts/MasterOrg.json';
 const assoJson = '/assets/contracts/AssociationOrg.json';
 
+const datJson = '/assets/contracts/DAT.json';
+const factoringJson = '/assets/contracts/Factoring.json';
+const mudarabaJson = '/assets/contracts/Mudaraba.json';
+const fpJson = '/assets/contracts/FP.json';
+const marketplaceJson = '/assets/contracts/Marketplace.json';
+
 const medTransfertStorageKey = "transfert";
 const medbeneficiaireStorageKey = "beneficiaire"
 
@@ -52,15 +58,24 @@ const medbeneficiaireStorageKey = "beneficiaire"
 web3.eth.sendTransaction({from:accounts[0], to:"0x99e5A82c5000f18F3CB0027382F9310110bD0376", value:web3.utils.toWei("5", "ether")});
 web3.eth.sendTransaction({from:accounts[0], to:"0x485d493EB472E10469F14bADa83c33941c018A76", value:web3.utils.toWei("5", "ether")});
 
+// MED supply
+let instanceMED = await MED.deployed();
 
-// add day and month
-let instance = await MED.deployed();
+instanceMED.incrementDay({from: accounts[0]});
+instanceMED.incrementDay({from: accounts[0]});
+instanceMED.incrementMonth({from: accounts[0]});
 
-instance.incrementDay({from: accounts[0]});
+// NFT approvals
+let instanceFP = await FP.deployed();
+let instanceDAT = await DAT.deployed();
+let instanceKYC = await KYC.deployed();
 
-instance.incrementDay({from: accounts[0]});
+instanceFP.setApprovalForAll(instanceDAT.address, true, {from: accounts[0]});
 
-instance.incrementMonth({from: accounts[0]});
+instanceDAT.setProduct(180, 2, {from: accounts[0]});
+instanceDAT.setProduct(360, 5, {from: accounts[0]});
+
+instanceKYC.submitKYC("Produit DAT by BlockBank", "123", instanceDAT.address, {from: accounts[0]});
 
 
 */

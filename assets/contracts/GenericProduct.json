@@ -53,7 +53,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"getSubscription\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getSubscriptionLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"isSuscribed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"AshtonIzmev\",\"details\":\"Generic Banking smart contracts\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/GenericProduct.sol\":\"GenericProduct\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/identity/KYC.sol\":{\"keccak256\":\"0xb80747e3224033b8d33d974285cb3b65b4d80a477cee4f2d77a73197363cbf4d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a9cf51af9b555b850bd274c425de159c7e661e1c71873f14c81aeb0cb3757ec6\",\"dweb:/ipfs/QmQbWYGnhMmEtTfkfZ1iH5dLBjV35d9hEbqcJAncVApCgz\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xfeccdcbf67b2006a715e5af1a4c7556004d95b2806552b5cc54e46e8eb7e887b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://45b1f9043c0fb450272f20ed19ef633fcba1b129d602651a856dfae1a2243a2c\",\"dweb:/ipfs/QmUTSQiDikkcNtTtyDpkEwCM5ztVUUh9c1inBukn6HC5Vr\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xf8e8d118a7a8b2e134181f7da655f6266aa3a0f9134b2605747139fcb0c5d835\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9ec48567e7ad06acb670980d5cdf3fd7f3949bf12894f02d68c3bb43e75aa84f\",\"dweb:/ipfs/QmaG3R2J9cz92YT77vFjYrjMNU2wHp4ypwYD62HqDUqS5U\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x83fe24f5c04a56091e50f4a345ff504c8bff658a76d4c43b16878c8f940c53b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d4c3df1a7ca104b633a7d81c6c6f5192367d150cd5a32cba81f7f27012729013\",\"dweb:/ipfs/QmSim72e3ZVsfgZt8UceCvbiSuMRHR6WDsiamqNzZahGSY\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x2d9f9af8b84d252e0e7ee716e4cb3ad1b58f3ec6619e4f54f40d4b5e28f75eb7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43d6abdcb4cd5be9933f526b53f21008e9a7ab75ce134478625cc8ccd3c1a638\",\"dweb:/ipfs/QmZrzWUYmNANRCvHaMGsJQXYnWCe6HvMmvrqaPn1GEcpJ1\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xc1c941ad1e580b4623007305921efe2f26fc7320a4edc226234dd707c658a428\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://473e11d739868e0d9f48254ccf84ba63290d6a2321d59a37b74c244a27f9cad7\",\"dweb:/ipfs/QmUGzDmecP936jzgM7SYyGwR1YgBGsveoHHJTbDfB8jbGF\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456\",\"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0xb8d11e77eb1ed34a33720edb551d7d6a6b0eee2bfaa40a7024020e1fdf879b16\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c583283c838cc624a96a69eaa823fa92ac5294ec88d417e266c09ea091e0ae62\",\"dweb:/ipfs/QmNdzitXaFADaxooWpB4WsckkDyr4j6GQRxBjyKXsvEeXv\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/GenericProduct.sol\":{\"keccak256\":\"0xf9b0d6452d57eb155693c15b561304e758043b59eeb8496a44f354d08f57952f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f18c2941ef329c184f2b6b43a7d5ca5b13403bb22223bcf83bec3c2951a8763\",\"dweb:/ipfs/QmPGCJ5nhKaHC3ELD9jQR52v1Zs6YVCXPyBzx8cPdVVNPs\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/med/MED.sol\":{\"keccak256\":\"0x74bd71fb11114464b71e092403283a1d9626476ca4bb29666b3b733005b10535\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7b4f7578e950b11a205c34b218e110de1ec1f5017bce566a75e542f82e790f6\",\"dweb:/ipfs/QmZY6QjhDsKtxmgf599vhDDN2g1M7xdGF9tvW6TZE4oVrr\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/nft/FP.sol\":{\"keccak256\":\"0x48aea8f8dcc6a0b5868a48d8007f8f5778a17ad7c78d3c5a7adf9411eac04f24\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bc056109c1762605515aa570dbcf085d4a2895561e0d88fbf873c43b6644690f\",\"dweb:/ipfs/QmUprDMmnKbDYpkXwuLtFmKtypgLMDUUZtYGSBA1zvq7fz\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Address.sol\":{\"keccak256\":\"0x069b2631bb5b5193a58ccf7a06266c7361bd2c20095667af4402817605627f45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a4c96fafff76deda5697c3c5c98cade6e6e1b178254544c106bf360c079ce4e\",\"dweb:/ipfs/QmXmxubE3jnatFgZuN8ay1VV6hZ8WRmhvUjNpeVjki15HX\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Counters.sol\":{\"keccak256\":\"0x62d306ff0499a11913bc60b5939eec619509b5c67b30e86ebf8b8bda0b7a7fee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6712ca27a06062db31465b1470e6207553553a9bb0b4358d918b35bdae5b4ffe\",\"dweb:/ipfs/QmZ92pU9DJ3h1qREMFvDQhArSy6fh6zA983NeLFHRs1qKJ\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/EnumerableSet.sol\":{\"keccak256\":\"0xd3f231a05686a49cf949c85df6dd3e2a747d20bcfd0d846afc1dd8e5696444e5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c66d2ecbee7159a331e2bdec3d6229587f5f05ca4ff50b29401a271e78770162\",\"dweb:/ipfs/QmUVbQyfKfRAoLuoFtd4UuYkdwDzyNR1Yc3nwCwbhGF47C\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Strings.sol\":{\"keccak256\":\"0x456e9b3a2bfe189b5249857f624f4139e59331db518483b456c4e587a20552e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1123c9545decc48a011370ebab4bf53dda98524fa21f9498e68851ba8f0ffc0f\",\"dweb:/ipfs/QmUpgMg8EFDnv87ePKUjXxXpJT3qwHRj9VDNSnRxu7T9sy\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549\",\"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"getSubscription\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getSubscriptionLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"isSuscribed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"AshtonIzmev\",\"details\":\"Generic Banking smart contracts\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/GenericProduct.sol\":\"GenericProduct\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/identity/KYC.sol\":{\"keccak256\":\"0x719a19c15f3462ec6a48a7316e66dd7f8cb5a7b7dbb6d5400e8307e5bc110a72\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://69aaedb25ab58047bbe66a0e059955228e298fdf3a73421f7841e39f50e235a3\",\"dweb:/ipfs/QmRT23qnjwzU9q2VvwFyHtzrjRFq7Hk9efR6gni2AnLCie\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xfeccdcbf67b2006a715e5af1a4c7556004d95b2806552b5cc54e46e8eb7e887b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://45b1f9043c0fb450272f20ed19ef633fcba1b129d602651a856dfae1a2243a2c\",\"dweb:/ipfs/QmUTSQiDikkcNtTtyDpkEwCM5ztVUUh9c1inBukn6HC5Vr\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xf8e8d118a7a8b2e134181f7da655f6266aa3a0f9134b2605747139fcb0c5d835\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9ec48567e7ad06acb670980d5cdf3fd7f3949bf12894f02d68c3bb43e75aa84f\",\"dweb:/ipfs/QmaG3R2J9cz92YT77vFjYrjMNU2wHp4ypwYD62HqDUqS5U\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x83fe24f5c04a56091e50f4a345ff504c8bff658a76d4c43b16878c8f940c53b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d4c3df1a7ca104b633a7d81c6c6f5192367d150cd5a32cba81f7f27012729013\",\"dweb:/ipfs/QmSim72e3ZVsfgZt8UceCvbiSuMRHR6WDsiamqNzZahGSY\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x2d9f9af8b84d252e0e7ee716e4cb3ad1b58f3ec6619e4f54f40d4b5e28f75eb7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43d6abdcb4cd5be9933f526b53f21008e9a7ab75ce134478625cc8ccd3c1a638\",\"dweb:/ipfs/QmZrzWUYmNANRCvHaMGsJQXYnWCe6HvMmvrqaPn1GEcpJ1\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xc1c941ad1e580b4623007305921efe2f26fc7320a4edc226234dd707c658a428\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://473e11d739868e0d9f48254ccf84ba63290d6a2321d59a37b74c244a27f9cad7\",\"dweb:/ipfs/QmUGzDmecP936jzgM7SYyGwR1YgBGsveoHHJTbDfB8jbGF\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456\",\"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0xb8d11e77eb1ed34a33720edb551d7d6a6b0eee2bfaa40a7024020e1fdf879b16\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c583283c838cc624a96a69eaa823fa92ac5294ec88d417e266c09ea091e0ae62\",\"dweb:/ipfs/QmNdzitXaFADaxooWpB4WsckkDyr4j6GQRxBjyKXsvEeXv\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/GenericProduct.sol\":{\"keccak256\":\"0xf9b0d6452d57eb155693c15b561304e758043b59eeb8496a44f354d08f57952f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f18c2941ef329c184f2b6b43a7d5ca5b13403bb22223bcf83bec3c2951a8763\",\"dweb:/ipfs/QmPGCJ5nhKaHC3ELD9jQR52v1Zs6YVCXPyBzx8cPdVVNPs\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/med/MED.sol\":{\"keccak256\":\"0x74bd71fb11114464b71e092403283a1d9626476ca4bb29666b3b733005b10535\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7b4f7578e950b11a205c34b218e110de1ec1f5017bce566a75e542f82e790f6\",\"dweb:/ipfs/QmZY6QjhDsKtxmgf599vhDDN2g1M7xdGF9tvW6TZE4oVrr\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/nft/FP.sol\":{\"keccak256\":\"0x48aea8f8dcc6a0b5868a48d8007f8f5778a17ad7c78d3c5a7adf9411eac04f24\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bc056109c1762605515aa570dbcf085d4a2895561e0d88fbf873c43b6644690f\",\"dweb:/ipfs/QmUprDMmnKbDYpkXwuLtFmKtypgLMDUUZtYGSBA1zvq7fz\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Address.sol\":{\"keccak256\":\"0x069b2631bb5b5193a58ccf7a06266c7361bd2c20095667af4402817605627f45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a4c96fafff76deda5697c3c5c98cade6e6e1b178254544c106bf360c079ce4e\",\"dweb:/ipfs/QmXmxubE3jnatFgZuN8ay1VV6hZ8WRmhvUjNpeVjki15HX\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Counters.sol\":{\"keccak256\":\"0x62d306ff0499a11913bc60b5939eec619509b5c67b30e86ebf8b8bda0b7a7fee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6712ca27a06062db31465b1470e6207553553a9bb0b4358d918b35bdae5b4ffe\",\"dweb:/ipfs/QmZ92pU9DJ3h1qREMFvDQhArSy6fh6zA983NeLFHRs1qKJ\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/EnumerableSet.sol\":{\"keccak256\":\"0xd3f231a05686a49cf949c85df6dd3e2a747d20bcfd0d846afc1dd8e5696444e5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c66d2ecbee7159a331e2bdec3d6229587f5f05ca4ff50b29401a271e78770162\",\"dweb:/ipfs/QmUVbQyfKfRAoLuoFtd4UuYkdwDzyNR1Yc3nwCwbhGF47C\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Strings.sol\":{\"keccak256\":\"0x456e9b3a2bfe189b5249857f624f4139e59331db518483b456c4e587a20552e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1123c9545decc48a011370ebab4bf53dda98524fa21f9498e68851ba8f0ffc0f\",\"dweb:/ipfs/QmUpgMg8EFDnv87ePKUjXxXpJT3qwHRj9VDNSnRxu7T9sy\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549\",\"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -65,66 +65,66 @@
     "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/GenericProduct.sol",
     "exportedSymbols": {
       "Address": [
-        5180
+        5271
       ],
       "Context": [
-        5203
+        5294
       ],
       "Counters": [
-        5264
+        5355
       ],
       "ERC165": [
-        6000
+        6091
       ],
       "ERC20": [
-        1765
+        1772
       ],
       "ERC721": [
-        2686
+        2693
       ],
       "EnumerableSet": [
-        5773
+        5864
       ],
       "FP": [
-        4884
+        4975
       ],
       "GenericProduct": [
-        3411
+        3502
       ],
       "IERC165": [
-        6012
+        6103
       ],
       "IERC20": [
-        1843
+        1850
       ],
       "IERC20Metadata": [
-        1868
+        1875
       ],
       "IERC721": [
-        2802
+        2809
       ],
       "IERC721Metadata": [
-        2847
+        2854
       ],
       "IERC721Receiver": [
-        2820
+        2827
       ],
       "KYC": [
-        1200
+        1207
       ],
       "MED": [
-        4747
+        4838
       ],
       "Strings": [
-        5976
+        6067
       ]
     },
-    "id": 3412,
+    "id": 3503,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3331,
+        "id": 3422,
         "literals": [
           "solidity",
           "^",
@@ -137,11 +137,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol",
         "file": "../../utils/Context.sol",
-        "id": 3332,
+        "id": 3423,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 5204,
+        "scope": 3503,
+        "sourceUnit": 5295,
         "src": "58:33:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -149,11 +149,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/EnumerableSet.sol",
         "file": "../../utils/EnumerableSet.sol",
-        "id": 3333,
+        "id": 3424,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 5774,
+        "scope": 3503,
+        "sourceUnit": 5865,
         "src": "92:39:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -161,11 +161,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/token/med/MED.sol",
         "file": "../med/MED.sol",
-        "id": 3334,
+        "id": 3425,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 4748,
+        "scope": 3503,
+        "sourceUnit": 4839,
         "src": "132:24:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -173,11 +173,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/token/nft/FP.sol",
         "file": "../nft/FP.sol",
-        "id": 3335,
+        "id": 3426,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 4885,
+        "scope": 3503,
+        "sourceUnit": 4976,
         "src": "157:23:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -187,95 +187,95 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 3337,
+              "id": 3428,
               "name": "Context",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5203,
+              "referencedDeclaration": 5294,
               "src": "289:7:14"
             },
-            "id": 3338,
+            "id": 3429,
             "nodeType": "InheritanceSpecifier",
             "src": "289:7:14"
           }
         ],
         "contractDependencies": [
-          5203
+          5294
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 3336,
+          "id": 3427,
           "nodeType": "StructuredDocumentation",
           "src": "182:70:14",
           "text": " @dev Generic Banking smart contracts\n @author AshtonIzmev"
         },
         "fullyImplemented": true,
-        "id": 3411,
+        "id": 3502,
         "linearizedBaseContracts": [
-          3411,
-          5203
+          3502,
+          5294
         ],
         "name": "GenericProduct",
         "nameLocation": "271:14:14",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 3342,
+            "id": 3433,
             "libraryName": {
-              "id": 3339,
+              "id": 3430,
               "name": "EnumerableSet",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5773,
+              "referencedDeclaration": 5864,
               "src": "310:13:14"
             },
             "nodeType": "UsingForDirective",
             "src": "304:46:14",
             "typeName": {
-              "id": 3341,
+              "id": 3432,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3340,
+                "id": 3431,
                 "name": "EnumerableSet.UintSet",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 5673,
+                "referencedDeclaration": 5764,
                 "src": "328:21:14"
               },
-              "referencedDeclaration": 5673,
+              "referencedDeclaration": 5764,
               "src": "328:21:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_UintSet_$5673_storage_ptr",
+                "typeIdentifier": "t_struct$_UintSet_$5764_storage_ptr",
                 "typeString": "struct EnumerableSet.UintSet"
               }
             }
           },
           {
             "constant": false,
-            "id": 3345,
+            "id": 3436,
             "mutability": "mutable",
             "name": "medToken",
             "nameLocation": "369:8:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "356:21:14",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_MED_$4747",
+              "typeIdentifier": "t_contract$_MED_$4838",
               "typeString": "contract MED"
             },
             "typeName": {
-              "id": 3344,
+              "id": 3435,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3343,
+                "id": 3434,
                 "name": "MED",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 4747,
+                "referencedDeclaration": 4838,
                 "src": "356:3:14"
               },
-              "referencedDeclaration": 4747,
+              "referencedDeclaration": 4838,
               "src": "356:3:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MED_$4747",
+                "typeIdentifier": "t_contract$_MED_$4838",
                 "typeString": "contract MED"
               }
             },
@@ -283,33 +283,33 @@
           },
           {
             "constant": false,
-            "id": 3348,
+            "id": 3439,
             "mutability": "mutable",
             "name": "fpToken",
             "nameLocation": "395:7:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "383:19:14",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_FP_$4884",
+              "typeIdentifier": "t_contract$_FP_$4975",
               "typeString": "contract FP"
             },
             "typeName": {
-              "id": 3347,
+              "id": 3438,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3346,
+                "id": 3437,
                 "name": "FP",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 4884,
+                "referencedDeclaration": 4975,
                 "src": "383:2:14"
               },
-              "referencedDeclaration": 4884,
+              "referencedDeclaration": 4975,
               "src": "383:2:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_FP_$4884",
+                "typeIdentifier": "t_contract$_FP_$4975",
                 "typeString": "contract FP"
               }
             },
@@ -317,12 +317,12 @@
           },
           {
             "constant": false,
-            "id": 3350,
+            "id": 3441,
             "mutability": "mutable",
             "name": "_issuingBank",
             "nameLocation": "426:12:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "409:29:14",
             "stateVariable": true,
             "storageLocation": "default",
@@ -331,7 +331,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 3349,
+              "id": 3440,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "409:7:14",
@@ -345,33 +345,33 @@
           },
           {
             "constant": false,
-            "id": 3353,
+            "id": 3444,
             "mutability": "mutable",
             "name": "_subscriptionIds",
             "nameLocation": "476:16:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "445:47:14",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+              "typeIdentifier": "t_struct$_UintSet_$5764_storage",
               "typeString": "struct EnumerableSet.UintSet"
             },
             "typeName": {
-              "id": 3352,
+              "id": 3443,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3351,
+                "id": 3442,
                 "name": "EnumerableSet.UintSet",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 5673,
+                "referencedDeclaration": 5764,
                 "src": "445:21:14"
               },
-              "referencedDeclaration": 5673,
+              "referencedDeclaration": 5764,
               "src": "445:21:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_UintSet_$5673_storage_ptr",
+                "typeIdentifier": "t_struct$_UintSet_$5764_storage_ptr",
                 "typeString": "struct EnumerableSet.UintSet"
               }
             },
@@ -379,7 +379,7 @@
           },
           {
             "body": {
-              "id": 3364,
+              "id": 3455,
               "nodeType": "Block",
               "src": "526:144:14",
               "statements": [
@@ -391,7 +391,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 3359,
+                        "id": 3450,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -400,18 +400,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 3356,
+                            "id": 3447,
                             "name": "_msgSender",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 5191,
+                            "referencedDeclaration": 5282,
                             "src": "557:10:14",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                               "typeString": "function () view returns (address)"
                             }
                           },
-                          "id": 3357,
+                          "id": 3448,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -429,11 +429,11 @@
                         "nodeType": "BinaryOperation",
                         "operator": "==",
                         "rightExpression": {
-                          "id": 3358,
+                          "id": 3449,
                           "name": "_issuingBank",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3350,
+                          "referencedDeclaration": 3441,
                           "src": "573:12:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -448,7 +448,7 @@
                       },
                       {
                         "hexValue": "4f6e6c792049737375696e672042616e6b20697320616c6c6f77656420746f2063616c6c2074686973",
-                        "id": 3360,
+                        "id": 3451,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -474,7 +474,7 @@
                           "typeString": "literal_string \"Only Issuing Bank is allowed to call this\""
                         }
                       ],
-                      "id": 3355,
+                      "id": 3446,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -488,7 +488,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 3361,
+                    "id": 3452,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -503,23 +503,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3362,
+                  "id": 3453,
                   "nodeType": "ExpressionStatement",
                   "src": "536:116:14"
                 },
                 {
-                  "id": 3363,
+                  "id": 3454,
                   "nodeType": "PlaceholderStatement",
                   "src": "662:1:14"
                 }
               ]
             },
-            "id": 3365,
+            "id": 3456,
             "name": "onlyIssuingBank",
             "nameLocation": "508:15:14",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 3354,
+              "id": 3445,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "523:2:14"
@@ -530,7 +530,7 @@
           },
           {
             "body": {
-              "id": 3377,
+              "id": 3468,
               "nodeType": "Block",
               "src": "749:58:14",
               "statements": [
@@ -538,11 +538,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3374,
+                        "id": 3465,
                         "name": "tokenId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3367,
+                        "referencedDeclaration": 3458,
                         "src": "792:7:14",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -558,32 +558,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 3372,
+                        "id": 3463,
                         "name": "_subscriptionIds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3353,
+                        "referencedDeclaration": 3444,
                         "src": "766:16:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                          "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                           "typeString": "struct EnumerableSet.UintSet storage ref"
                         }
                       },
-                      "id": 3373,
+                      "id": 3464,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "contains",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5736,
+                      "referencedDeclaration": 5827,
                       "src": "766:25:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$_t_uint256_$returns$_t_bool_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$_t_uint256_$returns$_t_bool_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                         "typeString": "function (struct EnumerableSet.UintSet storage pointer,uint256) view returns (bool)"
                       }
                     },
-                    "id": 3375,
+                    "id": 3466,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -598,15 +598,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 3371,
-                  "id": 3376,
+                  "functionReturnParameters": 3462,
+                  "id": 3467,
                   "nodeType": "Return",
                   "src": "759:41:14"
                 }
               ]
             },
             "functionSelector": "839db9c0",
-            "id": 3378,
+            "id": 3469,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -614,17 +614,17 @@
             "nameLocation": "685:11:14",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3368,
+              "id": 3459,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3367,
+                  "id": 3458,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nameLocation": "705:7:14",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3378,
+                  "scope": 3469,
                   "src": "697:15:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -633,7 +633,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3366,
+                    "id": 3457,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "697:7:14",
@@ -648,17 +648,17 @@
               "src": "696:17:14"
             },
             "returnParameters": {
-              "id": 3371,
+              "id": 3462,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3370,
+                  "id": 3461,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3378,
+                  "scope": 3469,
                   "src": "743:4:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -667,7 +667,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3369,
+                    "id": 3460,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "743:4:14",
@@ -681,7 +681,7 @@
               ],
               "src": "742:6:14"
             },
-            "scope": 3411,
+            "scope": 3502,
             "src": "676:131:14",
             "stateMutability": "view",
             "virtual": true,
@@ -689,7 +689,7 @@
           },
           {
             "body": {
-              "id": 3399,
+              "id": 3490,
               "nodeType": "Block",
               "src": "889:114:14",
               "statements": [
@@ -701,17 +701,17 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 3390,
+                        "id": 3481,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 3386,
+                          "id": 3477,
                           "name": "idx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3380,
+                          "referencedDeclaration": 3471,
                           "src": "907:3:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -725,32 +725,32 @@
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 3387,
+                              "id": 3478,
                               "name": "_subscriptionIds",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3353,
+                              "referencedDeclaration": 3444,
                               "src": "913:16:14",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                                "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                                 "typeString": "struct EnumerableSet.UintSet storage ref"
                               }
                             },
-                            "id": 3388,
+                            "id": 3479,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "length",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5751,
+                            "referencedDeclaration": 5842,
                             "src": "913:23:14",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                              "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                               "typeString": "function (struct EnumerableSet.UintSet storage pointer) view returns (uint256)"
                             }
                           },
-                          "id": 3389,
+                          "id": 3480,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -773,7 +773,7 @@
                       },
                       {
                         "hexValue": "496478206f766572666c6f77",
-                        "id": 3391,
+                        "id": 3482,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -799,7 +799,7 @@
                           "typeString": "literal_string \"Idx overflow\""
                         }
                       ],
-                      "id": 3385,
+                      "id": 3476,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -813,7 +813,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 3392,
+                    "id": 3483,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -828,7 +828,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3393,
+                  "id": 3484,
                   "nodeType": "ExpressionStatement",
                   "src": "899:56:14"
                 },
@@ -836,11 +836,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3396,
+                        "id": 3487,
                         "name": "idx",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3380,
+                        "referencedDeclaration": 3471,
                         "src": "992:3:14",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -856,32 +856,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 3394,
+                        "id": 3485,
                         "name": "_subscriptionIds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3353,
+                        "referencedDeclaration": 3444,
                         "src": "972:16:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                          "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                           "typeString": "struct EnumerableSet.UintSet storage ref"
                         }
                       },
-                      "id": 3395,
+                      "id": 3486,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "at",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5772,
+                      "referencedDeclaration": 5863,
                       "src": "972:19:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$_t_uint256_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$_t_uint256_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                         "typeString": "function (struct EnumerableSet.UintSet storage pointer,uint256) view returns (uint256)"
                       }
                     },
-                    "id": 3397,
+                    "id": 3488,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -896,15 +896,15 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3384,
-                  "id": 3398,
+                  "functionReturnParameters": 3475,
+                  "id": 3489,
                   "nodeType": "Return",
                   "src": "965:31:14"
                 }
               ]
             },
             "functionSelector": "dc311dd3",
-            "id": 3400,
+            "id": 3491,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -912,17 +912,17 @@
             "nameLocation": "822:15:14",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3381,
+              "id": 3472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3380,
+                  "id": 3471,
                   "mutability": "mutable",
                   "name": "idx",
                   "nameLocation": "846:3:14",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3400,
+                  "scope": 3491,
                   "src": "838:11:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -931,7 +931,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3379,
+                    "id": 3470,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "838:7:14",
@@ -946,17 +946,17 @@
               "src": "837:13:14"
             },
             "returnParameters": {
-              "id": 3384,
+              "id": 3475,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3383,
+                  "id": 3474,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3400,
+                  "scope": 3491,
                   "src": "880:7:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -965,7 +965,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3382,
+                    "id": 3473,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "880:7:14",
@@ -979,7 +979,7 @@
               ],
               "src": "879:9:14"
             },
-            "scope": 3411,
+            "scope": 3502,
             "src": "813:190:14",
             "stateMutability": "view",
             "virtual": true,
@@ -987,7 +987,7 @@
           },
           {
             "body": {
-              "id": 3409,
+              "id": 3500,
               "nodeType": "Block",
               "src": "1080:49:14",
               "statements": [
@@ -997,32 +997,32 @@
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 3405,
+                        "id": 3496,
                         "name": "_subscriptionIds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3353,
+                        "referencedDeclaration": 3444,
                         "src": "1097:16:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                          "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                           "typeString": "struct EnumerableSet.UintSet storage ref"
                         }
                       },
-                      "id": 3406,
+                      "id": 3497,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "length",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5751,
+                      "referencedDeclaration": 5842,
                       "src": "1097:23:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                         "typeString": "function (struct EnumerableSet.UintSet storage pointer) view returns (uint256)"
                       }
                     },
-                    "id": 3407,
+                    "id": 3498,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1037,15 +1037,15 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3404,
-                  "id": 3408,
+                  "functionReturnParameters": 3495,
+                  "id": 3499,
                   "nodeType": "Return",
                   "src": "1090:32:14"
                 }
               ]
             },
             "functionSelector": "2530ea71",
-            "id": 3410,
+            "id": 3501,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1053,23 +1053,23 @@
             "nameLocation": "1018:21:14",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3401,
+              "id": 3492,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1039:2:14"
             },
             "returnParameters": {
-              "id": 3404,
+              "id": 3495,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3403,
+                  "id": 3494,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3410,
+                  "scope": 3501,
                   "src": "1071:7:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1078,7 +1078,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3402,
+                    "id": 3493,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1071:7:14",
@@ -1092,14 +1092,14 @@
               ],
               "src": "1070:9:14"
             },
-            "scope": 3411,
+            "scope": 3502,
             "src": "1009:120:14",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 3412,
+        "scope": 3503,
         "src": "253:879:14"
       }
     ],
@@ -1109,66 +1109,66 @@
     "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/GenericProduct.sol",
     "exportedSymbols": {
       "Address": [
-        5180
+        5271
       ],
       "Context": [
-        5203
+        5294
       ],
       "Counters": [
-        5264
+        5355
       ],
       "ERC165": [
-        6000
+        6091
       ],
       "ERC20": [
-        1765
+        1772
       ],
       "ERC721": [
-        2686
+        2693
       ],
       "EnumerableSet": [
-        5773
+        5864
       ],
       "FP": [
-        4884
+        4975
       ],
       "GenericProduct": [
-        3411
+        3502
       ],
       "IERC165": [
-        6012
+        6103
       ],
       "IERC20": [
-        1843
+        1850
       ],
       "IERC20Metadata": [
-        1868
+        1875
       ],
       "IERC721": [
-        2802
+        2809
       ],
       "IERC721Metadata": [
-        2847
+        2854
       ],
       "IERC721Receiver": [
-        2820
+        2827
       ],
       "KYC": [
-        1200
+        1207
       ],
       "MED": [
-        4747
+        4838
       ],
       "Strings": [
-        5976
+        6067
       ]
     },
-    "id": 3412,
+    "id": 3503,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3331,
+        "id": 3422,
         "literals": [
           "solidity",
           "^",
@@ -1181,11 +1181,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol",
         "file": "../../utils/Context.sol",
-        "id": 3332,
+        "id": 3423,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 5204,
+        "scope": 3503,
+        "sourceUnit": 5295,
         "src": "58:33:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1193,11 +1193,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/EnumerableSet.sol",
         "file": "../../utils/EnumerableSet.sol",
-        "id": 3333,
+        "id": 3424,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 5774,
+        "scope": 3503,
+        "sourceUnit": 5865,
         "src": "92:39:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1205,11 +1205,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/token/med/MED.sol",
         "file": "../med/MED.sol",
-        "id": 3334,
+        "id": 3425,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 4748,
+        "scope": 3503,
+        "sourceUnit": 4839,
         "src": "132:24:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1217,11 +1217,11 @@
       {
         "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/token/nft/FP.sol",
         "file": "../nft/FP.sol",
-        "id": 3335,
+        "id": 3426,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 3412,
-        "sourceUnit": 4885,
+        "scope": 3503,
+        "sourceUnit": 4976,
         "src": "157:23:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1231,95 +1231,95 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 3337,
+              "id": 3428,
               "name": "Context",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5203,
+              "referencedDeclaration": 5294,
               "src": "289:7:14"
             },
-            "id": 3338,
+            "id": 3429,
             "nodeType": "InheritanceSpecifier",
             "src": "289:7:14"
           }
         ],
         "contractDependencies": [
-          5203
+          5294
         ],
         "contractKind": "contract",
         "documentation": {
-          "id": 3336,
+          "id": 3427,
           "nodeType": "StructuredDocumentation",
           "src": "182:70:14",
           "text": " @dev Generic Banking smart contracts\n @author AshtonIzmev"
         },
         "fullyImplemented": true,
-        "id": 3411,
+        "id": 3502,
         "linearizedBaseContracts": [
-          3411,
-          5203
+          3502,
+          5294
         ],
         "name": "GenericProduct",
         "nameLocation": "271:14:14",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 3342,
+            "id": 3433,
             "libraryName": {
-              "id": 3339,
+              "id": 3430,
               "name": "EnumerableSet",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5773,
+              "referencedDeclaration": 5864,
               "src": "310:13:14"
             },
             "nodeType": "UsingForDirective",
             "src": "304:46:14",
             "typeName": {
-              "id": 3341,
+              "id": 3432,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3340,
+                "id": 3431,
                 "name": "EnumerableSet.UintSet",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 5673,
+                "referencedDeclaration": 5764,
                 "src": "328:21:14"
               },
-              "referencedDeclaration": 5673,
+              "referencedDeclaration": 5764,
               "src": "328:21:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_UintSet_$5673_storage_ptr",
+                "typeIdentifier": "t_struct$_UintSet_$5764_storage_ptr",
                 "typeString": "struct EnumerableSet.UintSet"
               }
             }
           },
           {
             "constant": false,
-            "id": 3345,
+            "id": 3436,
             "mutability": "mutable",
             "name": "medToken",
             "nameLocation": "369:8:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "356:21:14",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_MED_$4747",
+              "typeIdentifier": "t_contract$_MED_$4838",
               "typeString": "contract MED"
             },
             "typeName": {
-              "id": 3344,
+              "id": 3435,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3343,
+                "id": 3434,
                 "name": "MED",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 4747,
+                "referencedDeclaration": 4838,
                 "src": "356:3:14"
               },
-              "referencedDeclaration": 4747,
+              "referencedDeclaration": 4838,
               "src": "356:3:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MED_$4747",
+                "typeIdentifier": "t_contract$_MED_$4838",
                 "typeString": "contract MED"
               }
             },
@@ -1327,33 +1327,33 @@
           },
           {
             "constant": false,
-            "id": 3348,
+            "id": 3439,
             "mutability": "mutable",
             "name": "fpToken",
             "nameLocation": "395:7:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "383:19:14",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_FP_$4884",
+              "typeIdentifier": "t_contract$_FP_$4975",
               "typeString": "contract FP"
             },
             "typeName": {
-              "id": 3347,
+              "id": 3438,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3346,
+                "id": 3437,
                 "name": "FP",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 4884,
+                "referencedDeclaration": 4975,
                 "src": "383:2:14"
               },
-              "referencedDeclaration": 4884,
+              "referencedDeclaration": 4975,
               "src": "383:2:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_FP_$4884",
+                "typeIdentifier": "t_contract$_FP_$4975",
                 "typeString": "contract FP"
               }
             },
@@ -1361,12 +1361,12 @@
           },
           {
             "constant": false,
-            "id": 3350,
+            "id": 3441,
             "mutability": "mutable",
             "name": "_issuingBank",
             "nameLocation": "426:12:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "409:29:14",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1375,7 +1375,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 3349,
+              "id": 3440,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "409:7:14",
@@ -1389,33 +1389,33 @@
           },
           {
             "constant": false,
-            "id": 3353,
+            "id": 3444,
             "mutability": "mutable",
             "name": "_subscriptionIds",
             "nameLocation": "476:16:14",
             "nodeType": "VariableDeclaration",
-            "scope": 3411,
+            "scope": 3502,
             "src": "445:47:14",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+              "typeIdentifier": "t_struct$_UintSet_$5764_storage",
               "typeString": "struct EnumerableSet.UintSet"
             },
             "typeName": {
-              "id": 3352,
+              "id": 3443,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 3351,
+                "id": 3442,
                 "name": "EnumerableSet.UintSet",
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 5673,
+                "referencedDeclaration": 5764,
                 "src": "445:21:14"
               },
-              "referencedDeclaration": 5673,
+              "referencedDeclaration": 5764,
               "src": "445:21:14",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_UintSet_$5673_storage_ptr",
+                "typeIdentifier": "t_struct$_UintSet_$5764_storage_ptr",
                 "typeString": "struct EnumerableSet.UintSet"
               }
             },
@@ -1423,7 +1423,7 @@
           },
           {
             "body": {
-              "id": 3364,
+              "id": 3455,
               "nodeType": "Block",
               "src": "526:144:14",
               "statements": [
@@ -1435,7 +1435,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 3359,
+                        "id": 3450,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1444,18 +1444,18 @@
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 3356,
+                            "id": 3447,
                             "name": "_msgSender",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 5191,
+                            "referencedDeclaration": 5282,
                             "src": "557:10:14",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
                               "typeString": "function () view returns (address)"
                             }
                           },
-                          "id": 3357,
+                          "id": 3448,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1473,11 +1473,11 @@
                         "nodeType": "BinaryOperation",
                         "operator": "==",
                         "rightExpression": {
-                          "id": 3358,
+                          "id": 3449,
                           "name": "_issuingBank",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3350,
+                          "referencedDeclaration": 3441,
                           "src": "573:12:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1492,7 +1492,7 @@
                       },
                       {
                         "hexValue": "4f6e6c792049737375696e672042616e6b20697320616c6c6f77656420746f2063616c6c2074686973",
-                        "id": 3360,
+                        "id": 3451,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1518,7 +1518,7 @@
                           "typeString": "literal_string \"Only Issuing Bank is allowed to call this\""
                         }
                       ],
-                      "id": 3355,
+                      "id": 3446,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1532,7 +1532,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 3361,
+                    "id": 3452,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1547,23 +1547,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3362,
+                  "id": 3453,
                   "nodeType": "ExpressionStatement",
                   "src": "536:116:14"
                 },
                 {
-                  "id": 3363,
+                  "id": 3454,
                   "nodeType": "PlaceholderStatement",
                   "src": "662:1:14"
                 }
               ]
             },
-            "id": 3365,
+            "id": 3456,
             "name": "onlyIssuingBank",
             "nameLocation": "508:15:14",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 3354,
+              "id": 3445,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "523:2:14"
@@ -1574,7 +1574,7 @@
           },
           {
             "body": {
-              "id": 3377,
+              "id": 3468,
               "nodeType": "Block",
               "src": "749:58:14",
               "statements": [
@@ -1582,11 +1582,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3374,
+                        "id": 3465,
                         "name": "tokenId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3367,
+                        "referencedDeclaration": 3458,
                         "src": "792:7:14",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1602,32 +1602,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 3372,
+                        "id": 3463,
                         "name": "_subscriptionIds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3353,
+                        "referencedDeclaration": 3444,
                         "src": "766:16:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                          "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                           "typeString": "struct EnumerableSet.UintSet storage ref"
                         }
                       },
-                      "id": 3373,
+                      "id": 3464,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "contains",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5736,
+                      "referencedDeclaration": 5827,
                       "src": "766:25:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$_t_uint256_$returns$_t_bool_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$_t_uint256_$returns$_t_bool_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                         "typeString": "function (struct EnumerableSet.UintSet storage pointer,uint256) view returns (bool)"
                       }
                     },
-                    "id": 3375,
+                    "id": 3466,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1642,15 +1642,15 @@
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 3371,
-                  "id": 3376,
+                  "functionReturnParameters": 3462,
+                  "id": 3467,
                   "nodeType": "Return",
                   "src": "759:41:14"
                 }
               ]
             },
             "functionSelector": "839db9c0",
-            "id": 3378,
+            "id": 3469,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1658,17 +1658,17 @@
             "nameLocation": "685:11:14",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3368,
+              "id": 3459,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3367,
+                  "id": 3458,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nameLocation": "705:7:14",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3378,
+                  "scope": 3469,
                   "src": "697:15:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1677,7 +1677,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3366,
+                    "id": 3457,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "697:7:14",
@@ -1692,17 +1692,17 @@
               "src": "696:17:14"
             },
             "returnParameters": {
-              "id": 3371,
+              "id": 3462,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3370,
+                  "id": 3461,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3378,
+                  "scope": 3469,
                   "src": "743:4:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1711,7 +1711,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3369,
+                    "id": 3460,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "743:4:14",
@@ -1725,7 +1725,7 @@
               ],
               "src": "742:6:14"
             },
-            "scope": 3411,
+            "scope": 3502,
             "src": "676:131:14",
             "stateMutability": "view",
             "virtual": true,
@@ -1733,7 +1733,7 @@
           },
           {
             "body": {
-              "id": 3399,
+              "id": 3490,
               "nodeType": "Block",
               "src": "889:114:14",
               "statements": [
@@ -1745,17 +1745,17 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 3390,
+                        "id": 3481,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 3386,
+                          "id": 3477,
                           "name": "idx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3380,
+                          "referencedDeclaration": 3471,
                           "src": "907:3:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1769,32 +1769,32 @@
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 3387,
+                              "id": 3478,
                               "name": "_subscriptionIds",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3353,
+                              "referencedDeclaration": 3444,
                               "src": "913:16:14",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                                "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                                 "typeString": "struct EnumerableSet.UintSet storage ref"
                               }
                             },
-                            "id": 3388,
+                            "id": 3479,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
                             "lValueRequested": false,
                             "memberName": "length",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 5751,
+                            "referencedDeclaration": 5842,
                             "src": "913:23:14",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                              "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                               "typeString": "function (struct EnumerableSet.UintSet storage pointer) view returns (uint256)"
                             }
                           },
-                          "id": 3389,
+                          "id": 3480,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1817,7 +1817,7 @@
                       },
                       {
                         "hexValue": "496478206f766572666c6f77",
-                        "id": 3391,
+                        "id": 3482,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1843,7 +1843,7 @@
                           "typeString": "literal_string \"Idx overflow\""
                         }
                       ],
-                      "id": 3385,
+                      "id": 3476,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1857,7 +1857,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 3392,
+                    "id": 3483,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1872,7 +1872,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3393,
+                  "id": 3484,
                   "nodeType": "ExpressionStatement",
                   "src": "899:56:14"
                 },
@@ -1880,11 +1880,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3396,
+                        "id": 3487,
                         "name": "idx",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3380,
+                        "referencedDeclaration": 3471,
                         "src": "992:3:14",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1900,32 +1900,32 @@
                         }
                       ],
                       "expression": {
-                        "id": 3394,
+                        "id": 3485,
                         "name": "_subscriptionIds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3353,
+                        "referencedDeclaration": 3444,
                         "src": "972:16:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                          "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                           "typeString": "struct EnumerableSet.UintSet storage ref"
                         }
                       },
-                      "id": 3395,
+                      "id": 3486,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "at",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5772,
+                      "referencedDeclaration": 5863,
                       "src": "972:19:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$_t_uint256_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$_t_uint256_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                         "typeString": "function (struct EnumerableSet.UintSet storage pointer,uint256) view returns (uint256)"
                       }
                     },
-                    "id": 3397,
+                    "id": 3488,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1940,15 +1940,15 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3384,
-                  "id": 3398,
+                  "functionReturnParameters": 3475,
+                  "id": 3489,
                   "nodeType": "Return",
                   "src": "965:31:14"
                 }
               ]
             },
             "functionSelector": "dc311dd3",
-            "id": 3400,
+            "id": 3491,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1956,17 +1956,17 @@
             "nameLocation": "822:15:14",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3381,
+              "id": 3472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3380,
+                  "id": 3471,
                   "mutability": "mutable",
                   "name": "idx",
                   "nameLocation": "846:3:14",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3400,
+                  "scope": 3491,
                   "src": "838:11:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1975,7 +1975,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3379,
+                    "id": 3470,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "838:7:14",
@@ -1990,17 +1990,17 @@
               "src": "837:13:14"
             },
             "returnParameters": {
-              "id": 3384,
+              "id": 3475,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3383,
+                  "id": 3474,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3400,
+                  "scope": 3491,
                   "src": "880:7:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2009,7 +2009,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3382,
+                    "id": 3473,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "880:7:14",
@@ -2023,7 +2023,7 @@
               ],
               "src": "879:9:14"
             },
-            "scope": 3411,
+            "scope": 3502,
             "src": "813:190:14",
             "stateMutability": "view",
             "virtual": true,
@@ -2031,7 +2031,7 @@
           },
           {
             "body": {
-              "id": 3409,
+              "id": 3500,
               "nodeType": "Block",
               "src": "1080:49:14",
               "statements": [
@@ -2041,32 +2041,32 @@
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 3405,
+                        "id": 3496,
                         "name": "_subscriptionIds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3353,
+                        "referencedDeclaration": 3444,
                         "src": "1097:16:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_UintSet_$5673_storage",
+                          "typeIdentifier": "t_struct$_UintSet_$5764_storage",
                           "typeString": "struct EnumerableSet.UintSet storage ref"
                         }
                       },
-                      "id": 3406,
+                      "id": 3497,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "length",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 5751,
+                      "referencedDeclaration": 5842,
                       "src": "1097:23:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5673_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5673_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_struct$_UintSet_$5764_storage_ptr_$returns$_t_uint256_$bound_to$_t_struct$_UintSet_$5764_storage_ptr_$",
                         "typeString": "function (struct EnumerableSet.UintSet storage pointer) view returns (uint256)"
                       }
                     },
-                    "id": 3407,
+                    "id": 3498,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2081,15 +2081,15 @@
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 3404,
-                  "id": 3408,
+                  "functionReturnParameters": 3495,
+                  "id": 3499,
                   "nodeType": "Return",
                   "src": "1090:32:14"
                 }
               ]
             },
             "functionSelector": "2530ea71",
-            "id": 3410,
+            "id": 3501,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2097,23 +2097,23 @@
             "nameLocation": "1018:21:14",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3401,
+              "id": 3492,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1039:2:14"
             },
             "returnParameters": {
-              "id": 3404,
+              "id": 3495,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3403,
+                  "id": 3494,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3410,
+                  "scope": 3501,
                   "src": "1071:7:14",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2122,7 +2122,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3402,
+                    "id": 3493,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1071:7:14",
@@ -2136,14 +2136,14 @@
               ],
               "src": "1070:9:14"
             },
-            "scope": 3411,
+            "scope": 3502,
             "src": "1009:120:14",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 3412,
+        "scope": 3503,
         "src": "253:879:14"
       }
     ],
@@ -2155,7 +2155,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-06-12T20:40:43.710Z",
+  "updatedAt": "2021-06-29T20:15:43.145Z",
   "devdoc": {
     "author": "AshtonIzmev",
     "details": "Generic Banking smart contracts",
