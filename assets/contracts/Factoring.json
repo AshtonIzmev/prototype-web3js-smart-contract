@@ -34,7 +34,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -47,7 +48,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -66,7 +68,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -144,7 +147,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"medToken_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"fpToken_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getProduct\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"idx\",\"type\":\"uint256\"}],\"name\":\"getSubscription\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getSubscriptionLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"isSuscribed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"payInvoice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"invoiceAmount_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"borrower_\",\"type\":\"address\"}],\"name\":\"sellInvoice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"validateInvoice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"AshtonIzmev\",\"details\":\"Banking smart contracts - Factoring\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"payInvoice(uint256)\":{\"notice\":\"Pay the owner of the FP NFT invoice representation\"},\"sellInvoice(uint256,address)\":{\"notice\":\"Get a token in exchange of an invoice\"},\"validateInvoice(uint256)\":{\"notice\":\"Validate an invoice\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/Factoring.sol\":\"Factoring\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/issam/git/solidity-contracts/sol/truffle/contracts/identity/KYC.sol\":{\"keccak256\":\"0x719a19c15f3462ec6a48a7316e66dd7f8cb5a7b7dbb6d5400e8307e5bc110a72\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://69aaedb25ab58047bbe66a0e059955228e298fdf3a73421f7841e39f50e235a3\",\"dweb:/ipfs/QmRT23qnjwzU9q2VvwFyHtzrjRFq7Hk9efR6gni2AnLCie\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xfeccdcbf67b2006a715e5af1a4c7556004d95b2806552b5cc54e46e8eb7e887b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://45b1f9043c0fb450272f20ed19ef633fcba1b129d602651a856dfae1a2243a2c\",\"dweb:/ipfs/QmUTSQiDikkcNtTtyDpkEwCM5ztVUUh9c1inBukn6HC5Vr\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xf8e8d118a7a8b2e134181f7da655f6266aa3a0f9134b2605747139fcb0c5d835\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9ec48567e7ad06acb670980d5cdf3fd7f3949bf12894f02d68c3bb43e75aa84f\",\"dweb:/ipfs/QmaG3R2J9cz92YT77vFjYrjMNU2wHp4ypwYD62HqDUqS5U\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x83fe24f5c04a56091e50f4a345ff504c8bff658a76d4c43b16878c8f940c53b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d4c3df1a7ca104b633a7d81c6c6f5192367d150cd5a32cba81f7f27012729013\",\"dweb:/ipfs/QmSim72e3ZVsfgZt8UceCvbiSuMRHR6WDsiamqNzZahGSY\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x2d9f9af8b84d252e0e7ee716e4cb3ad1b58f3ec6619e4f54f40d4b5e28f75eb7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://43d6abdcb4cd5be9933f526b53f21008e9a7ab75ce134478625cc8ccd3c1a638\",\"dweb:/ipfs/QmZrzWUYmNANRCvHaMGsJQXYnWCe6HvMmvrqaPn1GEcpJ1\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xc1c941ad1e580b4623007305921efe2f26fc7320a4edc226234dd707c658a428\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://473e11d739868e0d9f48254ccf84ba63290d6a2321d59a37b74c244a27f9cad7\",\"dweb:/ipfs/QmUGzDmecP936jzgM7SYyGwR1YgBGsveoHHJTbDfB8jbGF\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x96877bb2eb8ca360e949ee1bd77b47a14e92e42f79897c350f088f87a3c231d4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://48593d699a4ef6b5bd2efb20d37320e69303fd27d4b59a2b6b8a8e563e608456\",\"dweb:/ipfs/QmdAPS8uLrzPJEeFZyJVkwTtaL3KB9jo9wJm1UcoJP55wT\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0xb8d11e77eb1ed34a33720edb551d7d6a6b0eee2bfaa40a7024020e1fdf879b16\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c583283c838cc624a96a69eaa823fa92ac5294ec88d417e266c09ea091e0ae62\",\"dweb:/ipfs/QmNdzitXaFADaxooWpB4WsckkDyr4j6GQRxBjyKXsvEeXv\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/Factoring.sol\":{\"keccak256\":\"0x631828d9e0d01fb56e61aed2dd6e4af451abc4a183d197dab934b934a101fd3a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33d066cc28692eaef70628626f4688e2f181769cd1d57f3e0c94bdfecfd0c62a\",\"dweb:/ipfs/QmUbGmfPyoEKktSeugrYUcesCwhBwRQRv7Ptgdh3zfTxoA\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/bank/GenericProduct.sol\":{\"keccak256\":\"0xf9b0d6452d57eb155693c15b561304e758043b59eeb8496a44f354d08f57952f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f18c2941ef329c184f2b6b43a7d5ca5b13403bb22223bcf83bec3c2951a8763\",\"dweb:/ipfs/QmPGCJ5nhKaHC3ELD9jQR52v1Zs6YVCXPyBzx8cPdVVNPs\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/med/MED.sol\":{\"keccak256\":\"0x74bd71fb11114464b71e092403283a1d9626476ca4bb29666b3b733005b10535\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7b4f7578e950b11a205c34b218e110de1ec1f5017bce566a75e542f82e790f6\",\"dweb:/ipfs/QmZY6QjhDsKtxmgf599vhDDN2g1M7xdGF9tvW6TZE4oVrr\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/token/nft/FP.sol\":{\"keccak256\":\"0x48aea8f8dcc6a0b5868a48d8007f8f5778a17ad7c78d3c5a7adf9411eac04f24\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bc056109c1762605515aa570dbcf085d4a2895561e0d88fbf873c43b6644690f\",\"dweb:/ipfs/QmUprDMmnKbDYpkXwuLtFmKtypgLMDUUZtYGSBA1zvq7fz\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Address.sol\":{\"keccak256\":\"0x069b2631bb5b5193a58ccf7a06266c7361bd2c20095667af4402817605627f45\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a4c96fafff76deda5697c3c5c98cade6e6e1b178254544c106bf360c079ce4e\",\"dweb:/ipfs/QmXmxubE3jnatFgZuN8ay1VV6hZ8WRmhvUjNpeVjki15HX\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Counters.sol\":{\"keccak256\":\"0x62d306ff0499a11913bc60b5939eec619509b5c67b30e86ebf8b8bda0b7a7fee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6712ca27a06062db31465b1470e6207553553a9bb0b4358d918b35bdae5b4ffe\",\"dweb:/ipfs/QmZ92pU9DJ3h1qREMFvDQhArSy6fh6zA983NeLFHRs1qKJ\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/EnumerableSet.sol\":{\"keccak256\":\"0xd3f231a05686a49cf949c85df6dd3e2a747d20bcfd0d846afc1dd8e5696444e5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c66d2ecbee7159a331e2bdec3d6229587f5f05ca4ff50b29401a271e78770162\",\"dweb:/ipfs/QmUVbQyfKfRAoLuoFtd4UuYkdwDzyNR1Yc3nwCwbhGF47C\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/Strings.sol\":{\"keccak256\":\"0x456e9b3a2bfe189b5249857f624f4139e59331db518483b456c4e587a20552e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1123c9545decc48a011370ebab4bf53dda98524fa21f9498e68851ba8f0ffc0f\",\"dweb:/ipfs/QmUpgMg8EFDnv87ePKUjXxXpJT3qwHRj9VDNSnRxu7T9sy\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549\",\"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn\"]},\"/home/issam/git/solidity-contracts/sol/truffle/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]}},\"version\":1}",
@@ -5859,12 +5863,13 @@
     "1338": {
       "events": {},
       "links": {},
-      "address": "0x8810bab6899Df1E7307FB2Bf0ac0491a60E5ba1B",
-      "transactionHash": "0x3a2a8c99b19ffdfa9aa9240f1f30f2374c9a9b586140922d9f9aa62dfe8edd66"
+      "address": "0x0ddE0Dd1B63E87dd7dB3a0559Cc9Aa83fcf60ce2",
+      "transactionHash": "0xbbbcba37c692944143d43c6c04d7ea9301c047ad627a89bcebdbd5c7ea5b51ad"
     }
   },
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-06-29T20:15:43.139Z",
+  "updatedAt": "2021-07-04T14:19:59.998Z",
+  "networkType": "ethereum",
   "devdoc": {
     "author": "AshtonIzmev",
     "details": "Banking smart contracts - Factoring",

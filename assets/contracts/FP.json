@@ -3921,12 +3921,12 @@
         }
       },
       "links": {},
-      "address": "0xe8ad1d7A5e4f9B1AFf94D117970Dbf2C487e89d7",
-      "transactionHash": "0xdcb46b3eaac058e2e76d3a0522795cecd6e90312398f8d11766f1265d5232947"
+      "address": "0x3775733aa1D91b9bB68Cf11b49A3538612Db4A47",
+      "transactionHash": "0xe9a5037f790f4f334e8c5d320fa9882e8aa7afa17acf49f892bfcdc2522e6321"
     }
   },
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-06-29T19:27:43.601Z",
+  "updatedAt": "2021-07-04T14:19:59.986Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "AshtonIzmev",

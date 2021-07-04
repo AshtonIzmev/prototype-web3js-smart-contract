@@ -6,25 +6,91 @@ permalink: /bourse/
 
 <div class="row connexion">
 	<!-- Solde -->
-	<div class="col-12">
+	<div class="col-6">
 		<!-- small box -->
 		<div class="small-box bg-dark">
 			<div class="inner">
 				{% include connexion.html %}
 			</div>
-			<a href="/#instruction" class="solde small-box-footer">Instructions <i
-					class="fas fa-arrow-circle-right"></i></a>
+      <a href="/#instruction" class="solde small-box-footer">Instructions <i class="fas fa-arrow-circle-right"></i></a>
 		</div>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-lg-12">
-		<p><strong>Pas encore développé :(</strong></p>
-		<p>C'est pour bientôt.</p>
+	<div class="col-lg-3 col-6">
+		<!-- small box -->
+		<div class="small-box bg-success">
+			<div class="inner">
+				<h3>
+					<span id="solde">?</span><sup>MED</sup>
+				</h3>
+			</div>
+			<div class="icon">
+				<i class="ion ion-bag"></i>
+			</div>
+			<a href="#" class="small-box-footer" onclick="loadMedInfos()">Mettre à jour <i
+					class="fas fa-arrow-circle-right"></i></a>
+		</div>
+	</div>
+	<div class="col-lg-3 col-6">
+		<!-- small box -->
+		<div class="small-box bg-default">
+			<div class="inner">
+				<p>Des frais de <span id="sellfees"></span><sup>MED</sup> pour toute opération de <span style="font-weight: bold;">mise en vente</span> et de <span id="withdrawfees"></span><sup>MED</sup> pour tout <span style="font-weight: bold;">retrait d'offre de vente</span> sont appliqués</p>
+			</div>
+		</div>
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-light">
+			<div class="card-header">
+				<h3 class="card-title">Produits souscrits</h3>
+			</div>
+			<div class="card-body p-0">
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Produit</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyevents">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="modal-sell" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Vendre un produit financier</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<span style="display: none;" id="tokid"></span>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="productAmount">Prix de vente</label>
+					<input type="number" class="form-control" id="productAmount">
+				</div>
+			</div>
+			<div class="modal-footer justify-content-between">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+				<button type="button" class="btn btn-primary" onclick="onSellTokenProduct()">Vendre</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/assets/js/banking/banking.js"></script>
 <script type="text/javascript" src="/assets/js/banking/bourse.js"></script>
 
 <script>

@@ -28,10 +28,8 @@ async function loadMedInfos() {
     console.log("Solde à jour");
 };
 
-
-
-async function buyProduct(productMontant) {
-
+async function buyProduct() {
+    var productMontant = $("#productAmount").val();
     var dat2pct6mois = $("#dat2pct6mois")[0].checked;
     var dat5pct12mois = $("#dat5pct12mois")[0].checked;
 
@@ -60,7 +58,7 @@ async function buyProduct(productMontant) {
         $('.toast-body').text("La souscription au DAT " + libDat + " a été correctement réalisé");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
         loadMedInfos();
-        loadDATHistoric();
+        loadDATHistoric("#tbodyevents");
     };
 
     $('#modal-subscribe').modal('hide');
@@ -102,7 +100,7 @@ async function cancelProduct(tokId) {
 
 async function payProduct(tokId, daysRemaining) {
 
-    if (Number(daysRemaining) > 0) {
+    if (Number(daysRemaining) >= 0) {
         $('.toast-header').text("Paiement de DAT");
         $('.toast-body').text("Votre DAT n'est pas encore échu");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
@@ -115,18 +113,18 @@ async function payProduct(tokId, daysRemaining) {
 
     function errorCallback(error) {
         console.log(error);
-        $('.toast-header').text("Annulation de DAT");
+        $('.toast-header').text("Paiement de DAT");
         $('.toast-body').text("Une erreur est survenue lors de la soumission");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
     };
     function transactionHashCallback(transactionHash) {
-        $('.toast-header').text("Annulation de DAT");
-        $('.toast-body').text("Votre annulation est en cours. Merci de patienter.");
+        $('.toast-header').text("Paiement de DAT");
+        $('.toast-body').text("Votre paiement est en cours. Merci de patienter.");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
     };
     function finalCallback(data) {
-        $('.toast-header').text("Annulation de DAT");
-        $('.toast-body').text("L'annulation de la souscription au DAT a été correctement réalisé");
+        $('.toast-header').text("Paiement de DAT");
+        $('.toast-body').text("Le paiement du DAT à l'échéance a été correctement réalisé");
         $('.toast').toast({ 'delay': 3000 }).toast('show');
         loadMedInfos();
         loadDATHistoric();
@@ -138,60 +136,39 @@ async function payProduct(tokId, daysRemaining) {
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
 }
 
-async function onBuyProduct() {
-
+async function onPreauthorize(callback) {
     var productMontant = $("#productAmount").val();
-    var contractObject = await getContractObject(medCtrAdd, medJsonPath);
-    var contractMethod = "approve";
-    var contractArg = [datCtrAdd, productMontant*100];
-
-    function errorCallback(error) {
-        console.log(error);
-        $('.toast-header').text("Autorisation de débit");
-        $('.toast-body').text("Une erreur est survenue lors de la pré-autorisation");
-        $('.toast').toast({ 'delay': 3000 }).toast('show');
-    };
-    function transactionHashCallback(transactionHash) {
-        $('.toast-header').text("Autorisation de débit");
-        $('.toast-body').text("Votre pré-autorisation est en cours. Merci de patienter.");
-        $('.toast').toast({ 'delay': 3000 }).toast('show');
-    };
-    function finalCallback(data) {
-        $('.toast-header').text("Autorisation de débit");
-        $('.toast-body').text("La pré-autorisation pour un montant de  " + productMontant + "MED a été correctement effectuée");
-        $('.toast').toast({ 'delay': 3000 }).toast('show');
-        buyProduct(productMontant);
-    };
-
-    $('#modal-allow').modal('hide');
-    $('.modal-backdrop').hide();
-
-    callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
+    preauthorizeAmount(callback, datCtrAdd, productMontant);
 };
 
 async function loadDATHistoric() {
     var contractObjectMed = await getContractObject(medCtrAdd, medJsonPath);
+    var contractObjectFP = await getContractObject(fpCtrAdd, fpJson);
     let days = await getContractValueWoArg(contractObjectMed, "daysElapsed");
     var contractObjectDat = await getContractObject(datCtrAdd, datJson);
     let subsLen = await getContractValueWoArg(contractObjectDat, "getSubscriptionLength");
     let account = await getPrimaryAccount();
     $("#tbodyevents").html("");
-    for (let i=1; i<Number(subsLen)+1; i++) {
-        const date = new Date('2024-10-18T00:00:00');
-        getContractValueWiArg(contractObjectDat, "getProduct", i).then(function(prod) {
-            const daysLeft = (Number(prod[1])-days);
-            const monthsLeft = Math.floor(daysLeft/30);
-            const isYou = (prod[4].toLowerCase() == account.toLowerCase());
-            const actions = isYou ? `
-                <a href='#' onclick='cancelProduct("${i}")'>Annuler</a> | 
-                <a href='#' onclick='payProduct("${i}", "${daysLeft}")'>Payer</a>
-            ` : `Propriétaire : ${prod[4]}`;
-            $("#tbodyevents").append(
-                `<tr>
-                <td>DAT de ${prod[3]/100}MED à ${prod[2]}% payable dans ${monthsLeft} mois et ${daysLeft%30} jours</td>
-                <td>${actions}</td>
-                </tr>`
-            );
+    for (let i=0; i<Number(subsLen); i++) {
+        getContractValueWiArg(contractObjectDat, "getSubscription", i).then(function(tokid) {
+            getContractValueWiArg(contractObjectDat, "getProduct", tokid).then(function(prod) {
+                getContractValueWiArg(contractObjectFP, "ownerOf", tokid).then(function(owner) {
+                    const daysLeft = (Number(prod[1])-days+Number(prod[0]));
+                    const monthsLeft = Math.floor(daysLeft/30);
+                    const isYou = (owner.toLowerCase() == account.toLowerCase());
+                    const payable = daysLeft < 0 ? `payable maintenant` : `payable dans ${monthsLeft} mois et ${daysLeft%30} jours`
+                    const actions = isYou ? `
+                        <a href='#' onclick='cancelProduct("${tokid}")'>Annuler</a> | 
+                        <a href='#' onclick='payProduct("${tokid}", "${daysLeft}")'>Payer</a>
+                    ` : `Propriétaire : ${owner}`;
+                    $("#tbodyevents").append(
+                        `<tr>
+                        <td>DAT de ${prod[3]/100}MED à ${prod[2]}% ${payable}</td>
+                        <td>${actions}</td>
+                        </tr>`
+                    );
+                });
+            });
         });
     }
 }

@@ -150,3 +150,9 @@ async function getContractValueWi2Arg(contractObject, methodTypeArg, methodCallA
 async function getContractValueWoArg(contractObject, methodTypeArg) {
     return contractObject.methods[methodTypeArg]().call();
 }
+
+function showToastGeneric(libHead, libBody, delay) {
+    $('.toast-header').text(libHead);
+    $('.toast-body').text(libBody);
+    $('.toast').toast({ 'delay': delay }).toast('show');
+};

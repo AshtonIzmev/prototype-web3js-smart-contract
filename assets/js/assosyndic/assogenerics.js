@@ -53,12 +53,6 @@ function toggleBlock(str) {
 // TOAST FUNCTIONS
 /////////////////////////
 
-function showToastGeneric(libHead, libBody, delay) {
-    $('.toast-header').text(libHead);
-    $('.toast-body').text(libBody);
-    $('.toast').toast({ 'delay': delay }).toast('show');
-};
-
 function showToast() {
     showToastGeneric("Recherche d'association", "Merci de renseigner une adresse valide", 5000)
 };
