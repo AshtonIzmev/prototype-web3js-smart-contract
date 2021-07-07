@@ -1,8 +1,7 @@
-
 loadScript("/home/ethereum/tmp/med.abi.js")
 loadScript("/home/ethereum/tmp/med.bytecode.js")
 
-var med = eth.contract(abi).at("0x01AbA88b557c46dC82D9B6f8367125370AB23c49");
+var med = eth.contract(medAbi).at("0xdd3828bd7d36555f96c1aaae7668a1e253dde7dd");
 
 med.incrementDay({from: eth.coinbase});
 

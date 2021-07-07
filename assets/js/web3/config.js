@@ -16,14 +16,16 @@ var factoringAdd = "0x19180a999A6142fd79241f8739Ef6e0189174bFe"
 var mudarabaAdd = "0x9F132168A0DA87c75ef03991784d111B5ad4d899"
 
 // Geth const
-let masterGAdd = "0x92f1Dd59b999d4E1DE9Ce3365C03625495d643d5"
-let kycGAdd = "0x92f1Dd59b999d4E1DE9Ce3365C03625495d643d5"
-let medGAdd = "0x13198770500C8d735b2838bf6E57876e2446abeB"
-let fpGAdd = "0x5CcE4DD66b9FF18F00ec7B131C176879A7911D5B"
-let marketplaceGAdd = "0xd1e7347519b9D99B617558293D1dE6401205751C"
-let datGAdd = "0x0105f484130586b6146dF1480F6f31F2Ec10f206"
-let factoringGAdd = "0x2EEbD011413247F2079DCEa89aac72D77fEb5ABa"
-let mudarabaGAdd = "0xC62cd7c6AcAf9002D5A065732D36f584dE94d4E7"
+let masterGAdd = "0x1147d78192b6a6c6bcbeaf32e29cd1a82072537d" // deployed
+let kycGAdd = "0x4b29b2d3ebc574984360a114990b4c6edaeb6bf7" // deployed
+let medGAdd = "0xdd3828bd7d36555f96c1aaae7668a1e253dde7dd" // deployed
+let fpGAdd = "0x76a0b26c5e08282bcb421e66ecc78cb59f1e834c" // deployed
+let marketplaceGAdd = "0xbb1bdd553f21bd0aee5a0e783d19246ceebba571" // deployed
+let datGAdd = "0x60d2729a948cd5cec18943bb2d69a8a58e51fd14" // deployed
+let factoringGAdd = "0x36a43738884bb1b1af247d3428dde7f6c952b239" // deployed
+let mudarabaGAdd = "0xfca80a163fa4462dfb91226c8e8058e82788f4d2" // deployed
+let mudarabaGAdd2 = "0x8e8a4b517135bc71e8e68a547265752e99a4f06f" // deployed
+let mudarabaGAdd3 = "0x69fc10dad001677402d6fb6f3832aa4bf16d12c4" // deployed
 
 const masterCtrAdd = isLocalhost ? masterAdd : masterGAdd;
 const kycCtrAdd = isLocalhost ? kycAdd : kycGAdd;
@@ -33,6 +35,8 @@ const marketplaceCtrAdd = isLocalhost ? marketplaceAdd : marketplaceGAdd;
 const datCtrAdd = isLocalhost ? datAdd : datGAdd;
 const factoringCtrAdd = isLocalhost ? factoringAdd : factoringGAdd;
 const mudarabaCtrAdd = isLocalhost ? mudarabaAdd : mudarabaGAdd;
+const mudarabaCtrAdd2 = isLocalhost ? mudarabaAdd : mudarabaGAdd2;
+const mudarabaCtrAdd3 = isLocalhost ? mudarabaAdd : mudarabaGAdd3;
 
 // ! Modifier le token contract address également dans med.day et med.month !
 const rootContractJson = '/assets/contracts/';
