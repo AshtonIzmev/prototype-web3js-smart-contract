@@ -58,3 +58,20 @@ async function preauthorizeToken(callback, tokId) {
 
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
 };
+
+async function loadKycDic() {
+    var kycDic = {}
+    var contractObject = await getContractObject(kycCtrAdd, kycJsonPath);
+    contractObject.getPastEvents("IdentitySubmission", { fromBlock: 0, toBlock: 'latest' }, function (error, eventResult) {
+        if (error)
+            console.log(error);
+        else if (eventResult) {
+            eventResult.forEach(function (e) {
+                let kycName = e.returnValues._name;
+                let kycAdd = e.returnValues._add;
+                kycDic[kycAdd] = kycName;
+            });
+        }
+    });
+    return kycDic;
+};

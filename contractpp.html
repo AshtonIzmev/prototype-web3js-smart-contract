@@ -49,7 +49,7 @@ permalink: /contractpp/
 <div class="row">
 	<div class="col-md-6">
 		<div class="small-box bg-primary"  style="padding: 2px;">
-			<a href="#" class="small-box-footer btn btn-default" data-toggle="modal" data-target="#modal-subscribe">Souscrire à un DAT</a>
+			<a href="#" class="small-box-footer btn btn-default" data-toggle="modal" data-target="#modal-subscribe">Souscrire à un produit DAT/Mudaraba</a>
 		</div>
 	</div>
 </div>
@@ -58,7 +58,7 @@ permalink: /contractpp/
 	<div class="col-md-6">
 		<div class="card card-light">
 			<div class="card-header">
-				<h3 class="card-title">Produits DAT souscrits</h3>
+				<h3 class="card-title">Produits souscrits</h3>
 			</div>
 			<div class="card-body p-0">
 				<table class="table table-sm">
@@ -95,6 +95,10 @@ permalink: /contractpp/
 						<input type="radio" id="dat5pct12mois" name="product" value="5p12t">
 						<label for="dat5pct12mois">DAT 5% à échéance 12 mois</label>
 					</div>
+					<div>
+						<input type="radio" id="mudaraba1" name="product" value="mud1">
+						<label for="mudaraba1"><div id="mud1txt"></div></label>
+					</div>
 				</div>
 				<div class="form-group">
 					<label for="productAmount">Montant</label>
@@ -104,6 +108,40 @@ permalink: /contractpp/
 			<div class="modal-footer justify-content-between">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
 				<button type="button" class="btn btn-primary" onclick="onPreauthorize(buyProduct)">Acheter</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-mudaraba" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Gérer sa participation</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<div>
+						<input type="radio" id="capitalize" name="mud" value="cap">
+						<label for="capitalize">Capitaliser</label>
+					</div>
+					<div>
+						<input type="radio" id="decapitalize" name="mud" value="dec">
+						<label for="decapitalize">Décaisser/Décapitaliser</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="productCapital">Montant</label>
+					<input type="number" class="form-control" id="productCapital">
+				</div>
+			</div>
+			<span style="display: none;" id="tokid"></span>
+			<div class="modal-footer justify-content-between">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+				<button type="button" class="btn btn-primary" onclick="onDeCapitalize()">Acheter</button>
 			</div>
 		</div>
 	</div>

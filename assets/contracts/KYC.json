@@ -173,7 +173,7 @@
     "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/identity/KYC.sol",
     "exportedSymbols": {
       "Context": [
-        5294
+        5334
       ],
       "KYC": [
         1207
@@ -201,7 +201,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1208,
-        "sourceUnit": 5295,
+        "sourceUnit": 5335,
         "src": "58:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -214,7 +214,7 @@
               "id": 1078,
               "name": "Context",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5294,
+              "referencedDeclaration": 5334,
               "src": "106:7:3"
             },
             "id": 1079,
@@ -223,14 +223,14 @@
           }
         ],
         "contractDependencies": [
-          5294
+          5334
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 1207,
         "linearizedBaseContracts": [
           1207,
-          5294
+          5334
         ],
         "name": "KYC",
         "nameLocation": "99:3:3",
@@ -339,7 +339,7 @@
                             "name": "_msgSender",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 5282,
+                            "referencedDeclaration": 5322,
                             "src": "251:10:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -498,7 +498,7 @@
                         "name": "_msgSender",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5282,
+                        "referencedDeclaration": 5322,
                         "src": "388:10:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -1089,7 +1089,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5282,
+                          "referencedDeclaration": 5322,
                           "src": "907:10:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -1309,7 +1309,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5282,
+                          "referencedDeclaration": 5322,
                           "src": "1052:10:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -1773,7 +1773,7 @@
     "absolutePath": "/home/issam/git/solidity-contracts/sol/truffle/contracts/identity/KYC.sol",
     "exportedSymbols": {
       "Context": [
-        5294
+        5334
       ],
       "KYC": [
         1207
@@ -1801,7 +1801,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1208,
-        "sourceUnit": 5295,
+        "sourceUnit": 5335,
         "src": "58:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1814,7 +1814,7 @@
               "id": 1078,
               "name": "Context",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5294,
+              "referencedDeclaration": 5334,
               "src": "106:7:3"
             },
             "id": 1079,
@@ -1823,14 +1823,14 @@
           }
         ],
         "contractDependencies": [
-          5294
+          5334
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 1207,
         "linearizedBaseContracts": [
           1207,
-          5294
+          5334
         ],
         "name": "KYC",
         "nameLocation": "99:3:3",
@@ -1939,7 +1939,7 @@
                             "name": "_msgSender",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 5282,
+                            "referencedDeclaration": 5322,
                             "src": "251:10:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -2098,7 +2098,7 @@
                         "name": "_msgSender",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 5282,
+                        "referencedDeclaration": 5322,
                         "src": "388:10:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -2689,7 +2689,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5282,
+                          "referencedDeclaration": 5322,
                           "src": "907:10:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -2909,7 +2909,7 @@
                           "name": "_msgSender",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5282,
+                          "referencedDeclaration": 5322,
                           "src": "1052:10:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
@@ -3429,12 +3429,12 @@
         }
       },
       "links": {},
-      "address": "0xF2C72F5F986c588918Ba62FBa0e1cb58F69410BF",
-      "transactionHash": "0x9f422f4691310e6bdff8cfa76d8f96d0db09aa006bd37ebdebe8df240c7b2560"
+      "address": "0xeca5826E2Ec427ECB7591D65dB15312bd0fAE229",
+      "transactionHash": "0xfe6e369d15505d9d9b015e70d93893f598965500d0222b1e22cea6dee1b8a982"
     }
   },
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-07-04T14:19:59.966Z",
+  "updatedAt": "2021-07-07T12:41:45.661Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

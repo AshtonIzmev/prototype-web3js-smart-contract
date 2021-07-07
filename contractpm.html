@@ -18,9 +18,83 @@ permalink: /contractpm/
 </div>
 
 <div class="row">
-	<div class="col-lg-12">
-		<p><strong>Pas encore développé :(</strong></p>
-		<p>C'est pour bientôt.</p>
+	<div class="col-lg-3 col-6">
+		<!-- small box -->
+		<div class="small-box bg-success">
+			<div class="inner">
+				<h3>
+					<span id="solde">?</span><sup>MED</sup>
+				</h3>
+			</div>
+			<div class="icon">
+				<i class="ion ion-bag"></i>
+			</div>
+			<a href="#" class="small-box-footer" onclick="loadMedInfos()">Mettre à jour <i
+					class="fas fa-arrow-circle-right"></i></a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="small-box bg-primary"  style="padding: 2px;">
+			<a href="#" class="small-box-footer btn btn-default" data-toggle="modal" data-target="#modal-subscribe">Souscrire à un produit Factoring</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-light">
+			<div class="card-header">
+				<h3 class="card-title">Produits souscrits</h3>
+			</div>
+			<div class="card-body p-0">
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Produit</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyevents">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-subscribe" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Souscription à un produit financier</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<div>
+						<label for="borrower">Adresse du client concerné</label>
+						<input class="form-control" type="text" id="borrower" name="product" pattern="0x.{40}">
+					</div>
+					<div>
+						<label for="facture">Identifiant de la facture</label>
+						<input class="form-control" type="number" id="facture" name="fac" >
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="productAmount">Montant de la facture</label>
+					<input type="number" step=".01" class="form-control" id="productAmount">
+				</div>
+			</div>
+			<div class="modal-footer justify-content-between">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
+				<button type="button" class="btn btn-primary" onclick="onSellInvoice()">Acheter</button>
+			</div>
+		</div>
 	</div>
 </div>
 
