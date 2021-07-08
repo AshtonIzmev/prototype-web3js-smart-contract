@@ -17,20 +17,20 @@ async function preauthorizeAmount(callback, destinationAdd, amount) {
     var contractMethod = "approve";
     var contractArg = [destinationAdd, amount*100];
 
+    $('#modal-allow').modal('hide');
+    $('.modal-backdrop').hide();
+
     function errorCallback(error) {
         console.log(error);
         showToastGeneric("Autorisation de débit", "Une erreur est survenue lors de la pré-autorisation", 3000);
     };
     function transactionHashCallback(transactionHash) {
-        showToastGeneric("Autorisation de débit", "Votre pré-autorisation est en cours. Merci de patienter.", 3000);
+        showToastGeneric("Autorisation de débit", "Votre pré-autorisation est en cours. Merci de patienter.", 5000);
     };
     function finalCallback(data) {
         showToastGeneric("Autorisation de débit", "La pré-autorisation pour un montant de  " + amount + "MED a été correctement effectuée", 3000);
         callback();
     };
-
-    $('#modal-allow').modal('hide');
-    $('.modal-backdrop').hide();
 
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
 };
@@ -68,8 +68,8 @@ async function loadKycDic() {
         else if (eventResult) {
             eventResult.forEach(function (e) {
                 let kycName = e.returnValues._name;
-                let kycAdd = e.returnValues._add;
-                kycDic[kycAdd] = kycName;
+                let kycPersonnAdd = e.returnValues._add;
+                kycDic[kycPersonnAdd] = kycName;
             });
         }
     });

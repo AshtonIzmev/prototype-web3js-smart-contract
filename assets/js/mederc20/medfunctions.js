@@ -59,6 +59,9 @@ async function onTransferERC20Btn() {
         $('.toast').toast({ 'delay': 3000 }).toast('show');
         addTransferToStore(benef + ";" + amount);
         addBenefToStore(benef + ";" + lib);
+        $("#trsfInputBenef").val("");
+        $("#trsfInputAmount").val("");
+        $("#trsfInputLib").val("");
         loadSolde();
         loadHistoric();
         $('#modal-transfer').modal('hide');

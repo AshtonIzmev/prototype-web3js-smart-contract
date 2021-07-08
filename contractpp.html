@@ -39,7 +39,7 @@ permalink: /contractpp/
 		<div class="small-box bg-warning">
 			<div class="inner">
 				<h3>
-					<span class="small">Date : </span><span id="date">?</span> 
+					<span class="small"></span><span id="date">?</span> 
 				</h3>
 			</div>
 		</div>
@@ -96,8 +96,16 @@ permalink: /contractpp/
 						<label for="dat5pct12mois">DAT 5% à échéance 12 mois</label>
 					</div>
 					<div>
-						<input type="radio" id="mudaraba1" name="product" value="mud1">
-						<label for="mudaraba1"><div id="mud1txt"></div></label>
+						<input type="radio" id="mudaraba1" name="product" class="inputMud" value="mud1">
+						<label for="mudaraba1" class="labelMud"><div id="mud1txt"></div></label>
+					</div>
+					<div>
+						<input type="radio" id="mudaraba2" name="product" class="inputMud" value="mud2">
+						<label for="mudaraba2" class="labelMud"><div id="mud2txt"></div></label>
+					</div>
+					<div>
+						<input type="radio" id="mudaraba3" name="product" class="inputMud" value="mud3">
+						<label for="mudaraba3" class="labelMud"><div id="mud3txt"></div></label>
 					</div>
 				</div>
 				<div class="form-group">
@@ -107,7 +115,9 @@ permalink: /contractpp/
 			</div>
 			<div class="modal-footer justify-content-between">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
-				<button type="button" class="btn btn-primary" onclick="onPreauthorize(buyProduct)">Acheter</button>
+				<button type="button" class="btn btn-primary" onclick="onPreauthorize(buyProduct)">Acheter 
+					<i id="faspin" class="fas fa-spinner fa-pulse" style="display:none;"></i>
+				</button>
 			</div>
 		</div>
 	</div>
@@ -141,7 +151,9 @@ permalink: /contractpp/
 			<span style="display: none;" id="tokid"></span>
 			<div class="modal-footer justify-content-between">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Retour</button>
-				<button type="button" class="btn btn-primary" onclick="onDeCapitalize()">Acheter</button>
+				<button type="button" class="btn btn-primary" onclick="onDeCapitalize()">Acheter
+					<i id="faspin2" class="fas fa-spinner fa-pulse" style="display:none;"></i>
+				</button>
 			</div>
 		</div>
 	</div>

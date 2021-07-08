@@ -66,7 +66,7 @@ async function loadMarketplaceHistoric() {
                 if (isToSell) {
                     getContractValueWiArg(contractObjectMP, "getOffer", tokid).then(function(offer) {
                         isYou = (offer[0].toLowerCase() == account.toLowerCase());
-                        actions = isYou ? `Vous avez mis en vente pour ${offer[1]/100}<sup>MED</sup> | <a href='#' onclick='onWithdrawTokenProduct(${tokid})'>Annuler</a>` :
+                        actions = isYou ? `En vente pour ${offer[1]/100}<sup>MED</sup> | <a href='#' onclick='onWithdrawTokenProduct(${tokid})'>Annuler</a>` :
                         `<a href='#' onclick='onBuyTokenProduct(${tokid})'>Acheter pour ${offer[1]/100}<sup>MED</sup></a>`
                         $("#tbodyevents").append(`<tr><td>${libelle}</td><td>${actions}</td></tr>`);
                     });
@@ -105,12 +105,10 @@ async function onWithdrawTokenProduct(tokId) {
     };
 
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
-
-    $('#modal-sell').modal('hide');
-    $('.modal-backdrop').hide();    
 };
 
 async function onSellTokenProduct() {
+    $("#faspin").toggle();
     var price = $("#productAmount").val();
     var tokId = $("#tokid").text();
     var allowance = Number(price) + sellFees + withdrawFees;
@@ -139,6 +137,8 @@ async function sellTokenProduct(price, tokId) {
     };
     function finalCallback(data) {
         showToastGeneric("Mise en vente de produit", "La mise en vente pour un prix de vente de " + price + "MED a été correctement effectuée", 3000);
+        $("#productAmount").val("");
+        $("#faspin").toggle();
         loadMarketplaceHistoric();
         loadMedInfos();
     };

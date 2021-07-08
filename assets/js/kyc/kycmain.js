@@ -57,10 +57,10 @@ async function loadKYCHistoric() {
             $("#tbodyevents").html("");
             eventResult.forEach(function (e) {
                 let kycName = e.returnValues._name;
-                let kycAdd = e.returnValues._add;
-                let kycCutAdd = kycAdd.substring(0, 10);
+                let kycPersonnAdd = e.returnValues._add;
+                let kycCutAdd = kycPersonnAdd.substring(0, 10);
                 $("#tbodyevents").append(
-                    `<tr><td> ${kycName} </td><td><a href='#' onclick='copyAdd("${kycAdd}")'> ${kycCutAdd} ...</a></td><td></td>`
+                    `<tr><td> ${kycName} </td><td><a href='#' onclick='copyAdd("${kycPersonnAdd}")'> ${kycCutAdd} ...</a></td><td></td>`
                 );
             });
         }

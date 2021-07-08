@@ -6,14 +6,14 @@ const WEB3ID = isLocalhost ? "1338" : "985459";
 const blockchainProvider = isLocalhost ? 'http://localhost:8545/' : 'https://curieux.ma/blockchain/';
 
 // Localhost const
-var masterAdd = "0x9FA6e716e9e2fD98C607daB8c4c76565D77447d3"
-var kycAdd = "0xeca5826E2Ec427ECB7591D65dB15312bd0fAE229"
-var medAdd = "0xF25d550Bb98e85BbB8E7f4Da415B3e64ce886B5b"
-var fpAdd = "0xdB80DE214EF0E5DDe4cBc8c67E6DAA41900E3BeF"
-var marketplaceAdd = "0xA494EA0C917588BceD1C253F58fFB089cF061587"
-var datAdd = "0xBe8265DEe08D8A6640D42701f47aB0AC0C2c80F8"
-var factoringAdd = "0x19180a999A6142fd79241f8739Ef6e0189174bFe"
-var mudarabaAdd = "0x9F132168A0DA87c75ef03991784d111B5ad4d899"
+var masterAdd = "0xF1FBd95ab59532B9195966283A5F701613A219b2"
+var kycAdd = "0x791De9Ee5d9c37e74b12D5484694eB0e590D528a"
+var medAdd = "0xdE0EDEF168acf589E24008d873d83132D5e48FB1"
+var fpAdd = "0x1Dc6745AcbCe5BE2e018cCF71499EA12774DAD01"
+var marketplaceAdd = "0x96766ab870B02493775b93b065bd80eDb07259B1"
+var datAdd = "0x04fC0d59019C158b4D63FC9ec8C93B45f4E51fE5"
+var factoringAdd = "0xd7909204e733DEA721a4621b9106bF4712ee46Be"
+var mudarabaAdd = "0xF00135086779a184cd2C8BEe99F2C81b979FFAF8"
 
 // Geth const
 let masterGAdd = "0x1147d78192b6a6c6bcbeaf32e29cd1a82072537d" // deployed

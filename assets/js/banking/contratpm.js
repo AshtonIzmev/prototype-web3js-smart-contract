@@ -27,12 +27,12 @@ async function loadHistoric() {
                 getContractValueWiArg(contractObjectFP, "ownerOf", tokid).then(function(owner) {
                     const isYou = (owner.toLowerCase() == account.toLowerCase());
                     const isValid = prod[4] == "false" ? "vérifiée" : "non vérifiée";
-                    const actions = `Propriétaire : ${kycDic[owner]}`;
+                    const actions = `Propriétaire ${kycDic[owner]}`;
                     $("#tbodyevents").append(
                         `<tr>
                         <td>Facture <span style="font-weight: bold;">${isValid}</span> d'un montant de 
                             <span style="font-weight: bold;">${prod[2]/100}</span>
-                            <sup>MED</sup> datée à J+${prod[1]} du client ${prod[0]}
+                            <sup>MED</sup> datée à J+${prod[1]} du client ${prod[0].substring(0, 10)}...
                         </td>
                         <td>${actions}</td>
                         </tr>`
@@ -44,6 +44,7 @@ async function loadHistoric() {
 }
 
 async function onSellInvoice() {
+    $("#faspin").toggle();
     var productMontant = $("#productAmount").val();
     var borrower = $("#borrower").val();
     var invoiceId = $("#facture").val();
@@ -61,6 +62,10 @@ async function onSellInvoice() {
     };
     function finalCallback(data) {
         showToastGeneric("Affacturage", "La publication de la facture " + invoiceId + " pour " + borrower + " a été correctement réalisée", 3000);
+        $("#productAmount").val("");
+        $("#borrower").val("");
+        $("#facture").val("");
+        $("#faspin").toggle();
         loadMedInfos();
         loadHistoric();
     };

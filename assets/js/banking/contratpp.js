@@ -17,20 +17,38 @@ async function main() {
 async function loadMedInfos() {
     var contractObjectMed = await getContractObject(medCtrAdd, medJsonPath);
     var contractObjectMud = await getContractObject(mudarabaCtrAdd, mudarabaJson);
+    var contractObjectMud2 = await getContractObject(mudarabaCtrAdd2, mudarabaJson);
+    var contractObjectMud3 = await getContractObject(mudarabaCtrAdd3, mudarabaJson);
     let account = await getPrimaryAccount();
     let solde = await getContractValueWiArg(contractObjectMed, "balanceOf", account);
     let days = await getContractValueWoArg(contractObjectMed, "daysElapsed");
     let allowance = await getContractValueWi2Arg(contractObjectMed, "allowance", account, medCtrAdd);
+
     let capitalCap = await getContractValueWoArg(contractObjectMud, "capitalCap");
     let totalCapital = await getContractValueWoArg(contractObjectMud, "totalCapital");
     let description = await getContractValueWoArg(contractObjectMud, "description");
     let ice = await getContractValueWoArg(contractObjectMud, "ice");
+
+    let capitalCap2 = await getContractValueWoArg(contractObjectMud2, "capitalCap");
+    let totalCapital2 = await getContractValueWoArg(contractObjectMud2, "totalCapital");
+    let description2 = await getContractValueWoArg(contractObjectMud2, "description");
+    let ice2 = await getContractValueWoArg(contractObjectMud2, "ice");
+
+    let capitalCap3 = await getContractValueWoArg(contractObjectMud3, "capitalCap");
+    let totalCapital3 = await getContractValueWoArg(contractObjectMud3, "totalCapital");
+    let description3 = await getContractValueWoArg(contractObjectMud3, "description");
+    let ice3 = await getContractValueWoArg(contractObjectMud3, "ice");
+
     let mudarabaTxt = `Souscription à ${description} (ICE ${ice}). Capital demandé ${capitalCap/100}MED. Capital souscrit ${totalCapital/100}MED`;
+    let mudarabaTxt2 = `Souscription à ${description2} (ICE ${ice2}). Capital demandé ${capitalCap2/100}MED. Capital souscrit ${totalCapital2/100}MED`;
+    let mudarabaTxt3 = `Souscription à ${description3} (ICE ${ice3}). Capital demandé ${capitalCap3/100}MED. Capital souscrit ${totalCapital3/100}MED`;
     $("#allowance").text(allowance/100);
     $("#solde").text(solde/100);
-    $("#date").text("Jour " + days);
+    $("#date").text("Jour J+" + days);
     $("#connect").hide();
     $("#mud1txt").text(mudarabaTxt);
+    $("#mud2txt").text(mudarabaTxt2);
+    $("#mud3txt").text(mudarabaTxt3);
     console.log("Solde à jour");
 };
 
@@ -58,6 +76,8 @@ async function buyMudaraba() {
     };
     function finalCallback(data) {
         showToastGeneric("Achat de DAT", "La souscription au contrat Mudaraba pour un montant de " + productMontant + " a été correctement réalisé", 3000);
+        $("#faspin").toggle();
+        $("#productAmount").val("");
         loadMedInfos();
         loadHistoric();
     };
@@ -91,6 +111,8 @@ async function buyDAT() {
     };
     function finalCallback(data) {
         showToastGeneric("Achat de DAT", "La souscription au DAT " + libelle + " a été correctement réalisé", 3000);
+        $("#productAmount").val("");
+        $("#faspin").toggle();
         loadMedInfos();
         loadHistoric();
     };
@@ -145,32 +167,27 @@ async function payProduct(tokId, daysRemaining) {
     var contractMethod = "payDat";
     var contractArg = [tokId];
 
+    $('#modal-subscribe').modal('hide');
+    $('.modal-backdrop').hide();
+
     function errorCallback(error) {
         console.log(error);
-        $('.toast-header').text("Paiement de DAT");
-        $('.toast-body').text("Une erreur est survenue lors de la soumission");
-        $('.toast').toast({ 'delay': 3000 }).toast('show');
+        showToastGeneric("Paiement de DAT", "Une erreur est survenue lors de la soumission", 5000);
     };
     function transactionHashCallback(transactionHash) {
-        $('.toast-header').text("Paiement de DAT");
-        $('.toast-body').text("Votre paiement est en cours. Merci de patienter.");
-        $('.toast').toast({ 'delay': 3000 }).toast('show');
+        showToastGeneric("Paiement de DAT", "Votre paiement est en cours. Merci de patienter.", 5000);
     };
     function finalCallback(data) {
-        $('.toast-header').text("Paiement de DAT");
-        $('.toast-body').text("Le paiement du DAT à l'échéance a été correctement réalisé");
-        $('.toast').toast({ 'delay': 3000 }).toast('show');
+        showToastGeneric("Paiement de DAT", "Le paiement du DAT à l'échéance a été correctement réalisé", 3000);
         loadMedInfos();
         loadHistoric();
     };
-
-    $('#modal-subscribe').modal('hide');
-    $('.modal-backdrop').hide();
 
     callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
 }
 
 async function onPreauthorize(callback) {
+    $("#faspin").toggle();
     var productMontant = $("#productAmount").val();
     var mudaraba1 = $("#mudaraba1")[0].checked;
     if (mudaraba1) {
@@ -241,6 +258,7 @@ function onHandleFund(tokId) {
 }
 
 async function onDeCapitalize() {
+    $("#faspin2").toggle();
     var tokid = $("#tokid").text();
     var isCapi = $("#capitalize")[0].checked;
     var montant = $("#productCapital").val();
@@ -249,6 +267,9 @@ async function onDeCapitalize() {
     var contractObject = await getContractObject(mudarabaCtrAdd, mudarabaJson);
     var contractMethod = isCapi ? "addFund" : "withdrawFund";
     var contractArg = [tokid, montant*100];
+
+    $('#modal-subscribe').modal('hide');
+    $('.modal-backdrop').hide();
 
     function errorCallback(error) {
         console.log(error);
@@ -259,22 +280,21 @@ async function onDeCapitalize() {
     };
     function finalCallback(data) {
         showToastGeneric("Gestion de Mudaraba", "Votre " + lib + " a été correctement réalisé", 3000);
+        $("#productCapital").val("");
+        $("#faspin2").toggle();
         loadMedInfos();
         loadHistoric();
     };
 
-    $('#modal-subscribe').modal('hide');
+    $('#modal-mudaraba').modal('hide');
     $('.modal-backdrop').hide();
-    
+
     var callback = () => callContractMethod(contractObject, contractMethod, contractArg, transactionHashCallback, errorCallback, finalCallback);
     if (isCapi) {
         preauthorizeAmount(callback, mudarabaCtrAdd, montant);
     } else {
         callback();
     }
-
-    $('#modal-mudaraba').modal('hide');
-    $('.modal-backdrop').hide();
 }
 
 function plusdinfos() {

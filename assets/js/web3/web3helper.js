@@ -48,7 +48,7 @@ function getEther() {
                     .done(function (data) {
                         $("#event").html("<p> 1 Ether reçu. Récepissé de la transaction : " + data.response.split('\n')[0] + ". Il sera visible dans une dizaine de secondes")
                         $('.toast-header').text("Envoi d'Ether");
-                        $('.toast-body').text("Envoi d'ether à l'adresse réussi");
+                        $('.toast-body').text("Envoi de 1 ether à l'adresse réussi. Merci de patienter 5 à 10 secondes...");
                         $('.toast').toast({ 'delay': 2000 }).toast('show');
                         setTimeout(refreshEther, 5000);
                         setTimeout(refreshEther, 10000);
